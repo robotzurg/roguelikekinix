@@ -1,0 +1,6 @@
+/// @description DO NOT PLACE IN ROOMS
+//  SELF-CREATING GML+ MANAGER OBJECT
+
+/*
+NULL DRAW
+*/
