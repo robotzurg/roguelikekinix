@@ -2,4 +2,6 @@ hp = 10;
 
 reloadbullet = 10;
 
-startreload = false
+hspd = 0;
+
+vspd = 0;
