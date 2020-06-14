@@ -17,12 +17,14 @@ if keyboard_check(ord("D")) {
 }
 
 if mouse_check_button(mb_left){
+		if reloadbullet = 0 {
 	var bullet = instance_create_layer(x,y,layer,o_bullet);
 	with bullet {
 		direction = point_direction(x,y,mouse_x,mouse_y);
 		speed = 10;
 	}
-} 
+	}
+	}
 
 if reloadbullet == 0 {
 	reloadbullet = 10
