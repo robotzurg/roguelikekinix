@@ -14,7 +14,7 @@ vspd = (key_down - key_up) * spd
 if hspd != 0 && vspd != 0 {
 	hspd *= 0.75;
 	vspd *= 0.75;
-
+}
 ///Horizontal Collision
 if (place_meeting(x+hspd, y, object_Wall)){
     while (!place_meeting(x+sign(hspd), y, object_Wall)){ 
