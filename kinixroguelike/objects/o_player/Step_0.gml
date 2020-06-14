@@ -1,19 +1,19 @@
 //AAAAAAAAAAAAAAAAAA-
 
 if keyboard_check(ord("W")) {
-	y -= 8;
+	vspd = -8;
 }
 
-if keyboard_check(ord("A")) {
-	x -= 8;
+if keyboard_check_pressed(ord("A")) {
+	hspd = -8;
 }
 
 if keyboard_check(ord("S")) {
-	y += 8;
+	vspd = 8;
 }
 
 if keyboard_check(ord("D")) {
-	x += 8;
+	hspd = 8;
 }
 
 if mouse_check_button(mb_left){
@@ -23,3 +23,25 @@ if mouse_check_button(mb_left){
 		speed = 10;
 	}
 } 
+
+if reloadbullet == 0 {
+	reloadbullet = 10
+}
+
+///Horizontal
+if (place_meeting(x+hspd, y, object_Wall)){
+    while (!place_meeting(x+sign(hspd), y, object_Wall)){ 
+        x+=sign(hspd);
+    }
+    hspd=0;
+}
+x+=hspd;
+
+//Vertical
+if (place_meeting(x, y+vspd, object_Wall)){
+    while (!place_meeting(x, y+sign(vspd), object_Wall)){
+        y+=sign(vspd);
+    }
+   vspd=0;
+} 
+y+=vspd;
