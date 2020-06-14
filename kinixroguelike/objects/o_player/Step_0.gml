@@ -1,3 +1,4 @@
+
 if (live_call()) return live_result;
 //Set up local variables for keybinds
 var key_left = keyboard_check(ord("A"));
@@ -13,7 +14,6 @@ vspd = (key_down - key_up) * spd
 if hspd != 0 && vspd != 0 {
 	hspd *= 0.75;
 	vspd *= 0.75;
-}
 
 ///Horizontal Collision
 if (place_meeting(x+hspd, y, object_Wall)){

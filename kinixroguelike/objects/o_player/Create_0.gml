@@ -4,3 +4,5 @@ vspd = 0;
 spd = 8;
 
 timer("reloadtimer");
+
+ammo = 100;
