@@ -1,12 +1,12 @@
 {
-    "id": "6407a484-2725-457c-99c3-cd0b67012b5b",
+    "id": "36c31736-55b9-4614-ad8c-a3af24c58103",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_testgun",
+    "name": "o_CollisionParent",
     "eventList": [
         
     ],
-    "maskSpriteId": "44730886-4a53-4d14-8d06-b730a1cbeac7",
+    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
     "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
@@ -24,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "44730886-4a53-4d14-8d06-b730a1cbeac7",
+    "spriteId": "f9166c38-756f-4749-ba19-cbd5578f0631",
     "visible": true
 }
