@@ -258,7 +258,7 @@
             "Key": "36c31736-55b9-4614-ad8c-a3af24c58103",
             "Value": {
                 "id": "1f0efacc-50b8-45fb-b262-fd0572ca1797",
-                "resourcePath": "objects\\object_Wall\\object_Wall.yy",
+                "resourcePath": "objects\\o_wall\\o_wall.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -386,7 +386,7 @@
             "Key": "6407a484-2725-457c-99c3-cd0b67012b5b",
             "Value": {
                 "id": "76241ae3-8b44-4f5e-841d-6141068b5618",
-                "resourcePath": "objects\\object_TestGun\\object_TestGun.yy",
+                "resourcePath": "objects\\o_testgun\\o_testgun.yy",
                 "resourceType": "GMObject"
             }
         },

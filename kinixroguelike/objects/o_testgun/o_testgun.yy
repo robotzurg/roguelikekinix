@@ -2,7 +2,7 @@
     "id": "6407a484-2725-457c-99c3-cd0b67012b5b",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "object_TestGun",
+    "name": "o_testgun",
     "eventList": [
         
     ],
