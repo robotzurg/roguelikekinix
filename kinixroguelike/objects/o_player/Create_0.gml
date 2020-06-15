@@ -1,7 +1,7 @@
 //Player Identifier Init
 map = global.playermap;
 sprite_index = map[? "Sprite"];
-//name = map[? "Name"];
+name = map[? "Name"];
 hp = map[? "HP"];
 spd = map[? "Speed"];
 hspd = 0;
