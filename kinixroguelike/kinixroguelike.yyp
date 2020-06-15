@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "047704e0-a43d-40f8-80cf-fe7941881394",
+            "Value": {
+                "id": "38dd7b10-e9f6-47fe-a927-e160d66ea9c5",
+                "resourcePath": "scripts\\draw_fade_text\\draw_fade_text.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0655e77b-2806-47e5-b306-7a0402370ee0",
             "Value": {
                 "id": "2cf56dc4-25f3-4ac1-95c7-fedc8cda6455",
@@ -52,6 +60,14 @@
                 "id": "e63eba58-bf6e-4fbf-b844-73a5807d73f6",
                 "resourcePath": "scripts\\array_height\\array_height.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "07643ade-0af5-40c3-a667-b129cb3f20b5",
+            "Value": {
+                "id": "92c2b50c-d7e0-4cc5-b751-881f40103d22",
+                "resourcePath": "objects\\o_fadetext\\o_fadetext.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -335,6 +351,14 @@
             }
         },
         {
+            "Key": "45dc5f02-858a-4421-8e11-a7b4ef264308",
+            "Value": {
+                "id": "6688e41e-2bf1-40af-87b5-ae1c69a7ef96",
+                "resourcePath": "scripts\\draw_fade_text_transformed\\draw_fade_text_transformed.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "463c769b-5320-4ee3-ba9f-58bcbb224877",
             "Value": {
                 "id": "670dd7af-94f1-49c8-9c66-b2b708ce467e",
@@ -364,6 +388,14 @@
                 "id": "8399b9cf-a1e4-498a-8577-21a36a475af0",
                 "resourcePath": "objects\\o_GameEngine\\o_GameEngine.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "4f333368-40e9-4a9f-9f5e-8b134f769155",
+            "Value": {
+                "id": "9cd64208-7475-4765-afea-be0bf9e90436",
+                "resourcePath": "sprites\\s_ammobox\\s_ammobox.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1039,6 +1071,14 @@
             }
         },
         {
+            "Key": "fcae85d2-f73d-41e4-afd6-02abdff3d8dd",
+            "Value": {
+                "id": "1522d232-3cce-4ae8-8572-a7db1a467867",
+                "resourcePath": "scripts\\chance\\chance.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fe2a9206-3b30-4086-8df9-453182b4e929",
             "Value": {
                 "id": "fdc6e709-8ed2-4c90-aa41-70718b81313e",
@@ -1120,7 +1160,10 @@
         "d7a0cb3d-aa5d-4aaf-9513-be0dd8a0c6b9",
         "3cfe40a9-f80e-4230-90e7-04a30e916cd1",
         "2794280e-db93-43a2-aab5-2d8b02035a67",
-        "1f710586-374b-44c3-a75e-d44392e156da"
+        "1f710586-374b-44c3-a75e-d44392e156da",
+        "fcae85d2-f73d-41e4-afd6-02abdff3d8dd",
+        "047704e0-a43d-40f8-80cf-fe7941881394",
+        "45dc5f02-858a-4421-8e11-a7b4ef264308"
     ],
     "tutorial": ""
 }

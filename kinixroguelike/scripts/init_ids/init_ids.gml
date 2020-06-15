@@ -1,8 +1,3 @@
-///ENEMY DATA MAPS\\\
-#region Enemy Map
-
-#endregion
-
 ///GUN DATA MAPS\\\
 #region Pistol Map
 global.pistolmap = ds_map_create();
@@ -47,13 +42,15 @@ ds_map_add(global.playermap,"Melee",global.swordmap); //ds_map of the Equipped M
 #endregion
 
 
-///ENEMY CRAP (NOT DONE)\\\
+///ENEMY DATA MAPS\\\
 #region Enemy Map
 global.enemymap = ds_map_create();
-ds_map_add(global.enemymap,"enemymove",5); //enemy movement speed
-ds_map_add(global.enemymap,"enemycost",10); //enemy placement currency cost
-ds_map_add(global.enemymap,"zone",1) //zone enemy spawns in
-ds_map_add(global.enemymap,"atkcooldown",5); //time between attacks
-ds_map_add(global.enemymap,"enemyhp",10); //enemy hp
-ds_map_add(global.enemymap,"movetimer", 0); //movement timer
+ds_map_add(global.enemymap,"Name","Bat"); //Name of the Enemy
+ds_map_add(global.enemymap,"Sprite",s_enemy);
+ds_map_add(global.enemymap,"HP",10); //Enemy HP
+ds_map_add(global.enemymap,"Speed",5); //Movement Speed for Enemy
+ds_map_add(global.enemymap,"Cost",10); //Enemy Placement Currency Cost
+ds_map_add(global.enemymap,"Spawn Area",1) // Area Enemy Spawns In
+ds_map_add(global.enemymap,"Attack Cooldown",10); //Time between Special Attacks or Fire Rate (0 means no cooldown)
+ds_map_add(global.enemymap,"Move Timer", 10); //Movement Timer
 #endregion

@@ -1,10 +1,9 @@
-
-enemyreload = 10;
-
 map = global.enemymap 
-
-hp = map[? "enemyhp"] +10;
-
-movetimer = map[? "movetimer"] +10;
-
-enemymove = map[? "enemymove"];
+sprite_index = map[? "Sprite"];
+name = map[? "Name"];
+hp = map[? "HP"] ;
+spd = map[? "Speed"];
+spawncost = map[? "Cost"];
+spawnarea = map[? "Spawn Area"];
+atkcooldown = map[? "Attack Cooldown"];
+movetimer = map[? "Move Timer"]

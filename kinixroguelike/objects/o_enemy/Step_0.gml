@@ -1,4 +1,4 @@
-enemyreload -= 1;
+atkcooldown -= 1;
 movetimer -= 1;
 
 if hp == 0 {
@@ -11,13 +11,13 @@ var bullet = instance_create_layer(x,y,layer,o_bullet)
 with bullet {direction=point_direction(x,y,o_player.x,o_player.y) speed = 8}
 }*/
 
-if enemyreload = 0 {
-	enemyreload = 10
+if atkcooldown = 0 {
+	atkcooldown = map[? "Attack Cooldown"];
 }
 
 if movetimer = 0 {
 	direction = random(360)
-	speed = enemymove
+	speed = spd;
 }
 
 if movetimer == 0 {
