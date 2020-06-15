@@ -11,7 +11,7 @@ if timer("reload") == true {
 			direction = point_direction(x,y,mouse_x,mouse_y);
 			speed = 8;
 		}
-		timer_set("reload",firerate);
+		timer_set("reload",0.1);
 		ammo -= 1;
 	}
 }
