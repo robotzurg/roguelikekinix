@@ -37,11 +37,11 @@ ds_map_add(global.swordmap,"Deflect",false); //If it can deflect bullets or not.
 global.playermap =  ds_map_create();
 
 ds_map_add(global.playermap,"Name","Jerry"); //Name of the Character
+ds_map_add(global.playermap,"Sprite",s_player); //Sprite of the Character
 ds_map_add(global.playermap,"HP",10); //Maximum HP
 ds_map_add(global.playermap,"Speed",8); //Movement Speed
 ds_map_add(global.playermap,"Ammo",100); //Player's Ammo Count
 ds_map_add(global.playermap,"Ability",1); //Current Ability of the Player
 ds_map_add(global.playermap,"Gun",global.pistolmap); //ds_map of the Equipped Gun
 ds_map_add(global.playermap,"Melee",global.swordmap); //ds_map of the Equipped Melee
-
 #endregion
