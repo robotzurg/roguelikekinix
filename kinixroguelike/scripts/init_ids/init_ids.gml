@@ -45,3 +45,15 @@ ds_map_add(global.playermap,"Ability",1); //Current Ability of the Player
 ds_map_add(global.playermap,"Gun",global.pistolmap); //ds_map of the Equipped Gun
 ds_map_add(global.playermap,"Melee",global.swordmap); //ds_map of the Equipped Melee
 #endregion
+
+
+///ENEMY CRAP (NOT DONE)\\\
+#region Enemy Map
+global.enemymap = ds_map_create();
+ds_map_add(global.enemymap,"enemymove",5); //enemy movement speed
+ds_map_add(global.enemymap,"enemycost",10); //enemy placement currency cost
+ds_map_add(global.enemymap,"zone",1) //zone enemy spawns in
+ds_map_add(global.enemymap,"atkcooldown",5); //time between attacks
+ds_map_add(global.enemymap,"enemyhp",10); //enemy hp
+ds_map_add(global.enemymap,"movetimer", 0); //movement timer
+#endregion
