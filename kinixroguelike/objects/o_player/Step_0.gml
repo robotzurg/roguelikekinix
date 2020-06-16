@@ -1,4 +1,3 @@
-
 plr_movement();
 
 //Shooting (with reload timer from GML+)

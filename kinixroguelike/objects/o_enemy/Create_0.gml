@@ -1,4 +1,4 @@
-map = global.enemymap 
+map = global.batmap 
 sprite_index = map[? "Sprite"];
 name = map[? "Name"];
 hp = map[? "HP"] ;
@@ -7,3 +7,4 @@ spawncost = map[? "Cost"];
 spawnarea = map[? "Spawn Area"];
 atkcooldown = map[? "Attack Cooldown"];
 movetimer = map[? "Move Timer"]
+coldmg = map[? "coldmg"];

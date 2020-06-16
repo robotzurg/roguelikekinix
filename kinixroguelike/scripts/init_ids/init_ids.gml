@@ -39,18 +39,20 @@ ds_map_add(global.playermap,"Ammo",100); //Player's Ammo Count
 ds_map_add(global.playermap,"Ability",1); //Current Ability of the Player
 ds_map_add(global.playermap,"Gun",global.pistolmap); //ds_map of the Equipped Gun
 ds_map_add(global.playermap,"Melee",global.swordmap); //ds_map of the Equipped Melee
+ds_map_add(global.playermap,"iframes",3); // I-frames
 #endregion
 
 
 ///ENEMY DATA MAPS\\\
 #region Enemy Map
-global.enemymap = ds_map_create();
-ds_map_add(global.enemymap,"Name","Bat"); //Name of the Enemy
-ds_map_add(global.enemymap,"Sprite",s_enemy);
-ds_map_add(global.enemymap,"HP",10); //Enemy HP
-ds_map_add(global.enemymap,"Speed",5); //Movement Speed for Enemy
-ds_map_add(global.enemymap,"Cost",10); //Enemy Placement Currency Cost
-ds_map_add(global.enemymap,"Spawn Area",1) // Area Enemy Spawns In
-ds_map_add(global.enemymap,"Attack Cooldown",10); //Time between Special Attacks or Fire Rate (0 means no cooldown)
-ds_map_add(global.enemymap,"Move Timer", 10); //Movement Timer
+global.batmap = ds_map_create();
+ds_map_add(global.batmap,"Name","Bat"); //Name of the Enemy
+ds_map_add(global.batmap,"Sprite",s_bat);
+ds_map_add(global.batmap,"HP",10); //Enemy HP
+ds_map_add(global.batmap,"Speed",0); //Movement Speed for Enemy
+ds_map_add(global.batmap,"Cost",10); //Enemy Placement Currency Cost
+ds_map_add(global.batmap,"Spawn Area",1) // Area Enemy Spawns In
+ds_map_add(global.batmap,"Attack Cooldown",10); //Time between Special Attacks or Fire Rate (0 means no cooldown)
+ds_map_add(global.batmap,"Move Timer", 10); //Movement Timer
+ds_map_add(global.batmap,"coldmg",true); //can colide with player
 #endregion
