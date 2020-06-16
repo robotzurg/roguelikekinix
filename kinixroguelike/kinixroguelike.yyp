@@ -759,6 +759,14 @@
             }
         },
         {
+            "Key": "b8e230ae-c42f-4975-97f8-810c33ab2e0d",
+            "Value": {
+                "id": "dbd17809-3cf9-4c74-88ca-4fc7cef89024",
+                "resourcePath": "sprites\\s_ram\\s_ram.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ba57ef20-ff60-4ec8-a6ec-0863759ef41e",
             "Value": {
                 "id": "a7d72f07-18b0-46c8-9d43-cefb67c70651",

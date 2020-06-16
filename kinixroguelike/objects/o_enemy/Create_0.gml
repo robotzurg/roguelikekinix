@@ -1,4 +1,6 @@
-map = global.batmap 
+
+map = global.rammap
+//map = global.batmap 
 sprite_index = map[? "Sprite"];
 name = map[? "Name"];
 hp = map[? "HP"] ;
@@ -8,3 +10,6 @@ spawnarea = map[? "Spawn Area"];
 atkcooldown = map[? "Attack Cooldown"];
 movetimer = map[? "Move Timer"]
 coldmg = map[? "coldmg"];
+
+
+
