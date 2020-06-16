@@ -32,7 +32,3 @@ if movetimer == 0 {
 	movetimer = map[? "Move Timer"];
 }
 
-if atkcooldown = 0 {
-	atkcooldown = map[? "Attack Cooldown"];
-}
-

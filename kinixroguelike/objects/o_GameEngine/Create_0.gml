@@ -1,3 +1,3 @@
 init_ids();
 
-room_goto(testroom);
+room_goto(rm_mainmenu);
