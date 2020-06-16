@@ -30,4 +30,5 @@ if movetimer == 0 {
 if map = global.rammap {
 	if movetimer = 0 {
 		
-
+	}
+}
