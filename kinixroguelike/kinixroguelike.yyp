@@ -356,6 +356,11 @@
                 "id": "b71510d2-98d1-48a8-ae37-497588dcd231",
                 "resourcePath": "scripts\\init_rooms\\init_rooms.yy",
                 "resourceType": "GMScript"
+            "Key": "3fc1dc4a-4fc1-410c-abdd-2d0c66f6b88c",
+            "Value": {
+                "id": "b6540827-80e5-4bde-8bbe-05752d83672a",
+                "resourcePath": "views\\3fc1dc4a-4fc1-410c-abdd-2d0c66f6b88c.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
