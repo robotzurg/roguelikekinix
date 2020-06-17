@@ -12,4 +12,8 @@ movetimer = map[? "Move Timer"]
 coldmg = map[? "coldmg"];
 
 
+hspd = 0;
+vspd = 0;
+
+i = 0;
 

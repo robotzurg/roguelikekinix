@@ -60,10 +60,10 @@ ds_map_add(global.batmap,"coldmg",true); //can colide with player
 
 #region Ram Map
 global.rammap = ds_map_create();
-ds_map_add(global.rammap,"Name","Bat"); //Name of the Enemy
+ds_map_add(global.rammap,"Name","Ram"); //Name of the Enemy
 ds_map_add(global.rammap,"Sprite",s_ram);
 ds_map_add(global.rammap,"HP",20); //Enemy HP
-ds_map_add(global.rammap,"Speed",0); //Movement Speed for Enemy
+ds_map_add(global.rammap,"Speed",15); //Movement Speed for Enemy
 ds_map_add(global.rammap,"Cost",10); //Enemy Placement Currency Cost
 ds_map_add(global.rammap,"Spawn Area",1) // Area Enemy Spawns In
 ds_map_add(global.rammap,"Attack Cooldown",50); //Time between Special Attacks or Fire Rate (0 means no cooldown)
