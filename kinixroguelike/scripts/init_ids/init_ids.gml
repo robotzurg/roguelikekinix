@@ -66,7 +66,7 @@ ds_map_add(global.rammap,"HP",20); //Enemy HP
 ds_map_add(global.rammap,"Speed",0); //Movement Speed for Enemy
 ds_map_add(global.rammap,"Cost",10); //Enemy Placement Currency Cost
 ds_map_add(global.rammap,"Spawn Area",1) // Area Enemy Spawns In
-ds_map_add(global.rammap,"Attack Cooldown",50); //Time between Special Attacks or Fire Rate (0 means no cooldown)
+ds_map_add(global.rammap,"Attack Cooldown",10); //Time between Special Attacks or Fire Rate (0 means no cooldown)
 ds_map_add(global.rammap,"Move Timer", 150); //Movement Timer
 ds_map_add(global.rammap,"coldmg",true); //can colide with player
 #endregion
