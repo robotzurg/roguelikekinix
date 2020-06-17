@@ -191,6 +191,14 @@
             }
         },
         {
+            "Key": "225c295d-b5a7-4a1f-985b-a2f216c6a16f",
+            "Value": {
+                "id": "5c93b7be-9407-4d78-bfea-54d25da5d953",
+                "resourcePath": "rooms\\rm_valleyright\\rm_valleyright.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "2312d3a9-6114-401c-820d-d884f7d99686",
             "Value": {
                 "id": "295f9b1d-7760-4ae0-81d6-da0ee36696b0",
@@ -335,11 +343,19 @@
             }
         },
         {
-            "Key": "3fc1dc4a-4fc1-410c-abdd-2d0c66f6b88c",
+            "Key": "42fd58d9-800f-4a18-b2a7-028f1e1462a1",
             "Value": {
-                "id": "b6540827-80e5-4bde-8bbe-05752d83672a",
-                "resourcePath": "views\\3fc1dc4a-4fc1-410c-abdd-2d0c66f6b88c.yy",
-                "resourceType": "GMFolder"
+                "id": "11a736da-07da-46b1-823a-56534e7afc1f",
+                "resourcePath": "rooms\\rm_valleyup\\rm_valleyup.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "44afb90b-9c80-4465-9bef-f31d13d6b435",
+            "Value": {
+                "id": "b71510d2-98d1-48a8-ae37-497588dcd231",
+                "resourcePath": "scripts\\init_rooms\\init_rooms.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -503,6 +519,14 @@
             }
         },
         {
+            "Key": "71a19489-a09f-4707-ab0e-543a32a6ba1d",
+            "Value": {
+                "id": "269930d2-c4e5-4caf-9712-089537cd7e96",
+                "resourcePath": "rooms\\rm_valleydown\\rm_valleydown.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "71a549fe-7370-4195-8b77-fbaf52016317",
             "Value": {
                 "id": "ec7b9f19-e564-4c71-a804-2a52555e7025",
@@ -575,6 +599,14 @@
             }
         },
         {
+            "Key": "7d9a54a6-1e2c-45ad-bfee-ec7b5aa0459f",
+            "Value": {
+                "id": "9378bbaf-22c4-45c6-9c19-5207a1767405",
+                "resourcePath": "rooms\\rm_valleyleft\\rm_valleyleft.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "7db10982-c9d1-4f55-81a3-a653833da914",
             "Value": {
                 "id": "edfdba62-b546-40a4-a6c3-3bdc8065f3b8",
@@ -643,6 +675,14 @@
             "Value": {
                 "id": "e5cac9ee-54b2-4e97-a4f5-6b531bccd1e3",
                 "resourcePath": "scripts\\device_mouse_check_region\\device_mouse_check_region.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9884bc32-b4d8-4c28-b41b-60b768dfe09c",
+            "Value": {
+                "id": "bcbedbf2-1d71-4e31-9ba6-da467351c2be",
+                "resourcePath": "scripts\\generate_world\\generate_world.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1031,6 +1071,14 @@
             }
         },
         {
+            "Key": "ed66ad5f-da95-4163-8986-4fcb7e65fee8",
+            "Value": {
+                "id": "89a9b23c-3ecf-47d8-9ab6-81f769e47829",
+                "resourcePath": "rooms\\rm_valleymain\\rm_valleymain.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "f007c028-4d6c-4240-a38a-79d97601fc62",
             "Value": {
                 "id": "a9d55783-3cee-446d-910f-5e67a8f3da67",
@@ -1197,13 +1245,15 @@
         "de3c3af8-7345-4b7a-9c29-c603d2386833",
         "ba57ef20-ff60-4ec8-a6ec-0863759ef41e",
         "c7e34897-2b15-440e-b1d5-bad8a2720954",
+        "44afb90b-9c80-4465-9bef-f31d13d6b435",
         "d7a0cb3d-aa5d-4aaf-9513-be0dd8a0c6b9",
         "3cfe40a9-f80e-4230-90e7-04a30e916cd1",
         "2794280e-db93-43a2-aab5-2d8b02035a67",
         "1f710586-374b-44c3-a75e-d44392e156da",
         "fcae85d2-f73d-41e4-afd6-02abdff3d8dd",
         "047704e0-a43d-40f8-80cf-fe7941881394",
-        "45dc5f02-858a-4421-8e11-a7b4ef264308"
+        "45dc5f02-858a-4421-8e11-a7b4ef264308",
+        "9884bc32-b4d8-4c28-b41b-60b768dfe09c"
     ],
     "tutorial": ""
 }

@@ -18,6 +18,11 @@ with bullet {direction=point_direction(x,y,o_player.x,o_player.y) speed = 8}
 
 
 if map = global.batmap {
+
+if atkcooldown = 0 {
+	atkcooldown = map[? "Attack Cooldown"];
+}
+
 if movetimer = 0 {
 	direction = random(360)
 	speed = spd;
