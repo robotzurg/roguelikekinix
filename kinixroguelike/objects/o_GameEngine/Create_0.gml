@@ -1,4 +1,5 @@
+randomize();
 init_ids();
 init_rooms();
 
-room_goto(testroom);
+room_goto(rm_mainmenu);

@@ -1,52 +1,82 @@
-global.valleygridgen = ds_grid_create(4,4);
+global.worldgrid = ds_grid_create(8,8); //This is a 8x8 grid;
 
-var startingroom = rm_valleymain; //This is the x coordinate of the first room in the grid. (Because 0,0 is rm_valleymain, in the valley case)
-ds_grid_add(global.valleygridgen,2,2,startingroom); //Puts the starting room in the middle of the world grid.
+var map_width = ds_grid_width(global.worldgrid)-1;
+var map_height = ds_grid_height(global.worldgrid)-1;
 
-for (var i = 1; i > ds_grid_width(global.valleygrid); i++) { //Cycle through every room
-	
-	if is_undefined(global.valleygridgen[# 1, 2]) { //If the left room container is empty, continue
-		
-		for (var ii = 1; ii > ds_grid_width(global.valleygrid); ii++) {
-			if global.valleygrid[# ii, 2] == true {
-				var roomtoadd = global.valleygrid[# ii, 0];	
-			}
-		}
-		
-		ds_grid_add(global.valleygridgen,1, 2, roomtoadd);
-		
-	} else if is_undefined(global.valleygridgen[# 3, 2]) { //Otherwise, if the right room container is empty, continue
-		
-		for (var ii = 1; ii > ds_grid_width(global.valleygrid); ii++) {
-			if global.valleygrid[# ii, 1] == true {
-				var roomtoadd = global.valleygrid[# ii, 0];	
-			}
-		}
-		
-		ds_grid_add(global.valleygridgen, 3, 2, roomtoadd);
+ //Populate the grid with 1s, for calculations
+for (var w=0; w < map_width; w++) {
+	for (var h=0; h < map_height; h++) {
+			ds_grid_set(global.worldgrid,w,h,1);
+	}
+}
+
+//Populate the outer ring with 0s, to have a border
+for (var w=0; w < map_width; w++) { 
+	ds_grid_set(global.worldgrid,w,0,0);
+	ds_grid_set(global.worldgrid,w,map_height,0);
+}
+
+for (var h=0; h < map_height; h++) {
+		ds_grid_set(global.worldgrid,0,h,0);
+		ds_grid_set(global.worldgrid,map_width,h,0);
+}
+
+ds_grid_set(global.worldgrid,3,3,(2*3*5*7)); //This is the starting room
+
+for (var rp=1;rp != 0; rp=rp) {
+	rp = 0;
+	for (var w=1; w < map_width; w++) {
+		for (var h=1; h < map_height; h++) {
 			
-	} else if is_undefined(global.valleygridgen[# 2, 1]) { //Otherwise if the up room container is empty, continue
-		
-		for (var ii = 1; ii > ds_grid_width(global.valleygrid); ii++) {
-			if global.valleygrid[# ii, 4] == true {
-				var roomtoadd = global.valleygrid[# ii, 0];	
+			if (global.worldgrid[# w,h] mod 2 == 0) && (global.worldgrid[# w,h-1] mod 5 != 0) { //Check if we can build in the space above us
+				ds_grid_set(global.worldgrid,w,h-1,(5*(choose(1,2))*(choose(1,3))*(choose(1,7))))
+				rp = 1;
 			}
-		}
-		
-		ds_grid_add(global.valleygridgen, 2, 1, roomtoadd);
 			
-	} else if is_undefined(global.valleygridgen[# 2, 3]) { //Otherwise if the down room container is empty, continue
-		
-		for (var ii = 1; ii > ds_grid_width(global.valleygrid); ii++) {
-			if global.valleygrid[# ii, 3] == true {
-				var roomtoadd = global.valleygrid[# ii, 0];	
+			if (global.worldgrid[# w,h] mod 5 == 0) && (global.worldgrid[# w,h+1] mod 2 != 0) { //Check if we can build in the space below us
+				ds_grid_set(global.worldgrid,w,h+1,(2*(choose(1,5))*(choose(1,3))*(choose(1,7))))
+				rp = 1;
 			}
+			
+			if (global.worldgrid[# w,h] mod 7 == 0) && (global.worldgrid[# w-1,h] mod 3 != 0) { //Check if we can build in the space to the left of us
+				ds_grid_set(global.worldgrid,w-1,h,(3*(choose(1,2))*(choose(1,5))*(choose(1,7))))
+				rp =1;
+			}
+			
+			if (global.worldgrid[# w,h] mod 3 == 0) && (global.worldgrid[# w+1,h] mod 7 != 0) { //Check if we can build in the space to the right of us
+				ds_grid_set(global.worldgrid,w+1,h,(7*(choose(1,2))*(choose(1,3))*(choose(1,5))))
+				rp = 1;
+			}
+			
 		}
-		
-		ds_grid_add(global.valleygridgen, 2, 3, roomtoadd);
+	}
+}
+
+for (var w=1; w < map_width; w++) {
+	for (var h=1; h < map_height; h++) {
+			
+		if global.worldgrid[# w,h-1] == 0 && global.worldgrid[# w,h] mod 2 == 0 {
+			ds_grid_set(global.worldgrid,w,h,(global.worldgrid[# w,h]/2))
+		}
+			
+		if global.worldgrid[# w,h+1] == 0 && global.worldgrid[# w,h] mod 5 == 0 {
+			ds_grid_set(global.worldgrid,w,h,(global.worldgrid[# w,h]/5))
+		}
+			
+		if global.worldgrid[# w-1,h] == 0 && global.worldgrid[# w,h] mod 7 == 0 {
+			ds_grid_set(global.worldgrid,w,h,(global.worldgrid[# w,h]/7))
+		}
+			
+		if global.worldgrid[# w+1,h] == 0 && global.worldgrid[# w,h] mod 3 == 0 {
+			ds_grid_set(global.worldgrid,w,h,(global.worldgrid[# w,h]/3))
+		}
 			
 	}
 }
 
-print(rm_valleyright);
-print(global.valleygridgen[# 1, 2]);
+for (var w=0; w < map_width+1; w++) {
+	for (var h=0; h < map_height+1; h++) {
+		print(string(global.worldgrid[# w, h]));		
+	}
+	print(" ");
+}
