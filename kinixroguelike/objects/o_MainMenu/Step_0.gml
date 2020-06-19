@@ -1,8 +1,10 @@
-if (live_call()) return live_result;
-
 if point_in_rectangle(mouse_x,mouse_y,room_width/2-90,200,room_width/2+90,290) { //PLAY BUTTON
 	if mouse_check_button_pressed(mb_left) {
-		generate_world();
+		if keyboard_check(vk_shift) {
+			room_goto(testroom);
+		} else {
+			generate_world(rm_valley,9,10,true);
+		}
 	}
 } 
 
