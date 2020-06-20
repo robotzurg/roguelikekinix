@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "0a3f2356-a4c8-49e2-97d5-308b2582cbf5",
+            "Value": {
+                "id": "92375748-2c2f-41aa-962f-87c221e42431",
+                "resourcePath": "sprites\\s_homingstaffbullet\\s_homingstaffbullet.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0ae8949a-a903-46ff-a136-b1950514a67e",
             "Value": {
                 "id": "87fb542a-309d-4510-8da4-7ce6e6b65a83",

@@ -13,3 +13,5 @@ if timer("reload") == true {
 		ammo -= 1;
 	}
 }
+
+
