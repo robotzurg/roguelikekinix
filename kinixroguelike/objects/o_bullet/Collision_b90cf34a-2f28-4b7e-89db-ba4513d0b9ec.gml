@@ -1,4 +1,4 @@
 if playerbullet = false {
-	other.hp -= 2;
+	other.hp -= damage;
 	instance_destroy();
 }

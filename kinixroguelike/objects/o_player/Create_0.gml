@@ -13,15 +13,3 @@ iframes = map[? "iframes"];
 timer("reload");
 
 draw_fade_text(x,y,name);
-
-map = global.homingstaffmap
-
-name = map[? "Name"]
-sprite = map[? "Sprite"]
-bulletspr = map[? "Bullet Sprite"]
-dmg = map[? "Damage"]
-firerate = map[? "Fire Rate"]
-ammouse = map[? "Ammo Use"]
-range = map[? "Range"]
-bulletspd = map[? "Bullet Speed"]
-bulletcol = map[? "Bullet Collision"]

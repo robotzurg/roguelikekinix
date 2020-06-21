@@ -1,6 +1,8 @@
 plr_movement();
 
 //Shooting (with reload timer from GML+)
+
+/* Commented Out to test o_ranged
 if timer("reload") == true {
 	if mouse_check_button(mb_left) && ammo != 0 {
 		var bullet = instance_create_layer(x,y,layer,o_bullet);
