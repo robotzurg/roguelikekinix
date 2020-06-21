@@ -8,8 +8,10 @@ ammo = map[? "Ammo"];
 gunmap = map[? "Gun"];
 meleemap = map[? "Melee"];
 iframes = map[? "iframes"];
+flipped = 1;
 
 //Create the reload timer (for using the guns)
 timer("reload");
 
 draw_fade_text(x,y,name);
+

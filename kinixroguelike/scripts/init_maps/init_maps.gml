@@ -53,10 +53,10 @@ ds_map_add(global.swordmap,"Name","Sword"); //Name of the Melee
 ds_map_add(global.swordmap,"Sprite",s_sword); //Sprite of the Melee
 ds_map_add(global.swordmap,"Damage",1); //Damage of the Melee
 ds_map_add(global.swordmap,"Deflect",false); //If it can deflect bullets or not.
-ds_map_add(global.swordmap,"Windup Time",.2);
+ds_map_add(global.swordmap,"Windup Time",.05);
 ds_map_add(global.swordmap,"Windup Angle",30);
-ds_map_add(global.swordmap,"Attack Time",.2);
-ds_map_add(global.swordmap,"Cooldown Time",.1);
+ds_map_add(global.swordmap,"Attack Time",.1);
+ds_map_add(global.swordmap,"Cooldown Time",.05);
 ds_map_add(global.swordmap,"Cooldown Angle",120);
 #endregion
 

@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-x = o_player.x;
+x = o_player.x + (32 * sign(o_player.flipped));
 y = o_player.y;
-direction = point_direction(x,y,mouse_x,mouse_y) + angle_offset;
-image_angle = angle_offset;
+direction = point_direction(x,y,mouse_x,mouse_y) + angle_offset*sign(o_player.flipped);
+image_angle = angle_offset*sign(o_player.flipped);
 image_xscale = sign(direction);
 
 if timer("reload") == true {
@@ -16,7 +16,7 @@ if timer("reload") == true {
 }
 
 if (wu > 0){
-	wu -= 1;
+	wu -= 1
 	angle_offset += (windup_angle/windup)/fps_scale;
 }
 else if (ha > 0){
@@ -28,8 +28,11 @@ else if (cd > 0){
 	cd -= 1;
 	angle_offset += (cooldown_angle/cooldown)/fps_scale;
 	hitbox_check = 0;
+	
+	if instance_exists(o_enemy) {
+		with o_enemy { invin = false; }
+	}
 }
 else{
 angle_offset=0;
 }
-

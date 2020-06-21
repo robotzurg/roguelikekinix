@@ -10,6 +10,7 @@ spawnarea = map[? "Spawn Area"];
 atkcooldown = map[? "Attack Cooldown"];
 movetimer = map[? "Move Timer"]
 coldmg = map[? "coldmg"];
+invin = false;
 
 
 hspd = 0;

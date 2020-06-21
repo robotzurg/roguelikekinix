@@ -922,7 +922,7 @@
             "Key": "c7e34897-2b15-440e-b1d5-bad8a2720954",
             "Value": {
                 "id": "481d6d9b-8658-454f-a8c4-7f60a84bc099",
-                "resourcePath": "scripts\\init_ids\\init_ids.yy",
+                "resourcePath": "scripts\\init_maps\\init_maps.yy",
                 "resourceType": "GMScript"
             }
         },

@@ -1,5 +1,6 @@
 plr_movement();
 
+flipped = sign(mouse_x-x);
 //Shooting (with reload timer from GML+)
 
 /* Commented Out to test o_ranged
@@ -15,5 +16,4 @@ if timer("reload") == true {
 		ammo -= 1;
 	}
 }
-
 
