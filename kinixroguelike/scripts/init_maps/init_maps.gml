@@ -25,23 +25,23 @@ ds_map_add(global.pistolmap,"Bullet Count",1) //How many bullets are fired per s
 #region Homing Staff Map
 global.homingstaffmap = ds_map_create();
 
-ds_map_add(global.pistolmap,"Name","Homing Staff"); //Name of the Gun
-ds_map_add(global.pistolmap,"Sprite",s_gun); //Sprite of the Gun
-ds_map_add(global.pistolmap,"Damage",1); //Damage of the Gun
-ds_map_add(global.pistolmap,"Fire Rate",0.2); //Measured in Seconds, time between shots
-ds_map_add(global.pistolmap,"Ammo Use",1) //Amount of Ammo the gun uses.
-ds_map_add(global.pistolmap,"Range", false); //How far the bullet can go (false means infinite)
-ds_map_add(global.pistolmap,"Bullet Sprites",s_homingstaffbullet); //Self Explanatory.
-ds_map_add(global.pistolmap,"Bullet Trail",false); //If there is a trail or not (false means no trail)
-ds_map_add(global.pistolmap,"Bullet Speed",10); //Speed of the Bullets
-ds_map_add(global.pistolmap,"Bullet Bounce",0) //How many times the bullet can bounce (0 means never)
-ds_map_add(global.pistolmap,"Bullet Split", 0) //How many times the bullet can split up into more bullets (0 means never)
-ds_map_add(global.pistolmap,"Bullet Split Amount", 0) //How many bullets the bullet splits up into (Use 0 Bullet Split is 0)
-ds_map_add(global.pistolmap,"Bullet Split Angle", 0) //How wide of an angle to split into
-ds_map_add(global.pistolmap,"Bullet Collision",true) //True means it destroys upon hitting collision, false means it doesn't
-ds_map_add(global.pistolmap,"Bullet Homing", .0) //How much bullets home in on their target
-ds_map_add(global.pistolmap,"Bullet Spread",0) //How much the bullets spread out
-ds_map_add(global.pistolmap,"Bullet Count",1) //How many bullets are fired per shot
+ds_map_add(global.homingstaffmap,"Name","Homing Staff"); //Name of the Gun
+ds_map_add(global.homingstaffmap,"Sprite",s_gun); //Sprite of the Gun
+ds_map_add(global.homingstaffmap,"Damage",1); //Damage of the Gun
+ds_map_add(global.homingstaffmap,"Fire Rate",0.2); //Measured in Seconds, time between shots
+ds_map_add(global.homingstaffmap,"Ammo Use",1) //Amount of Ammo the gun uses.
+ds_map_add(global.homingstaffmap,"Range", false); //How far the bullet can go (false means infinite)
+ds_map_add(global.homingstaffmap,"Bullet Sprites",s_homingstaffbullet); //Self Explanatory.
+ds_map_add(global.homingstaffmap,"Bullet Trail",false); //If there is a trail or not (false means no trail)
+ds_map_add(global.homingstaffmap,"Bullet Speed",10); //Speed of the Bullets
+ds_map_add(global.homingstaffmap,"Bullet Bounce",0) //How many times the bullet can bounce (0 means never)
+ds_map_add(global.homingstaffmap,"Bullet Split", 0) //How many times the bullet can split up into more bullets (0 means never)
+ds_map_add(global.homingstaffmap,"Bullet Split Amount", 0) //How many bullets the bullet splits up into (Use 0 Bullet Split is 0)
+ds_map_add(global.homingstaffmap,"Bullet Split Angle", 0) //How wide of an angle to split into
+ds_map_add(global.homingstaffmap,"Bullet Collision",true) //True means it destroys upon hitting collision, false means it doesn't
+ds_map_add(global.homingstaffmap,"Bullet Homing", .0) //How much bullets home in on their target
+ds_map_add(global.homingstaffmap,"Bullet Spread",0) //How much the bullets spread out
+ds_map_add(global.homingstaffmap,"Bullet Count",1) //How many bullets are fired per shot
 
 #endregion
 
