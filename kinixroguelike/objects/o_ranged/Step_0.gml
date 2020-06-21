@@ -21,6 +21,8 @@ if timer("reload") == true {
 				b_homing = other.b_homing;
 				b_count = other.b_count;
 				b_spread = other.b_spread;
+				b_hot_time = other.b_hot_time;
+				b_cold_time = other.b_cold_time;
 			}					
 		}
 		timer_set("reload",fire_rate);

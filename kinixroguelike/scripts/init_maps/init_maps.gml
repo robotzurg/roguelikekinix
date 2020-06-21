@@ -10,15 +10,17 @@ ds_map_add(global.pistolmap,"Ammo Use",1) //Amount of Ammo the gun uses.
 ds_map_add(global.pistolmap,"Range", false); //How far the bullet can go (false means infinite)
 ds_map_add(global.pistolmap,"Bullet Sprites",s_bullet); //Self Explanatory.
 ds_map_add(global.pistolmap,"Bullet Trail",false); //If there is a trail or not (false means no trail)
-ds_map_add(global.pistolmap,"Bullet Speed",10); //Speed of the Bullets
+ds_map_add(global.pistolmap,"Bullet Speed",0); //Speed of the Bullets
 ds_map_add(global.pistolmap,"Bullet Bounce",0) //How many times the bullet can bounce (0 means never)
 ds_map_add(global.pistolmap,"Bullet Split", 0) //How many times the bullet can split up into more bullets (0 means never)
 ds_map_add(global.pistolmap,"Bullet Split Amount", 0) //How many bullets the bullet splits up into (Use 0 Bullet Split is 0)
 ds_map_add(global.pistolmap,"Bullet Split Angle", 0) //How wide of an angle to split into
 ds_map_add(global.pistolmap,"Bullet Collision",true) //True means it destroys upon hitting collision, false means it doesn't
-ds_map_add(global.pistolmap,"Bullet Homing", .0) //How much bullets home in on their target
+ds_map_add(global.pistolmap,"Bullet Homing", 0.0) //How much bullets home in on their target
 ds_map_add(global.pistolmap,"Bullet Spread",0) //How much the bullets spread out
 ds_map_add(global.pistolmap,"Bullet Count",1) //How many bullets are fired per shot
+ds_map_add(global.pistolmap,"Hot Damage Time",0) //How long target takes hot damage for (60 per tick of damage)
+ds_map_add(global.pistolmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
 
 
 #endregion
@@ -33,15 +35,17 @@ ds_map_add(global.homingstaffmap,"Ammo Use",1) //Amount of Ammo the gun uses.
 ds_map_add(global.homingstaffmap,"Range", false); //How far the bullet can go (false means infinite)
 ds_map_add(global.homingstaffmap,"Bullet Sprites",s_homingstaffbullet); //Self Explanatory.
 ds_map_add(global.homingstaffmap,"Bullet Trail",false); //If there is a trail or not (false means no trail)
-ds_map_add(global.homingstaffmap,"Bullet Speed",10); //Speed of the Bullets
+ds_map_add(global.homingstaffmap,"Bullet Speed",5); //Speed of the Bullets
 ds_map_add(global.homingstaffmap,"Bullet Bounce",0) //How many times the bullet can bounce (0 means never)
 ds_map_add(global.homingstaffmap,"Bullet Split", 0) //How many times the bullet can split up into more bullets (0 means never)
 ds_map_add(global.homingstaffmap,"Bullet Split Amount", 0) //How many bullets the bullet splits up into (Use 0 Bullet Split is 0)
 ds_map_add(global.homingstaffmap,"Bullet Split Angle", 0) //How wide of an angle to split into
 ds_map_add(global.homingstaffmap,"Bullet Collision",true) //True means it destroys upon hitting collision, false means it doesn't
-ds_map_add(global.homingstaffmap,"Bullet Homing", .0) //How much bullets home in on their target
+ds_map_add(global.homingstaffmap,"Bullet Homing", .2) //How much bullets home in on their target
 ds_map_add(global.homingstaffmap,"Bullet Spread",0) //How much the bullets spread out
 ds_map_add(global.homingstaffmap,"Bullet Count",1) //How many bullets are fired per shot
+ds_map_add(global.homingstaffmap,"Hot Damage Time",0) //How long target takes hot damage for (60 per tick of damage)
+ds_map_add(global.homingstaffmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
 
 #endregion
 
@@ -53,11 +57,13 @@ ds_map_add(global.swordmap,"Name","Sword"); //Name of the Melee
 ds_map_add(global.swordmap,"Sprite",s_sword); //Sprite of the Melee
 ds_map_add(global.swordmap,"Damage",1); //Damage of the Melee
 ds_map_add(global.swordmap,"Deflect",false); //If it can deflect bullets or not.
-ds_map_add(global.swordmap,"Windup Time",.05);
-ds_map_add(global.swordmap,"Windup Angle",30);
-ds_map_add(global.swordmap,"Attack Time",.1);
-ds_map_add(global.swordmap,"Cooldown Time",.05);
-ds_map_add(global.swordmap,"Cooldown Angle",120);
+ds_map_add(global.swordmap,"Windup Time",.05); //How long the windup animation takes (in seconds)
+ds_map_add(global.swordmap,"Windup Angle",30); //How far back the windup swing is
+ds_map_add(global.swordmap,"Attack Time",.1); //How long the attack animation takes (in seconds)
+ds_map_add(global.swordmap,"Cooldown Time",.05); //How long the cooldown animation takes (in seconds)
+ds_map_add(global.swordmap,"Cooldown Angle",120); //How far back the reset swing is
+ds_map_add(global.swordmap,"Hot Damage Time",0) //How long target takes hot damage for (60 per tick of damage)
+ds_map_add(global.swordmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
 #endregion
 
 ///PLAYER DATA MAPS\\\
@@ -70,7 +76,7 @@ ds_map_add(global.playermap,"HP",10); //Maximum HP
 ds_map_add(global.playermap,"Speed",8); //Movement Speed
 ds_map_add(global.playermap,"Ammo",100); //Player's Ammo Count
 ds_map_add(global.playermap,"Ability",1); //Current Ability of the Player
-ds_map_add(global.playermap,"Gun",global.pistolmap); //ds_map of the Equipped Gun
+ds_map_add(global.playermap,"Gun",global.homingstaffmap); //ds_map of the Equipped Gun
 ds_map_add(global.playermap,"Melee",global.swordmap); //ds_map of the Equipped Melee
 ds_map_add(global.playermap,"iframes",3); // I-frames
 #endregion

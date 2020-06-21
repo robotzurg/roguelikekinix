@@ -16,6 +16,15 @@ if(b_bounce > 0){
 }
 //Bullet Homing
 if(b_homing > 0) && instance_exists(o_enemy){
-	x_vel+= sign(o_enemy.x -x )*b_homing;
-	y_vel+= sign(o_enemy.y - y)*b_homing;
+	var ybuffer = 1;
+	var xbuffer = 1;
+		if sign(o_enemy.x - x) != sign(x_vel){
+			xbuffer = 4;
+		}
+		if sign(o_enemy.y - y) != sign(y_vel){
+			ybuffer = 4;
+		}
+	x_vel+= sign(o_enemy.x - x)*b_homing*xbuffer;
+	y_vel+= sign(o_enemy.y - y)*b_homing*ybuffer;
+
 }
