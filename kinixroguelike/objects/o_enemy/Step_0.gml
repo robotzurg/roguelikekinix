@@ -14,9 +14,7 @@ var bullet = instance_create_layer(x,y,layer,o_bullet)
 with bullet {direction=point_direction(x,y,o_player.x,o_player.y) speed = 8}
 }*/
 
-// BAT ENEMY
-
-
+#region // BAT ENEMY
 if map = global.batmap {
 
 if atkcooldown = 0 {
@@ -28,10 +26,9 @@ if movetimer = 0 {
 	speed = spd;
 }
 }
+#endregion
 
-// RAM ENEMY
-
-
+#region // RAM ENEMY
 if (map = global.rammap) {
 	if i <= 0{
 		hspd = 0;
@@ -47,12 +44,13 @@ if (i > 0) {
 	movetimer = random_range(100, 150);
 }
 
-x = x+hspd;
-y = y+vspd;
+
 if(place_meeting(x+hspd, y+vspd, o_CollisionParent)){
 	hspd = 0
 	vspd = 0;
 	}
 }
-
+x = x+hspd;
+y = y+vspd;
+#endregion
 

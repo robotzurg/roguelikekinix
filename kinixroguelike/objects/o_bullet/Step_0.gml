@@ -1,6 +1,7 @@
 x += x_vel;
 y += y_vel;
 direction = point_direction(x,y, x+x_vel, y+y_vel);
+image_angle = direction;
 
 //Bullet Bouncing
 if(b_bounce > 0){

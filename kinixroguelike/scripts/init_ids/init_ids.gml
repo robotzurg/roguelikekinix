@@ -1,4 +1,4 @@
-///GUN DATA MAPS\\\
+///RANGED DATA MAPS\\\
 #region Pistol Map
 global.pistolmap = ds_map_create();
 
@@ -22,6 +22,28 @@ ds_map_add(global.pistolmap,"Bullet Count",1) //How many bullets are fired per s
 
 
 #endregion
+#region Homing Staff Map
+global.homingstaffmap = ds_map_create();
+
+ds_map_add(global.pistolmap,"Name","Homing Staff"); //Name of the Gun
+ds_map_add(global.pistolmap,"Sprite",s_gun); //Sprite of the Gun
+ds_map_add(global.pistolmap,"Damage",1); //Damage of the Gun
+ds_map_add(global.pistolmap,"Fire Rate",0.2); //Measured in Seconds, time between shots
+ds_map_add(global.pistolmap,"Ammo Use",1) //Amount of Ammo the gun uses.
+ds_map_add(global.pistolmap,"Range", false); //How far the bullet can go (false means infinite)
+ds_map_add(global.pistolmap,"Bullet Sprites",s_homingstaffbullet); //Self Explanatory.
+ds_map_add(global.pistolmap,"Bullet Trail",false); //If there is a trail or not (false means no trail)
+ds_map_add(global.pistolmap,"Bullet Speed",10); //Speed of the Bullets
+ds_map_add(global.pistolmap,"Bullet Bounce",0) //How many times the bullet can bounce (0 means never)
+ds_map_add(global.pistolmap,"Bullet Split", 0) //How many times the bullet can split up into more bullets (0 means never)
+ds_map_add(global.pistolmap,"Bullet Split Amount", 0) //How many bullets the bullet splits up into (Use 0 Bullet Split is 0)
+ds_map_add(global.pistolmap,"Bullet Split Angle", 0) //How wide of an angle to split into
+ds_map_add(global.pistolmap,"Bullet Collision",true) //True means it destroys upon hitting collision, false means it doesn't
+ds_map_add(global.pistolmap,"Bullet Homing", .0) //How much bullets home in on their target
+ds_map_add(global.pistolmap,"Bullet Spread",0) //How much the bullets spread out
+ds_map_add(global.pistolmap,"Bullet Count",1) //How many bullets are fired per shot
+
+#endregion
 
 ///MELEE DATA MAPS\\\
 #region Sword Map
@@ -31,6 +53,11 @@ ds_map_add(global.swordmap,"Name","Sword"); //Name of the Melee
 ds_map_add(global.swordmap,"Sprite",s_sword); //Sprite of the Melee
 ds_map_add(global.swordmap,"Damage",1); //Damage of the Melee
 ds_map_add(global.swordmap,"Deflect",false); //If it can deflect bullets or not.
+ds_map_add(global.swordmap,"Windup Time",.2);
+ds_map_add(global.swordmap,"Windup Angle",30);
+ds_map_add(global.swordmap,"Attack Time",.2);
+ds_map_add(global.swordmap,"Cooldown Time",.1);
+ds_map_add(global.swordmap,"Cooldown Angle",120);
 #endregion
 
 ///PLAYER DATA MAPS\\\
@@ -62,8 +89,6 @@ ds_map_add(global.batmap,"Attack Cooldown",10); //Time between Special Attacks o
 ds_map_add(global.batmap,"Move Timer", 10); //Movement Timer
 ds_map_add(global.batmap,"coldmg",true); //can colide with player
 #endregion
-
-
 #region Ram Map
 global.rammap = ds_map_create();
 ds_map_add(global.rammap,"Name","Ram"); //Name of the Enemy
@@ -77,25 +102,3 @@ ds_map_add(global.rammap,"Move Timer", 150); //Movement Timer
 ds_map_add(global.rammap,"coldmg",true); //can colide with player
 #endregion
 
-#region Homing Staff Map
-global.homingstaffmap = ds_map_create();
-
-ds_map_add(global.pistolmap,"Name","Homing Staff"); //Name of the Gun
-ds_map_add(global.pistolmap,"Sprite",s_gun); //Sprite of the Gun
-ds_map_add(global.pistolmap,"Damage",1); //Damage of the Gun
-ds_map_add(global.pistolmap,"Fire Rate",0.2); //Measured in Seconds, time between shots
-ds_map_add(global.pistolmap,"Ammo Use",1) //Amount of Ammo the gun uses.
-ds_map_add(global.pistolmap,"Range", false); //How far the bullet can go (false means infinite)
-ds_map_add(global.pistolmap,"Bullet Sprites",s_homingstaffbullet); //Self Explanatory.
-ds_map_add(global.pistolmap,"Bullet Trail",false); //If there is a trail or not (false means no trail)
-ds_map_add(global.pistolmap,"Bullet Speed",10); //Speed of the Bullets
-ds_map_add(global.pistolmap,"Bullet Bounce",0) //How many times the bullet can bounce (0 means never)
-ds_map_add(global.pistolmap,"Bullet Split", 0) //How many times the bullet can split up into more bullets (0 means never)
-ds_map_add(global.pistolmap,"Bullet Split Amount", 0) //How many bullets the bullet splits up into (Use 0 Bullet Split is 0)
-ds_map_add(global.pistolmap,"Bullet Split Angle", 0) //How wide of an angle to split into
-ds_map_add(global.pistolmap,"Bullet Collision",true) //True means it destroys upon hitting collision, false means it doesn't
-ds_map_add(global.pistolmap,"Bullet Homing", .0) //How much bullets home in on their target
-ds_map_add(global.pistolmap,"Bullet Spread",0) //How much the bullets spread out
-ds_map_add(global.pistolmap,"Bullet Count",1) //How many bullets are fired per shot
-
-#endregion
