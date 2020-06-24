@@ -16,3 +16,7 @@ b_homing = 0;
 b_count = 0;
 b_spread = 0;
 b_split_angle = 0;
+b_hot_time = 0;
+b_cold_time = 0;
+
+sprite_index = b_sprite;

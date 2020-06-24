@@ -13,6 +13,8 @@ cooldown  = melee_map[? "Cooldown Time"];
 windup_angle = melee_map[? "Windup Angle"];
 cooldown_angle = melee_map[? "Cooldown Angle"];
 hitbox_active_angle = windup_angle + cooldown_angle;
+hot_time = melee_map[? "Hot Damage Time"];
+cold_time = melee_map[? "Cold Damage Time"];
 
 sprite_index = sprite;
 

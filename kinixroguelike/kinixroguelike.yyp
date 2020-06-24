@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "0825e416-7f93-4e5a-80b1-48a48978210f",
+            "Value": {
+                "id": "32153593-35a5-4240-8eb7-a5de80073009",
+                "resourcePath": "sprites\\s_fire_particle\\s_fire_particle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "08c02d80-dbdf-4c35-9290-df42bb6db99f",
             "Value": {
                 "id": "ab335ebb-e63a-42d3-9834-ffd30aab5f40",
@@ -439,6 +447,14 @@
             }
         },
         {
+            "Key": "51b52763-7c2a-4e63-8f21-eef6997f7a11",
+            "Value": {
+                "id": "7826b6f9-aef6-448f-aa6b-28e89e125512",
+                "resourcePath": "sprites\\s_ice_particle\\s_ice_particle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5662b4ff-7b6e-4caa-aebb-a239887a3774",
             "Value": {
                 "id": "0ab611bb-cae8-4564-9f13-277a5090f10c",
@@ -631,6 +647,14 @@
             }
         },
         {
+            "Key": "818252a4-aace-4f9c-83b7-bf09552ada22",
+            "Value": {
+                "id": "ded30a26-6372-4da8-a414-8da18f459ce1",
+                "resourcePath": "views\\818252a4-aace-4f9c-83b7-bf09552ada22.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "835b5988-b33a-4d15-8f35-36cd4a971e3c",
             "Value": {
                 "id": "ff61308e-dd69-4e11-b97e-932bd6c03850",
@@ -652,6 +676,14 @@
                 "id": "c97bb1cf-ce52-46fd-853f-de24b969f01c",
                 "resourcePath": "views\\8806d025-adef-4edb-9f15-91cd749ae315.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8844c838-769e-43bd-9a11-f92ec1a74efb",
+            "Value": {
+                "id": "d5b4be7d-79de-48e2-87c5-ccbed9d71d6b",
+                "resourcePath": "objects\\o_particle\\o_particle.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1119,6 +1151,14 @@
             }
         },
         {
+            "Key": "f16ba3b9-1bcb-4cd0-935c-4d40bf8ad081",
+            "Value": {
+                "id": "a60d4e31-8bbe-4302-9bbd-5859889c478d",
+                "resourcePath": "scripts\\create_particle\\create_particle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f28826f7-897d-4026-b7f5-ed9457bcef7c",
             "Value": {
                 "id": "6737e302-bb0d-431a-a8a0-8554151afb78",
@@ -1285,7 +1325,8 @@
         "1f710586-374b-44c3-a75e-d44392e156da",
         "fcae85d2-f73d-41e4-afd6-02abdff3d8dd",
         "047704e0-a43d-40f8-80cf-fe7941881394",
-        "45dc5f02-858a-4421-8e11-a7b4ef264308"
+        "45dc5f02-858a-4421-8e11-a7b4ef264308",
+        "f16ba3b9-1bcb-4cd0-935c-4d40bf8ad081"
     ],
     "tutorial": ""
 }

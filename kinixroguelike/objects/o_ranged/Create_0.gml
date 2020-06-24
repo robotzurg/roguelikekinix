@@ -18,5 +18,7 @@ b_collision = ranged_map[? "Bullet Collision"];
 b_homing = ranged_map[? "Bullet Homing"];
 b_count = ranged_map[? "Bullet Count"];
 b_spread = ranged_map[? "Bullet Spread"];
+b_hot_time = ranged_map[? "Hot Damage Time"];
+b_cold_time = ranged_map[? "Cold Damage Time"];
 
 sprite_index = sprite;
