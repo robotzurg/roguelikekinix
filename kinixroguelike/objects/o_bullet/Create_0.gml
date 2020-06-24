@@ -5,7 +5,7 @@ y_vel = 0;
 
 damage = 0;
 b_speed = 0;
-b_sprite = s_bullet;
+b_sprite = s_homingstaffbullet;
 b_trail  = false;
 b_bounce = 0;
 b_split = 0;

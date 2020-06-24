@@ -1,16 +1,8 @@
 var map = global.worldgrid;
 
-if keyboard_check_pressed(ord("G")) {
-	generate_world(rm_valley,9,10,true);
-}
-if keyboard_check_pressed(ord("H")) {
-	generate_world(rm_valley,9,15,true);	
-}
-	generate_world(rm_valley,9,20,true);	
-
 var map_w = ds_grid_width(map);
 var map_h = ds_grid_height(map);
-var mm_size = 32;
+var mm_size = 12;
 mm_sp = mm_size/2; //Spacing
 
 for (var w=0; w < map_w; w++) {
@@ -88,3 +80,53 @@ for (var w=0; w < map_w; w++) {
 draw_set_color(c_white);
 draw_set_halign(fa_right)
 draw_text_transformed(room_width-10,0,"FPS:" + string(fps),2,2,0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

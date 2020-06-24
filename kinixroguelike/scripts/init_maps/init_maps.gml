@@ -8,7 +8,7 @@ ds_map_add(global.pistolmap,"Damage",8); //Damage of the Gun
 ds_map_add(global.pistolmap,"Fire Rate",0.2); //Measured in Seconds, time between shots
 ds_map_add(global.pistolmap,"Ammo Use",1) //Amount of Ammo the gun uses.
 ds_map_add(global.pistolmap,"Range", false); //How far the bullet can go (false means infinite)
-ds_map_add(global.pistolmap,"Bullet Sprites",s_bullet); //Self Explanatory.
+ds_map_add(global.pistolmap,"Bullet Sprites",s_homingstaffbullet); //Self Explanatory.
 ds_map_add(global.pistolmap,"Bullet Trail",false); //If there is a trail or not (false means no trail)
 ds_map_add(global.pistolmap,"Bullet Speed",0); //Speed of the Bullets
 ds_map_add(global.pistolmap,"Bullet Bounce",0) //How many times the bullet can bounce (0 means never)
@@ -44,7 +44,7 @@ ds_map_add(global.homingstaffmap,"Bullet Collision",true) //True means it destro
 ds_map_add(global.homingstaffmap,"Bullet Homing", .2) //How much bullets home in on their target
 ds_map_add(global.homingstaffmap,"Bullet Spread",0) //How much the bullets spread out
 ds_map_add(global.homingstaffmap,"Bullet Count",1) //How many bullets are fired per shot
-ds_map_add(global.homingstaffmap,"Hot Damage Time",0) //How long target takes hot damage for (60 per tick of damage)
+ds_map_add(global.homingstaffmap,"Hot Damage Time",1200) //How long target takes hot damage for (60 per tick of damage)
 ds_map_add(global.homingstaffmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
 
 #endregion
