@@ -1,9 +1,10 @@
-x = o_player.x;
+x = o_player.x + (16 * sign(o_player.flipped));
 y = o_player.y;
 direction = point_direction(x,y,mouse_x,mouse_y)
 
 if timer("reload") == true {
 	if mouse_check_button(mb_left) && ammo != 0 {
+		o_player.wepequipped = "ranged";
 		for(var i = b_count; i > 0; i--){
 			with (instance_create_layer(x,y,layer,o_bullet)){;
 				playerbullet = true;

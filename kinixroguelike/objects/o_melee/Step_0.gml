@@ -1,13 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
-x = o_player.x + (32 * sign(o_player.flipped));
+x = o_player.x + (16 * sign(o_player.flipped));
 y = o_player.y;
 direction = point_direction(x,y,mouse_x,mouse_y) + angle_offset*sign(o_player.flipped);
 image_angle = angle_offset*sign(o_player.flipped);
 image_xscale = sign(direction);
+image_alpha = (o_player.wepequipped == "melee") ? 1 : 0;
 
 if timer("reload") == true {
 	if mouse_check_button(mb_right){
+		o_player.wepequipped = "melee";
 		wu = windup * fps_scale;
 		ha = hitbox_active * fps_scale;
 		cd = cooldown * fps_scale;

@@ -7,7 +7,7 @@ var mapsize = argument1;
 var maxrooms = argument2;
 var in_middle = argument3;
 
-global.worldgrid = ds_grid_create(9,9); //This is a 8x8 grid;
+global.worldgrid = ds_grid_create(mapsize,mapsize);
 
 var map_width = ds_grid_width(global.worldgrid)-1;
 var map_height = ds_grid_height(global.worldgrid)-1;
@@ -32,10 +32,10 @@ for (var h=0; h < map_height; h++) {
 		ds_grid_set(global.worldgrid,map_width,h,0);
 }
 
-if in_middle == true {
+if in_middle == false {
 	ds_grid_set(global.worldgrid,round(map_width/2),round(map_height/2),2*choose(1,3)*choose(1,5)*choose(1,7)); //This is the starting room
 } else {
-	ds_grid_set(global.worldgrid,irandom_range(2,map_width-1),irandom_range(2,map_height-1),(2*3*5*7)); //This is the starting room
+	ds_grid_set(global.worldgrid,round(map_width/2),round(map_height/2),(2*3*5*7)); //This is the starting room
 }
 
 
@@ -163,4 +163,4 @@ for (var w=1; w < map_width; w++) {
 	}
 }
 
-if room != rm_valley room_goto(rm_valley);
+if room != rm_valley room_goto(rm_valleyroom1);

@@ -1,22 +1,22 @@
 var map = global.worldgrid;
 
-if keyboard_check_pressed(ord("G")) {
-	generate_world(rm_valley,9,10,true);
-}
-if keyboard_check_pressed(ord("H")) {
-	generate_world(rm_valley,9,15,true);	
-}
-
-
 var map_w = ds_grid_width(map);
 var map_h = ds_grid_height(map);
-var mm_size = 32;
+var mm_size = 12;
 mm_sp = mm_size/2; //Spacing
+draw_set_color(c_gray)
+draw_set_alpha(0.5);
+draw_rectangle(0,0,mm_size*map_w+52, mm_size*map_h+52,false);
+draw_set_alpha(1);
 
 for (var w=0; w < map_w; w++) {
-	for (var h=0; h < map_h; h++) {
+	for (var h=0; h < map_h; h++) {	
 		if map[# w,h] != 0 {
-			draw_set_color(c_white);
+			if o_player.current_sector_x == w && o_player.current_sector_y == h {
+				draw_set_color(c_purple);
+			} else {
+				draw_set_color(c_white);	
+			}
 			
 			draw_rectangle(
 			0 + (mm_sp * w) + (mm_size * w),
@@ -73,6 +73,7 @@ for (var w=0; w < map_w; w++) {
 			}
 				
 			} else {
+				draw_set_alpha(0.5);
 				draw_set_color(c_gray);
 				
 				draw_rectangle(
@@ -81,10 +82,54 @@ for (var w=0; w < map_w; w++) {
 				mm_size + (mm_sp * w) + (mm_size * w), 
 				mm_size + (mm_sp * h) + (mm_size * h),
 				false);
+				draw_set_alpha(1);
 		}
 	}
 }
 
+var window_width = RES_W * RES_SCALE;
 draw_set_color(c_white);
 draw_set_halign(fa_right)
-draw_text_transformed(room_width-10,0,"FPS:" + string(fps),2,2,0);
+draw_text_transformed(window_width,0,"FPS:" + string(fps),2,2,0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
