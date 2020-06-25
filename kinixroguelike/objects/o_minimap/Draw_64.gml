@@ -6,7 +6,7 @@ if keyboard_check_pressed(ord("G")) {
 if keyboard_check_pressed(ord("H")) {
 	generate_world(rm_valley,9,15,true);	
 }
-	generate_world(rm_valley,9,20,true);	
+
 
 var map_w = ds_grid_width(map);
 var map_h = ds_grid_height(map);
