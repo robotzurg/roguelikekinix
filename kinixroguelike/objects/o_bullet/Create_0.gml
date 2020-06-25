@@ -19,4 +19,6 @@ b_split_angle = 0;
 b_hot_time = 0;
 b_cold_time = 0;
 
+start_home = false;
+
 sprite_index = b_sprite;

@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "0c628b23-a43b-48e4-b557-be78d77de995",
+            "Value": {
+                "id": "e31e1eb3-4623-426c-a0a1-7d191fdc3f30",
+                "resourcePath": "objects\\o_spawnzones\\o_spawnzones.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0d060661-ca40-4272-ab54-21e1c22ded40",
             "Value": {
                 "id": "56f19f07-94e5-448a-a043-b3f4d7ce1e87",
@@ -884,6 +892,14 @@
                 "id": "12d741ad-fbfa-479f-a1af-41c076952ff3",
                 "resourcePath": "scripts\\create_world\\create_world.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a681b476-c0da-4833-b11a-5313c994cc04",
+            "Value": {
+                "id": "8c95253d-f060-4dd8-8522-0f8d09f02649",
+                "resourcePath": "sprites\\s_spawnzone\\s_spawnzone.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

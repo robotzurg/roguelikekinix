@@ -11,6 +11,9 @@ iframes = map[? "iframes"];
 flipped = 1;
 current_sector_x = 0;
 current_sector_y = 0;
+wepequipped = "ranged";
 //Create the reload timer (for using the guns)
 timer("reload");
 
+instance_create_layer(x,y,layer,o_melee);
+instance_create_layer(x,y,layer,o_ranged);
