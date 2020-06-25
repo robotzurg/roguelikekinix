@@ -8,6 +8,8 @@ view_enabled = true;
 view_visible[0] = true;
 global.zoom = 0;
 zoom = false;
+sector_width = 4320;
+sector_height = 2430;
 
 // Create camera
 camera = camera_create_view(0, 0, RES_W, RES_H);
@@ -32,8 +34,8 @@ window_set_position(display_width/2 - window_width/2, display_height/2 - window_
 var camW = camera_get_view_width(camera);
 var camH = camera_get_view_height(camera);
 
-var targetX = global.camera_focus.x - camW/2;
-var targetY = global.camera_focus.y - camH/2-50;
+var targetX = sector_width - (960/2)
+var targetY = sector_height - (540/2)
 
 targetX = clamp(targetX, 0, room_width - camW);
 targetY = clamp(targetY, 0, room_height - camH);
@@ -42,5 +44,3 @@ camera_set_view_pos(camera, targetX, targetY);
 
 global.d_mouse_x_previous = device_mouse_x_to_gui(0)
 global.d_mouse_y_previous = device_mouse_y_to_gui(0);
-
-print("Camera Created.");

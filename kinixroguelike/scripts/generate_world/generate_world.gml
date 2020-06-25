@@ -163,4 +163,4 @@ for (var w=1; w < map_width; w++) {
 	}
 }
 
-if room != rm_valley room_goto(rm_valley);
+if room != rm_valley room_goto(rm_valleyroom1);

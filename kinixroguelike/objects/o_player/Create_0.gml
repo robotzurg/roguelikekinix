@@ -9,9 +9,8 @@ gunmap = map[? "Gun"];
 meleemap = map[? "Melee"];
 iframes = map[? "iframes"];
 flipped = 1;
-
+current_sector_x = 0;
+current_sector_y = 0;
 //Create the reload timer (for using the guns)
 timer("reload");
-
-draw_fade_text(x,y,name);
 
