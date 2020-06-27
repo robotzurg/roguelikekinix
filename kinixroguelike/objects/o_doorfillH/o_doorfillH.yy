@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "o_doorfillH",
     "eventList": [
-        
+        {
+            "id": "4c12c0eb-ee44-4842-aebc-a5139bba31ba",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "496a4788-9226-45c4-b6c7-14dac1aed7ad"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

@@ -12,7 +12,10 @@ for (var w=0; w < map_w; w++) {
 			if global.worldgrid[# w,h] mod 2 == 0 { //UP
 				instance_create_layer(0 + (room_w * w) + (room_w/2), 0 + (room_h * h), "Instances", o_doorW);
 			} else {
-				instance_create_layer(0 + (room_w * w) + (room_w/2), 0 + (room_h * h), "Instances", o_doorfillW);
+				with instance_create_layer(0 + (room_w * w) + (room_w/2), 0 + (room_h * h), "Instances", o_doorfillW){
+					image_yscale = -1;
+					y += 32;
+				}
 			}
 			
 			if global.worldgrid[# w,h] mod 5 == 0 { //DOWN
@@ -30,7 +33,10 @@ for (var w=0; w < map_w; w++) {
 			if global.worldgrid[# w,h] mod 3 == 0 { //RIGHT
 				instance_create_layer(0 + (room_w * w) + (room_w-32), 0 + (room_h * h) + (room_h/2)+2, "Instances", o_doorH);
 			} else {
-				instance_create_layer(0 + (room_w * w) + (room_w-32), 0 + (room_h * h) + (room_h/2)+2, "Instances", o_doorfillH);
+				with instance_create_layer(0 + (room_w * w) + (room_w-32), 0 + (room_h * h) + (room_h/2)+2, "Instances", o_doorfillH){
+					image_xscale = -1;
+					x += 32;
+				}
 			}
 			
 			//Add in the extra blocks based on what room type it is
