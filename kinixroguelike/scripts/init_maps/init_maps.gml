@@ -8,9 +8,9 @@ ds_map_add(global.pistolmap,"Damage",8); //Damage of the Gun
 ds_map_add(global.pistolmap,"Fire Rate",0.2); //Measured in Seconds, time between shots
 ds_map_add(global.pistolmap,"Ammo Use",1) //Amount of Ammo the gun uses.
 ds_map_add(global.pistolmap,"Range", false); //How far the bullet can go (false means infinite)
-ds_map_add(global.pistolmap,"Bullet Sprites",s_homingstaffbullet); //Self Explanatory.
+ds_map_add(global.pistolmap,"Bullet Sprite",s_homingstaffbullet); //Self Explanatory.
 ds_map_add(global.pistolmap,"Bullet Trail",false); //If there is a trail or not (false means no trail)
-ds_map_add(global.pistolmap,"Bullet Speed",0); //Speed of the Bullets
+ds_map_add(global.pistolmap,"Bullet Speed",8); //Speed of the Bullets
 ds_map_add(global.pistolmap,"Bullet Bounce",0) //How many times the bullet can bounce (0 means never)
 ds_map_add(global.pistolmap,"Bullet Split", 0) //How many times the bullet can split up into more bullets (0 means never)
 ds_map_add(global.pistolmap,"Bullet Split Amount", 0) //How many bullets the bullet splits up into (Use 0 Bullet Split is 0)
@@ -33,7 +33,7 @@ ds_map_add(global.homingstaffmap,"Damage",1); //Damage of the Gun
 ds_map_add(global.homingstaffmap,"Fire Rate",0.2); //Measured in Seconds, time between shots
 ds_map_add(global.homingstaffmap,"Ammo Use",1) //Amount of Ammo the gun uses.
 ds_map_add(global.homingstaffmap,"Range", false); //How far the bullet can go (false means infinite)
-ds_map_add(global.homingstaffmap,"Bullet Sprites",s_homingstaffbullet); //Self Explanatory.
+ds_map_add(global.homingstaffmap,"Bullet Sprite",s_homingstaffbullet); //Self Explanatory.
 ds_map_add(global.homingstaffmap,"Bullet Trail",false); //If there is a trail or not (false means no trail)
 ds_map_add(global.homingstaffmap,"Bullet Speed",5); //Speed of the Bullets
 ds_map_add(global.homingstaffmap,"Bullet Bounce",0) //How many times the bullet can bounce (0 means never)
@@ -76,7 +76,7 @@ ds_map_add(global.playermap,"HP",10); //Maximum HP
 ds_map_add(global.playermap,"Speed",5); //Movement Speed
 ds_map_add(global.playermap,"Ammo",100); //Player's Ammo Count
 ds_map_add(global.playermap,"Ability",1); //Current Ability of the Player
-ds_map_add(global.playermap,"Gun",global.homingstaffmap); //ds_map of the Equipped Gun
+ds_map_add(global.playermap,"Gun",global.pistolmap); //ds_map of the Equipped Gun
 ds_map_add(global.playermap,"Melee",global.swordmap); //ds_map of the Equipped Melee
 ds_map_add(global.playermap,"iframes",3); // I-frames
 #endregion
@@ -85,6 +85,7 @@ ds_map_add(global.playermap,"iframes",3); // I-frames
 ///ENEMY DATA MAPS\\\
 #region Bat Map
 global.batmap = ds_map_create();
+ds_map_add(global.batmap,"Cost",2); //Number of spawn currency it takes to spawn the enemy in the room.
 ds_map_add(global.batmap,"Name","Bat"); //Name of the Enemy
 ds_map_add(global.batmap,"Sprite",s_bat);
 ds_map_add(global.batmap,"HP",10); //Enemy HP
@@ -97,6 +98,7 @@ ds_map_add(global.batmap,"coldmg",true); //can colide with player
 #endregion
 #region Ram Map
 global.rammap = ds_map_create();
+ds_map_add(global.rammap,"Cost",5); //Number of spawn currency it takes to spawn the enemy in the room.
 ds_map_add(global.rammap,"Name","Ram"); //Name of the Enemy
 ds_map_add(global.rammap,"Sprite",s_ram);
 ds_map_add(global.rammap,"HP",20); //Enemy HP
@@ -106,5 +108,11 @@ ds_map_add(global.rammap,"Spawn Area",1) // Area Enemy Spawns In
 ds_map_add(global.rammap,"Attack Cooldown",10); //Time between Special Attacks or Fire Rate (0 means no cooldown)
 ds_map_add(global.rammap,"Move Timer", 150); //Movement Timer
 ds_map_add(global.rammap,"coldmg",true); //can colide with player
+#endregion
+
+///ENEMY SPAWN POOL LIST\\\
+#region Valley Spawn Pool
+global.valleyspawnpool = ds_list_create();
+ds_list_add(global.valleyspawnpool,global.batmap,global.rammap);
 #endregion
 

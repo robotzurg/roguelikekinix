@@ -16,4 +16,3 @@ wepequipped = "ranged";
 timer("reload");
 
 instance_create_layer(x,y,layer,o_melee);
-instance_create_layer(x,y,layer,o_ranged);

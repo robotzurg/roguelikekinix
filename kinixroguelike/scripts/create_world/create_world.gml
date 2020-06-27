@@ -41,6 +41,10 @@ for (var w=0; w < map_w; w++) {
 				with obj {
 					image_xscale = rtsec[# ix, 2];
 					image_yscale = rtsec[# ix, 3];
+					if object_index = o_spawnzones {
+						sector_x = w;
+						sector_y = h;
+					}
 				}
 			}
 			

@@ -13,3 +13,11 @@ for (var w=0; w < map_w; w++) {
 		}
 	}
 }
+
+if room = rm_valley && instance_exists(o_enemy) {
+	instance_activate_object(o_doorW);
+	instance_activate_object(o_doorH);
+} else {
+	instance_deactivate_object(o_doorW);	
+	instance_deactivate_object(o_doorH);	
+}

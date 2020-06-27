@@ -1,19 +1,20 @@
 plr_movement();
 
 flipped = sign(mouse_x-x);
-//Shooting (with reload timer from GML+)
 
-/* Commented Out to test o_ranged
+//Shooting (with reload timer from GML+)
 if timer("reload") == true {
 	if mouse_check_button(mb_left) && ammo != 0 {
-		var bullet = instance_create_layer(x,y,layer,o_bullet);
-		with bullet {
-			playerbullet = true;
-			direction = point_direction(x,y,mouse_x,mouse_y);
-			speed = 8;
+		o_player.wepequipped = "ranged";
+		for(var i = gunmap[? "Bullet Count"]; i > 0; i--){
+			var bullet = instance_create_layer(x + (16 * sign(flipped)),y,layer,o_bullet);
+			with bullet {
+				x = o_player.x + (16 * sign(o_player.flipped));
+				y = o_player.y;
+			}
 		}
-		timer_set("reload",0.1);
-		ammo -= 1;
+		timer_set("reload",gunmap[? "Fire Rate"]);
+		ammo -= gunmap[? "Ammo Use"];
 	}
 }
 

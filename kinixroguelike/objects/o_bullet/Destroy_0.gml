@@ -3,7 +3,6 @@ if(b_split > 1){
 	b_split-=1;
 	for(var i = b_split_amount; i > 0; i--){
 		with (instance_create_layer(x,y,layer,o_bullet)){;
-				playerbullet = true;
 				x_vel = lengthdir_x(other.b_speed,other.direction+random_range(-other.b_split_angle/2,other.b_split_angle/2)+180);
 				y_vel = lengthdir_y(other.b_speed,other.direction+random_range(-other.b_split_angle/2,other.b_split_angle/2)+180);
 				b_sprite = other.b_sprite;

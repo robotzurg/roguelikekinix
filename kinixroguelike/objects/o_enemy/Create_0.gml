@@ -1,6 +1,4 @@
-
-map = global.rammap
-//map = global.batmap 
+map = global.maptoset;
 sprite_index = map[? "Sprite"];
 name = map[? "Name"];
 hp = map[? "HP"] ;
