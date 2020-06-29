@@ -1,3 +1,4 @@
+if (live_call()) return live_result;
 //Get current camera position
 var camX = camera_get_view_x(camera)
 var camY = camera_get_view_y(camera)
@@ -5,11 +6,17 @@ var camW = camera_get_view_width(camera);
 var camH = camera_get_view_height(camera);
 
 //Set target camera position
-var targetX = sector_width - (960/2)
-var targetY = sector_height - (540/2)
+if room_num != 11 {
+	var targetX = sector_width - (960/2)
+	var targetY = sector_height - (540/2)
+} else {
+	var targetX = o_player.x - camW/2;
+	var targetY = o_player.y - camH/2;
+	targetX = clamp(targetX, sector_width,  sector_width - (960/2));
+	targetY = clamp(targetY, sector_height - (540/2), sector_height + (538/2));
+}
 
-targetX = clamp(targetX, 0, room_width - camW);
-targetY = clamp(targetY, 0, room_height - camH);
+
 
 camX = lerp(camX, targetX, CAM_SMOOTH);
 camY = lerp(camY, targetY, CAM_SMOOTH);

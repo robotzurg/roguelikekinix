@@ -17,4 +17,3 @@ if timer("reload") == true {
 		ammo -= gunmap[? "Ammo Use"];
 	}
 }
-

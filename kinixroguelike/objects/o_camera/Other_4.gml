@@ -10,6 +10,7 @@ global.zoom = 0;
 zoom = false;
 sector_width = 4320;
 sector_height = 2430;
+room_num = 2*3*5*7;
 
 // Create camera
 camera = camera_create_view(0, 0, RES_W, RES_H);
@@ -36,6 +37,7 @@ var camH = camera_get_view_height(camera);
 
 var targetX = sector_width - (960/2)
 var targetY = sector_height - (540/2)
+
 
 targetX = clamp(targetX, 0, room_width - camW);
 targetY = clamp(targetY, 0, room_height - camH);
