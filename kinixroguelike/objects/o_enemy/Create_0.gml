@@ -9,6 +9,7 @@ atkcooldown = map[? "Attack Cooldown"];
 movetimer = map[? "Move Timer"]
 coldmg = map[? "coldmg"];
 invin = false;
+wall_col = true;
 
 speed_multiplier = 1;
 cold_time = 0;
@@ -19,5 +20,6 @@ fire_damage = 1;
 hspd = 0;
 vspd = 0;
 
-ram_i = 0;
+i_timer = 0;
+
 

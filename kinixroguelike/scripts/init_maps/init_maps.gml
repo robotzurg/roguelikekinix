@@ -89,7 +89,7 @@ ds_map_add(global.batmap,"Cost",2); //Number of spawn currency it takes to spawn
 ds_map_add(global.batmap,"Name","Bat"); //Name of the Enemy
 ds_map_add(global.batmap,"Sprite",s_bat);
 ds_map_add(global.batmap,"HP",10); //Enemy HP
-ds_map_add(global.batmap,"Speed",0); //Movement Speed for Enemy
+ds_map_add(global.batmap,"Speed",2); //Movement Speed for Enemy
 ds_map_add(global.batmap,"Cost",10); //Enemy Placement Currency Cost
 ds_map_add(global.batmap,"Spawn Area",1) // Area Enemy Spawns In
 ds_map_add(global.batmap,"Attack Cooldown",10); //Time between Special Attacks or Fire Rate (0 means no cooldown)
@@ -102,7 +102,7 @@ ds_map_add(global.rammap,"Cost",5); //Number of spawn currency it takes to spawn
 ds_map_add(global.rammap,"Name","Ram"); //Name of the Enemy
 ds_map_add(global.rammap,"Sprite",s_ram);
 ds_map_add(global.rammap,"HP",20); //Enemy HP
-ds_map_add(global.rammap,"Speed",15); //Movement Speed for Enemy
+ds_map_add(global.rammap,"Speed",5); //Movement Speed for Enemy
 ds_map_add(global.rammap,"Cost",10); //Enemy Placement Currency Cost
 ds_map_add(global.rammap,"Spawn Area",1) // Area Enemy Spawns In
 ds_map_add(global.rammap,"Attack Cooldown",10); //Time between Special Attacks or Fire Rate (0 means no cooldown)
