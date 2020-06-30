@@ -535,6 +535,14 @@
             }
         },
         {
+            "Key": "56e1d047-87b1-4c32-abe1-913de14db839",
+            "Value": {
+                "id": "4d2c2815-2de7-4607-8af4-6d481dadd684",
+                "resourcePath": "rooms\\rm_valleyroom5\\rm_valleyroom5.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "57120e08-dd65-467f-b1ad-d2d9dea781f3",
             "Value": {
                 "id": "45152a9e-8109-426d-9dd6-f6e80d9cbc9c",
@@ -1383,6 +1391,14 @@
             }
         },
         {
+            "Key": "f7d85fb8-ac11-4450-8bc5-7c05bbca79e5",
+            "Value": {
+                "id": "e90478f3-1f34-4d25-a308-4e317af48a57",
+                "resourcePath": "sprites\\s_roomtemplatewide\\s_roomtemplatewide.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f7edf357-3cef-4d8f-b8b8-fc3617e7ebb7",
             "Value": {
                 "id": "33daa592-ebaa-4f33-a1ae-12396d64a78e",
@@ -1404,6 +1420,14 @@
                 "id": "8a57b250-a918-4bd0-b1fc-053c44480d20",
                 "resourcePath": "tilesets\\valley_grass\\valley_grass.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "f889f154-cd27-4aac-bb94-3e7d5ff4db3f",
+            "Value": {
+                "id": "d28d91c9-d8ab-408a-b088-bde13dffc5f7",
+                "resourcePath": "objects\\o_WallTemplateWide\\o_WallTemplateWide.yy",
+                "resourceType": "GMObject"
             }
         },
         {
