@@ -57,13 +57,14 @@ ds_map_add(global.swordmap,"Name","Sword"); //Name of the Melee
 ds_map_add(global.swordmap,"Sprite",s_sword); //Sprite of the Melee
 ds_map_add(global.swordmap,"Damage",1); //Damage of the Melee
 ds_map_add(global.swordmap,"Deflect",false); //If it can deflect bullets or not.
-ds_map_add(global.swordmap,"Windup Time",.05); //How long the windup animation takes (in seconds)
-ds_map_add(global.swordmap,"Windup Angle",30); //How far back the windup swing is
-ds_map_add(global.swordmap,"Attack Time",.1); //How long the attack animation takes (in seconds)
+ds_map_add(global.swordmap,"Slash Sprite",s_swordswing); //How long the windup animation takes (in seconds)
+ds_map_add(global.swordmap,"Slash Offset",20); //How far back the windup swing is
+ds_map_add(global.swordmap,"Slash Speed",1); //How fast the attack is
 ds_map_add(global.swordmap,"Cooldown Time",.05); //How long the cooldown animation takes (in seconds)
 ds_map_add(global.swordmap,"Cooldown Angle",120); //How far back the reset swing is
 ds_map_add(global.swordmap,"Hot Damage Time",0) //How long target takes hot damage for (60 per tick of damage)
 ds_map_add(global.swordmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
+ds_map_add(global.swordmap,"Knockback Distance",20) //How far the target is knocked back (in pixels)
 #endregion
 
 ///PLAYER DATA MAPS\\\
@@ -113,6 +114,6 @@ ds_map_add(global.rammap,"coldmg",true); //can colide with player
 ///ENEMY SPAWN POOL LIST\\\
 #region Valley Spawn Pool
 global.valleyspawnpool = ds_list_create();
-ds_list_add(global.valleyspawnpool,global.batmap,global.rammap);
+ds_list_add(global.valleyspawnpool,global.rammap);
 #endregion
 

@@ -239,14 +239,6 @@
             }
         },
         {
-            "Key": "1f710586-374b-44c3-a75e-d44392e156da",
-            "Value": {
-                "id": "fb2bf3cf-23ea-4952-a45e-716265e8e4b1",
-                "resourcePath": "scripts\\plr_movement\\plr_movement.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "1f7a0477-2d6d-46ce-90e3-23d63619451f",
             "Value": {
                 "id": "d005edde-a1ab-4f84-b100-b086532fa8dd",
@@ -332,6 +324,14 @@
                 "id": "9e16c3d3-6f41-4bc2-bbd9-3ef68f664732",
                 "resourcePath": "sprites\\s_gun\\s_gun.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "324020f2-55b8-47c6-b904-1ab2e47ca599",
+            "Value": {
+                "id": "114033e3-5561-4a85-9963-27b207c2f342",
+                "resourcePath": "objects\\o_swordswing\\o_swordswing.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -515,6 +515,14 @@
             "Value": {
                 "id": "9cd64208-7475-4765-afea-be0bf9e90436",
                 "resourcePath": "sprites\\s_ammobox\\s_ammobox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "50445e53-ae05-4130-af16-79cffe3f9464",
+            "Value": {
+                "id": "d56082e0-334c-4f69-8956-85830462c5a2",
+                "resourcePath": "sprites\\s_player\\s_player.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -967,6 +975,14 @@
             }
         },
         {
+            "Key": "a929e9c0-9d4e-463e-a577-5bc77cad7ee3",
+            "Value": {
+                "id": "b86f8459-57de-40c3-a4d1-3b91e3c56106",
+                "resourcePath": "sprites\\s_swordswing\\s_swordswing.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "aa00e615-6049-4fb7-9d4b-2a9a1cf9c0e6",
             "Value": {
                 "id": "586cb3ea-489b-42af-b0ac-8ccc57b9adc8",
@@ -1271,14 +1287,6 @@
             }
         },
         {
-            "Key": "e42f8972-4d75-44e1-a919-043f35680d5b",
-            "Value": {
-                "id": "d3d81e0b-51e5-4115-ba42-415630d9dcc7",
-                "resourcePath": "objects\\o_melee\\o_melee.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "e5261e7b-313c-4fca-9bfb-302aecacccad",
             "Value": {
                 "id": "62da9039-72d4-4509-82c7-d2987f88d881",
@@ -1471,14 +1479,6 @@
             }
         },
         {
-            "Key": "fe36ef46-a3a0-40be-bbd8-c44fa849dd7c",
-            "Value": {
-                "id": "224ca2b9-aa3f-4df0-b02d-9a92870f9d1d",
-                "resourcePath": "sprites\\s_player\\s_player.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "ff6f43e6-6ad3-4b2f-b801-cb64102f1c43",
             "Value": {
                 "id": "6c59a9da-aa2d-46c7-a942-a6c5e687125c",
@@ -1547,7 +1547,6 @@
         "d7a0cb3d-aa5d-4aaf-9513-be0dd8a0c6b9",
         "3cfe40a9-f80e-4230-90e7-04a30e916cd1",
         "2794280e-db93-43a2-aab5-2d8b02035a67",
-        "1f710586-374b-44c3-a75e-d44392e156da",
         "fcae85d2-f73d-41e4-afd6-02abdff3d8dd",
         "047704e0-a43d-40f8-80cf-fe7941881394",
         "45dc5f02-858a-4421-8e11-a7b4ef264308",

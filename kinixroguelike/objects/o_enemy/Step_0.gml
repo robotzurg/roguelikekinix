@@ -1,3 +1,5 @@
+hspd = 0;
+vspd = 0;
 atkcooldown -= 1;
 movetimer -= 1;
 if hp <= 0 {
@@ -63,7 +65,7 @@ if movetimer = 0 {
 #region // RAM ENEMY
 if (map = global.rammap) {
 	
-	if i_timer = 0{
+	/*if i_timer = 0{
 		
 		hspd = 0;
 		vspd = 0;
@@ -94,12 +96,22 @@ if (map = global.rammap) {
 	if (i_timer > 0) {
 		i_timer--;
 		movetimer = random_range(100, 150);
-	}
+	}*/
 	
 	
 }
 #endregion
 
+#region Knockback
+if kblen > 0 {
+	kblen -= 10;
+	
+	hspd += lengthdir_x(10,kbdir);
+	vspd += lengthdir_y(10,kbdir);
+}
+
+
+#endregion
 
 #region //collision
 if(wall_col = true){

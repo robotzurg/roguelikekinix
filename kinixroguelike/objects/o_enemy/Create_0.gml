@@ -22,4 +22,6 @@ vspd = 0;
 
 i_timer = 0;
 
-
+//Knockback variables
+kblen = 0;
+kbdir = 0;

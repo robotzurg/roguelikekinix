@@ -19,7 +19,6 @@ for (var w=0; w < map_w; w++) {
 				o_camera.sector_width = room_w/2 + (room_w * w)
 				o_camera.sector_height = room_h/2 + (room_h * h)
 				o_camera.room_num = global.worldgrid[# w,h];
-				print(o_camera.room_num);
 			} else {
 				
 				o_camera.room_num = global.worldgrid[# w,h];
