@@ -14,6 +14,7 @@ if (key_right or key_left or key_up or key_down) && state != "hit" {
 
 //Switch direction we're facing based on mouse cursor
 flipped = sign(mouse_x-x);
+if(flipped = 0) flipped ++;
 
 /// MOVE STATE \\\
 
@@ -59,14 +60,22 @@ if timer("reload") == true {
 		for(var i = gunmap[? "Bullet Count"]; i > 0; i--){
 			var bullet = instance_create_layer(x + (16 * sign(flipped)),y,layer,o_bullet);
 			with bullet {
-				x = o_player.x + (16 * sign(o_player.flipped));
-				y = o_player.y;
+				x = o_player.x + lengthdir_x(o_player.arm_length + o_player.bullet_h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(o_player.bullet_v_offset,point_direction(x,y,mouse_x,mouse_y) * sign(o_player.flipped)));
+				y = o_player.y + lengthdir_y(o_player.arm_length + o_player.bullet_h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(o_player.bullet_v_offset,point_direction(x,y,mouse_x,mouse_y)) * -sign(o_player.flipped));
 			}
 		}
 		timer_set("reload",gunmap[? "Fire Rate"]);
 		ammo -= gunmap[? "Ammo Use"];
 	}
 }
+
+
+
+
+
+
+
+
 
 //Melee Weapon
 if mouse_check_button_pressed(mb_right) && melee_swing == false {

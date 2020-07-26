@@ -22,6 +22,7 @@ b_cold_time = o_player.gunmap[? "Cold Damage Time"];
 x_vel = lengthdir_x(b_speed,direction+random_range(-b_spread/2,b_spread/2));
 y_vel = lengthdir_y(b_speed,direction+random_range(-b_spread/2,b_spread/2));
 
+
 start_home = false;
 
 sprite_index = b_sprite;

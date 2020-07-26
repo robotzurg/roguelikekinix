@@ -21,14 +21,15 @@ ds_map_add(global.pistolmap,"Bullet Spread",0) //How much the bullets spread out
 ds_map_add(global.pistolmap,"Bullet Count",1) //How many bullets are fired per shot
 ds_map_add(global.pistolmap,"Hot Damage Time",0) //How long target takes hot damage for (60 per tick of damage)
 ds_map_add(global.pistolmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
-
+ds_map_add(global.pistolmap,"Vertical Offset",6) //Vertical offset for the bullet spawns
+ds_map_add(global.pistolmap,"Horizontal Offset",16) //How far out bullets are spawned from the weapon's center point
 
 #endregion
 #region Homing Staff Map
 global.homingstaffmap = ds_map_create();
 
 ds_map_add(global.homingstaffmap,"Name","Homing Staff"); //Name of the Gun
-ds_map_add(global.homingstaffmap,"Sprite",s_gun); //Sprite of the Gun
+ds_map_add(global.homingstaffmap,"Sprite",s_homingWand); //Sprite of the Gun
 ds_map_add(global.homingstaffmap,"Damage",1); //Damage of the Gun
 ds_map_add(global.homingstaffmap,"Fire Rate",0.2); //Measured in Seconds, time between shots
 ds_map_add(global.homingstaffmap,"Ammo Use",1) //Amount of Ammo the gun uses.
@@ -46,6 +47,8 @@ ds_map_add(global.homingstaffmap,"Bullet Spread",0) //How much the bullets sprea
 ds_map_add(global.homingstaffmap,"Bullet Count",1) //How many bullets are fired per shot
 ds_map_add(global.homingstaffmap,"Hot Damage Time",1200) //How long target takes hot damage for (60 per tick of damage)
 ds_map_add(global.homingstaffmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
+ds_map_add(global.homingstaffmap,"Vertical Offset",20) //Vertical offset for the bullet spawns
+ds_map_add(global.homingstaffmap,"Horizontal Offset",-5) //How far out bullets are spawned from the weapon's center point
 
 #endregion
 
@@ -57,14 +60,15 @@ ds_map_add(global.swordmap,"Name","Sword"); //Name of the Melee
 ds_map_add(global.swordmap,"Sprite",s_sword); //Sprite of the Melee
 ds_map_add(global.swordmap,"Damage",1); //Damage of the Melee
 ds_map_add(global.swordmap,"Deflect",false); //If it can deflect bullets or not.
-ds_map_add(global.swordmap,"Slash Sprite",s_swordswing); //How long the windup animation takes (in seconds)
-ds_map_add(global.swordmap,"Slash Offset",20); //How far back the windup swing is
+ds_map_add(global.swordmap,"Slash Sprite",s_swordswing); //Sprite of the slash
+ds_map_add(global.swordmap,"Slash Offset",24); //How far forward the slash is placed
 ds_map_add(global.swordmap,"Slash Speed",1); //How fast the attack is
 ds_map_add(global.swordmap,"Cooldown Time",.05); //How long the cooldown animation takes (in seconds)
 ds_map_add(global.swordmap,"Cooldown Angle",120); //How far back the reset swing is
 ds_map_add(global.swordmap,"Hot Damage Time",0) //How long target takes hot damage for (60 per tick of damage)
 ds_map_add(global.swordmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
 ds_map_add(global.swordmap,"Knockback Distance",20) //How far the target is knocked back (in pixels)
+
 #endregion
 
 ///PLAYER DATA MAPS\\\
@@ -77,7 +81,7 @@ ds_map_add(global.playermap,"HP",10); //Maximum HP
 ds_map_add(global.playermap,"Speed",5); //Movement Speed
 ds_map_add(global.playermap,"Ammo",100); //Player's Ammo Count
 ds_map_add(global.playermap,"Ability",1); //Current Ability of the Player
-ds_map_add(global.playermap,"Gun",global.pistolmap); //ds_map of the Equipped Gun
+ds_map_add(global.playermap,"Gun",global.homingstaffmap); //ds_map of the Equipped Gun
 ds_map_add(global.playermap,"Melee",global.swordmap); //ds_map of the Equipped Melee
 ds_map_add(global.playermap,"iframes",3); // I-frames
 #endregion

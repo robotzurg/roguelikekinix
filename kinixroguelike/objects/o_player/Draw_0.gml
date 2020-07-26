@@ -9,7 +9,33 @@ if floor(image_index) == 2  {
 draw_sprite_ext(sprite_index,image_index,x,y,flipped,image_yscale,image_angle,image_blend,image_alpha);
 
 //Draw the Gun
-draw_sprite_ext(gunmap[? "Sprite"],image_index,x + (16 * sign(flipped)),y,flipped,image_yscale,image_angle,image_blend, (wepequipped == "ranged") ? 1 : 0);
+draw_sprite_ext(gunmap[? "Sprite"],
+				image_index,
+				x - (arm_length * sign(flipped)) + lengthdir_x(20,point_direction(x,y,mouse_x,mouse_y)),
+				y+lengthdir_y(20,point_direction(x,y,mouse_x,mouse_y)),
+				image_xscale,
+				flipped,
+				point_direction(x,y,mouse_x,mouse_y),
+				image_blend, 
+				(wepequipped == "ranged") ? 1 : 0);
 
 //Draw the Melee
-//draw_sprite_ext(meleemap[? "Sprite"],image_index,x + (16 * sign(flipped)),y,flipped,image_yscale,image_angle,image_blend, (wepequipped == "melee" && melee_swing == false) ? 1 : 0);
+draw_sprite_ext(meleemap[? "Sprite"],
+				image_index,
+				x - (arm_length * sign(flipped)) + lengthdir_x(20,point_direction(x,y,mouse_x,mouse_y)+melee_rotation*sign(flipped)),
+				y+lengthdir_y(20,point_direction(x,y,mouse_x,mouse_y)+melee_rotation*sign(flipped)),
+				image_xscale,
+				flipped,
+				point_direction(x,y,mouse_x,mouse_y)+melee_rotation*sign(flipped),
+				image_blend, 
+				(wepequipped == "melee") ? 1 : 0);
+
+//Draw the Arm
+draw_sprite_ext(s_playerarm,
+				image_index,
+				x - (arm_length * sign(flipped)),
+				y,
+				image_xscale,
+				flipped,
+				point_direction(x,y,mouse_x,mouse_y)+melee_rotation*sign(flipped),
+				image_blend, 1);

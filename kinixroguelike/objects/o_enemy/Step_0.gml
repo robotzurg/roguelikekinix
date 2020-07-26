@@ -112,7 +112,7 @@ if (map = global.rammap) {
 }
 #endregion
 
-#region Knockback
+#region //Knockback
 if kblen > 0 {
 	kblen -= kbspeed;
 
