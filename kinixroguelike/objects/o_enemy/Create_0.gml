@@ -20,8 +20,13 @@ fire_damage = 1;
 hspd = 0;
 vspd = 0;
 
+hspd_mod = 0;
+vspd_mod = 0;
+
 i_timer = 0;
 
 //Knockback variables
 kblen = 0;
 kbdir = 0;
+kbhalf = 0;
+kbspeed = 3;

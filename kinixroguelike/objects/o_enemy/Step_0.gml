@@ -1,10 +1,13 @@
-hspd = 0;
-vspd = 0;
 atkcooldown -= 1;
 movetimer -= 1;
+
+hspd = 0; 
+vspd = 0;
+
 if hp <= 0 {
 	instance_destroy();	
 }
+
 
 #region //Status Effects
 //ICE DAMAGE
@@ -39,43 +42,52 @@ if map = global.batmap {
 
 if atkcooldown = 0 {
 	atkcooldown = map[? "Attack Cooldown"];
-	}
-
+}
+	
+//Movement
 if movetimer = 0 {	
-	hspd = lengthdir_x(spd,random_range(0,360));
-	vspd = lengthdir_y(spd,random_range(0,360));
+	hspd_mod = 0;
+	vspd_mod = 0;
+	hspd_mod = lengthdir_x(spd,random_range(0,360));
+	vspd_mod = lengthdir_y(spd,random_range(0,360));
 	if(o_player.x < x){
-		hspd-=1;
+		hspd_mod-=1;
 		}
 	else{
-		hspd+=1;
+		hspd_mod+=1;
 		}
 	if(o_player.y < y){
-		vspd-=1;
+		vspd_mod-=1;
 		}
 	else{
-		vspd+=1;
+		vspd_mod+=1;
 		}
 	movetimer = 10;
 	}
+	hspd += hspd_mod;
+	vspd += vspd_mod;
 	
 }
 #endregion
 
 #region // RAM ENEMY
+
+//Movement
 if (map = global.rammap) {
-	
-	/*if i_timer = 0{
-		
-		hspd = 0;
-		vspd = 0;
+
+	if i_timer = 0{
+		vspd_mod = 0;
+		hspd_mod = 0;
 		if(movetimer <= 0){
 			i_timer = max(20, (round((point_distance(x,y,o_player.x, o_player.y)/spd)*1.2))); //distance between self and player
-			hspd = lengthdir_x(spd,point_direction(x, y, o_player.x, o_player.y));
-			vspd = lengthdir_y(spd,point_direction(x, y, o_player.x, o_player.y));
+			hspd_mod = lengthdir_x(spd,point_direction(x, y, o_player.x, o_player.y));
+			vspd_mod = lengthdir_y(spd,point_direction(x, y, o_player.x, o_player.y));
 		}
 	}
+	hspd += hspd_mod;
+	vspd += vspd_mod;
 	
+//visuals	
 	if(vspd!=0 || hspd!=0){
 		if(image_index>11 || (image_index<8 && (vspd!=0 || hspd!=0))){image_index = 8;}
 	}
@@ -88,32 +100,32 @@ if (map = global.rammap) {
 		}
 		if(image_index>7){image_index = 4;}
 	}
-	
 	if(sign(hspd!=0)){
 	image_xscale = -sign(hspd);	
 	}
 	
+//timer stuff
 	if (i_timer > 0) {
 		i_timer--;
 		movetimer = random_range(100, 150);
-	}*/
-	
-	
+	}
 }
 #endregion
 
 #region Knockback
 if kblen > 0 {
-	kblen -= 10;
+	kblen -= kbspeed;
+
 	
-	hspd += lengthdir_x(10,kbdir);
-	vspd += lengthdir_y(10,kbdir);
+	hspd += lengthdir_x(kbspeed,kbdir);
+	vspd += lengthdir_y(kbspeed,kbdir);
+	vspd += kbhalf - kblen;
 }
 
 
 #endregion
 
-#region //collision
+#region //Collision
 if(wall_col = true){
 	if(place_meeting(x+hspd, y+vspd, o_CollisionParent)){
 		hspd = 0
