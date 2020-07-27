@@ -21,8 +21,17 @@ if room_num != 11 && room_num != 13 {
 	}
 }
 
-camX = lerp(camX, targetX, CAM_SMOOTH);
-camY = lerp(camY, targetY, CAM_SMOOTH);
+if shake == false {
+	camX = lerp(camX, targetX, CAM_SMOOTH);
+	camY = lerp(camY, targetY, CAM_SMOOTH);
+} else {
+	if timer("screenshake") == false {
+		camX = lerp(camX, targetX, CAM_SMOOTH) + random_range(-shake,shake);
+		camY = lerp(camY, targetY, CAM_SMOOTH) + random_range(-shake,shake);
+	} else {
+		shake = false;
+	}
+}
 
 //Zoom
 var wheel = mouse_wheel_down() - mouse_wheel_up();

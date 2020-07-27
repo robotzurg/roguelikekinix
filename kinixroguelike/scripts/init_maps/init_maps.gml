@@ -23,7 +23,8 @@ ds_map_add(global.pistolmap,"Hot Damage Time",0) //How long target takes hot dam
 ds_map_add(global.pistolmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
 ds_map_add(global.pistolmap,"Vertical Offset",6) //Vertical offset for the bullet spawns
 ds_map_add(global.pistolmap,"Horizontal Offset",16) //How far out bullets are spawned from the weapon's center point
-
+ds_map_add(global.pistolmap,"Screenshake Intensity",4); //How intense screenshake is when a bullet is shot. (0 means no screenshake)
+ds_map_add(global.pistolmap,"Screenshake Duration",0.1); //How long screenshake lasts (in seconds, invalid if screenshake intensity is 0)
 #endregion
 #region Homing Staff Map
 global.homingstaffmap = ds_map_create();
@@ -49,7 +50,8 @@ ds_map_add(global.homingstaffmap,"Hot Damage Time",1200) //How long target takes
 ds_map_add(global.homingstaffmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
 ds_map_add(global.homingstaffmap,"Vertical Offset",20) //Vertical offset for the bullet spawns
 ds_map_add(global.homingstaffmap,"Horizontal Offset",-5) //How far out bullets are spawned from the weapon's center point
-
+ds_map_add(global.homingstaffmap,"Screenshake Intensity",4); //How intense screenshake is when a bullet is shot. (0 means no screenshake)
+ds_map_add(global.homingstaffmap,"Screenshake Duration",0.1); //How long screenshake lasts (in seconds, invalid if screenshake intensity is 0)
 #endregion
 
 ///MELEE DATA MAPS\\\

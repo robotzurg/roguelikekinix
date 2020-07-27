@@ -2,12 +2,41 @@ var map_w = ds_grid_width(global.worldgrid);
 var map_h = ds_grid_height(global.worldgrid);
 var room_w = 960;
 var room_h = 540;
+var dist_from_spawn = 0;
+var dw = 0;
+var dh = 0;
+var origin_w = round((map_w-1)/2)
+var origin_h = round((map_h-1)/2)
+print(origin_w);
+print(origin_h);
+
+//Check to see what the furthest room is, to place the victory room later.
+for (var w=0; w < map_w; w++) {
+	for (var h=0; h < map_h; h++) {
+		if global.worldgrid[# w,h] != 0 {
+			
+			//Update distance from spawn
+			if (abs(w-origin_w)+abs(h-origin_h)) > dist_from_spawn {
+				dist_from_spawn = (abs(w-origin_w)+abs(h-origin_h)) //Update distance
+				dw = w;
+				dh = h;
+				print(dw);
+				print(dh);
+			}
+			
+		}
+	}
+}
 
 for (var w=0; w < map_w; w++) {
 	for (var h=0; h < map_h; h++) {
 		if global.worldgrid[# w,h] != 0 {
 			
-			var roomtype = irandom_range(0,ds_list_size(global.valleyareas)-1);
+			if w == dw && h == dh {
+				var roomtype = ds_list_size(global.valleyareas)-1; //Place the victory room in the furthest room (according to the for loop above)
+			} else {
+				var roomtype = irandom_range(0,ds_list_size(global.valleyareas)-2);
+			}
 			
 			if (global.worldgrid[# w,h] == 10 or global.worldgrid[# w,h] == 5) && global.worldgrid[# w,h+1] == 10 { //If both rooms have an up and down door, but no left or right doors, connect them together. Otherwise, make a regular 960x540 room.
 				
@@ -60,6 +89,7 @@ for (var w=0; w < map_w; w++) {
 				instance_create_layer( 0 + (room_w * w), 0 + (room_h * h), "Instances", o_CollisionParent);
 			}
 			
+			//Door Creation Phase
 			
 			if global.worldgrid[# w,h] mod 2 == 0 { //UP
 				instance_create_layer(0 + (room_w * w) + (room_w/2), 0 + (room_h * h), "Instances", o_doorW);

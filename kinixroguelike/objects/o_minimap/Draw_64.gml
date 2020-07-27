@@ -34,6 +34,24 @@ for (var w=0; w < map_w; w++) {
 			mm_size + (mm_sp * h) + (mm_size * h),
 			true);
 			
+			draw_set_color(c_aqua);
+			
+			if collision_rectangle(
+			w * 960,
+			h * 960,
+			960 * w + 960,
+			540 * h + 540,
+			o_specialwall,
+			false,
+			true) {
+				draw_rectangle(
+				0 + (mm_sp * w) + (mm_size * w),
+				0 + (mm_sp * h) + (mm_size * h), 
+				mm_size + (mm_sp * w) + (mm_size * w), 
+				mm_size + (mm_sp * h) + (mm_size * h),
+				true);
+			}
+			
 			draw_set_color(c_red);
 			
 			if map[# w,h] mod 2 == 0 { //UP

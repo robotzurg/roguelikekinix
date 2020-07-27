@@ -12,6 +12,10 @@ sector_width = 4320;
 sector_height = 2430;
 room_num = 2*3*5*7;
 
+//Screenshake variables
+shakedur = 0;
+shake = false;
+
 // Create camera
 camera = camera_create_view(0, 0, RES_W, RES_H);
 

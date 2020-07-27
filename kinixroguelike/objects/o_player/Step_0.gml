@@ -65,6 +65,7 @@ if timer("reload") == true {
 			}
 		}
 		timer_set("reload",gunmap[? "Fire Rate"]);
+		shake_screen(gunmap[? "Screenshake Intensity"], gunmap[? "Screenshake Duration"]);
 		ammo -= gunmap[? "Ammo Use"];
 	}
 }
@@ -78,7 +79,7 @@ if timer("reload") == true {
 
 
 //Melee Weapon
-if mouse_check_button_pressed(mb_right) && melee_swing == false {
+if mouse_check_button(mb_right) && melee_swing == false {
 	var dir_x = lengthdir_x(meleemap[? "Slash Offset"],  point_direction(o_player.x,o_player.y,mouse_x,mouse_y))
 	var dir_y = lengthdir_y(meleemap[? "Slash Offset"],  point_direction(o_player.x,o_player.y,mouse_x,mouse_y))
 	with instance_create_layer(o_player.x + dir_x, o_player.y + dir_y, layer,o_swordswing) {

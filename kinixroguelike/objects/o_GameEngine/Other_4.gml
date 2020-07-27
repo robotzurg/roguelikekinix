@@ -1,5 +1,5 @@
 if room != rm_valley && room != testroom && room != rm_init && room != rm_valleytemplate && room != rm_mainmenu {
-	if instance_exists(o_wall) {
+	if room != rm_valleyroomlong && room != rm_valleyroomwide {
 		ds_list_add(global.valleyareas,ds_grid_create(instance_count,5))
 		var sec = global.valleyareas[| ds_list_size(global.valleyareas)-1]
 		var i = 0;

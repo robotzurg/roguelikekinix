@@ -16,26 +16,26 @@ for (var w=0; w < map_w; w++) {
 				}
 				o_player.current_sector_x = w;
 				o_player.current_sector_y = h;
-				o_camera.sector_width = room_w/2 + (room_w * w)
-				o_camera.sector_height = room_h/2 + (room_h * h)
-				o_camera.room_num = global.worldgrid[# w,h];
+				o_Camera.sector_width = room_w/2 + (room_w * w)
+				o_Camera.sector_height = room_h/2 + (room_h * h)
+				o_Camera.room_num = global.worldgrid[# w,h];
 			} else {
 				
-				o_camera.room_num = global.worldgrid[# w,h];
-				if o_camera.room_num == 11 or o_camera.room_num == 13 {
-					o_camera.sector_width = room_w/2 + (room_w * w)
-				} else if o_camera.room_num == 17 {
-					o_camera.sector_width = room_w/2 + (room_w * o_player.current_sector_x+1) + room_w;
-				} else if o_camera.room_num == 19 {
-					o_camera.sector_width = room_w/2 + (room_w * o_player.current_sector_x-1) + room_w;
+				o_Camera.room_num = global.worldgrid[# w,h];
+				if o_Camera.room_num == 11 or o_Camera.room_num == 13 {
+					o_Camera.sector_width = room_w/2 + (room_w * w)
+				} else if o_Camera.room_num == 17 {
+					o_Camera.sector_width = room_w/2 + (room_w * o_player.current_sector_x+1) + room_w;
+				} else if o_Camera.room_num == 19 {
+					o_Camera.sector_width = room_w/2 + (room_w * o_player.current_sector_x-1) + room_w;
 				}
 			
-				if o_camera.room_num == 17 or o_camera.room_num == 19 {
-					o_camera.sector_height = room_h/2 + (room_h * h)
-				} else if o_camera.room_num == 11 {
-					o_camera.sector_height = room_h/2 + (room_h * o_player.current_sector_y+1) + room_h
-				} else if o_camera.room_num = 13 {
-					o_camera.sector_height = room_h/2 + (room_h * o_player.current_sector_y-1) + room_h
+				if o_Camera.room_num == 17 or o_Camera.room_num == 19 {
+					o_Camera.sector_height = room_h/2 + (room_h * h)
+				} else if o_Camera.room_num == 11 {
+					o_Camera.sector_height = room_h/2 + (room_h * o_player.current_sector_y+1) + room_h
+				} else if o_Camera.room_num = 13 {
+					o_Camera.sector_height = room_h/2 + (room_h * o_player.current_sector_y-1) + room_h
 				}
 			}
 		}
