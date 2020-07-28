@@ -2,7 +2,7 @@
     "id": "34e465c8-29b2-42f7-ad5e-e9c8ed7f08ae",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "s_specialwall",
+    "name": "s_staircase",
     "For3D": false,
     "HTile": false,
     "VTile": false,

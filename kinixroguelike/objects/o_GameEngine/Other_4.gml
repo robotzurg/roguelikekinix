@@ -1,4 +1,5 @@
-if room != rm_valley && room != testroom && room != rm_init && room != rm_valleytemplate && room != rm_mainmenu {
+//Go through all the possible room layouts, and save every instance in that room into a ds_grid, so we can place it into the full world later.
+if room != rm_valley && room != testroom && room != rm_init && room != rm_valleytemplate && room != rm_mainmenu && room != rm_valleyarea2 {
 	if room != rm_valleyroomlong && room != rm_valleyroomwide {
 		ds_list_add(global.valleyareas,ds_grid_create(instance_count,5))
 		var sec = global.valleyareas[| ds_list_size(global.valleyareas)-1]
@@ -13,10 +14,18 @@ if room != rm_valley && room != testroom && room != rm_init && room != rm_valley
 				i++;
 			}
 		}
-		room_goto_next();
+		if room_next(room) = testroom {
+			room_goto(room_to_goto);
+		} else {
+			room_goto_next();
+		}
 		print("Next Room!");
 	} else {
-		room_goto_next();
+		if room_next(room) = testroom {
+			room_goto(room_to_goto);
+		} else {
+			room_goto_next();
+		}
 		print("Next Room!");
 	}
 }

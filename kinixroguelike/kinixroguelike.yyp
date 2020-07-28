@@ -362,7 +362,7 @@
             "Key": "34e465c8-29b2-42f7-ad5e-e9c8ed7f08ae",
             "Value": {
                 "id": "c747329a-b67c-45ec-901e-28050bfd38a1",
-                "resourcePath": "sprites\\s_specialwall\\s_specialwall.yy",
+                "resourcePath": "sprites\\s_staircase\\s_staircase.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -810,7 +810,7 @@
             "Key": "7fc993ef-3320-4f18-9665-3382ca1cb0c2",
             "Value": {
                 "id": "d63e11af-9b2b-4669-87cd-77761338e16e",
-                "resourcePath": "objects\\o_specialwall\\o_specialwall.yy",
+                "resourcePath": "objects\\o_staircase\\o_staircase.yy",
                 "resourceType": "GMObject"
             }
         },

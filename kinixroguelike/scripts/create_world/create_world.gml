@@ -141,4 +141,4 @@ for (var w=0; w < map_w; w++) {
 	}
 }
 
-ds_list_destroy(global.valleyareas);
+//ds_list_destroy(global.valleyareas);

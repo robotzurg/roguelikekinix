@@ -2,7 +2,7 @@
     "id": "7fc993ef-3320-4f18-9665-3382ca1cb0c2",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_specialwall",
+    "name": "o_staircase",
     "eventList": [
         {
             "id": "6b86eae8-336e-4c4f-9a91-feeb0b89acae",
@@ -17,7 +17,7 @@
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "36c31736-55b9-4614-ad8c-a3af24c58103",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

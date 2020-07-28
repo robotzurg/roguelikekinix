@@ -1,13 +1,18 @@
-///@param World_Type
+///@param World_Room
 ///@param Map_Size
 ///@param Num_Of_Rooms
 ///@param In_Middle
-var worldtype = argument0;
+var worldroom = argument0;
 var mapsize = argument1;
 var maxrooms = argument2;
 var in_middle = argument3;
 
-global.worldgrid = ds_grid_create(mapsize,mapsize);
+if ds_exists(global.worldgrid, ds_type_grid) {
+	ds_grid_destroy(global.worldgrid);
+	global.worldgrid = ds_grid_create(mapsize,mapsize);
+} else {
+	global.worldgrid = ds_grid_create(mapsize,mapsize);
+}
 
 var map_width = ds_grid_width(global.worldgrid)-1;
 var map_height = ds_grid_height(global.worldgrid)-1;
@@ -163,4 +168,4 @@ for (var w=1; w < map_width; w++) {
 	}
 }
 
-if room != rm_valley room_goto(rm_valleyroom1);
+o_GameEngine.room_to_goto = worldroom;

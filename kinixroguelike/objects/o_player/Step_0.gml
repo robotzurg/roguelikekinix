@@ -16,8 +16,15 @@ if (key_right or key_left or key_up or key_down) && state != "hit" {
 flipped = sign(mouse_x-x);
 if(flipped = 0) flipped ++;
 
-/// MOVE STATE \\\
+//Move onto next floor code
+if (place_meeting(x,y,o_staircase)) {
+	if keyboard_check_pressed(ord("E")) {
+		generate_world(rm_valleyarea2, 10, 15, true);
+		room_goto(room_next(room));
+	}
+}
 
+#region Move State
 if state == "move" {
 	//Movement code
 	hspd = (key_right - key_left) * spd
@@ -53,7 +60,10 @@ if (place_meeting(x, y+vspd, o_CollisionParent)){
 } 
 y+=vspd;
 
-//Shooting (with reload timer from GML+)
+#endregion
+
+#region Shooting with Gun
+
 if timer("reload") == true {
 	if mouse_check_button(mb_left) && ammo != 0 {
 		wepequipped = "ranged";
@@ -70,15 +80,9 @@ if timer("reload") == true {
 	}
 }
 
+#endregion
 
-
-
-
-
-
-
-
-//Melee Weapon
+#region Melee
 if mouse_check_button(mb_right) && melee_swing == false {
 	var dir_x = lengthdir_x(meleemap[? "Slash Offset"],  point_direction(o_player.x,o_player.y,mouse_x,mouse_y))
 	var dir_y = lengthdir_y(meleemap[? "Slash Offset"],  point_direction(o_player.x,o_player.y,mouse_x,mouse_y))
@@ -91,3 +95,5 @@ if mouse_check_button(mb_right) && melee_swing == false {
 	melee_swing = true;
 	wepequipped = "melee";
 }
+
+#endregion
