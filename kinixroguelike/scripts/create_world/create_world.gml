@@ -46,7 +46,7 @@ for (var w=0; w < map_w; w++) {
 				}
 				ds_grid_set(global.worldgrid, w, h, 11); //Set the current room to 0
 				ds_grid_set(global.worldgrid, w, h+1, 13); //Set the bottom room to 0
-				var roomtype = ds_list_size(global.valleyareas)-2;
+				var roomtype = ds_list_size(global.valleyareas)-3;
 				
 			} else if (global.worldgrid[# w,h+1] == 10 or global.worldgrid[# w,h+1] == 2) && global.worldgrid[# w,h] == 10 { //If both rooms have an up and down door, but no left or right doors, connect them together. Otherwise, make a regular 960x540 room.
 				
@@ -60,7 +60,7 @@ for (var w=0; w < map_w; w++) {
 				}
 				ds_grid_set(global.worldgrid, w, h, 11); //Set the current room to 0
 				ds_grid_set(global.worldgrid, w, h+1, 13); //Set the bottom room to 0
-				var roomtype = ds_list_size(global.valleyareas)-2;
+				var roomtype = ds_list_size(global.valleyareas)-3;
 				
 			} else if (global.worldgrid[# w,h] == 21 or global.worldgrid[# w,h] == 3) && global.worldgrid[# w+1,h] == 21 { 
 				
@@ -70,7 +70,7 @@ for (var w=0; w < map_w; w++) {
 				}
 				ds_grid_set(global.worldgrid, w, h, 17); //Set the current room to 0
 				ds_grid_set(global.worldgrid, w+1, h, 19); //Set the bottom room to 0
-				var roomtype = ds_list_size(global.valleyareas)-1;
+				var roomtype = ds_list_size(global.valleyareas)-2;
 				
 			} else if (global.worldgrid[# w+1,h] == 21 or global.worldgrid[# w+1,h] == 7) && global.worldgrid[# w,h] == 21 { 
 				
@@ -83,7 +83,7 @@ for (var w=0; w < map_w; w++) {
 				}
 				ds_grid_set(global.worldgrid, w, h, 17); //Set the current room to 0
 				ds_grid_set(global.worldgrid, w+1, h, 19); //Set the bottom room to 0
-				var roomtype = ds_list_size(global.valleyareas)-1;
+				var roomtype = ds_list_size(global.valleyareas)-2;
 				
 			} else if global.worldgrid[# w,h] != 11 && global.worldgrid[# w,h] != 13 && global.worldgrid[# w,h] != 17 && global.worldgrid[# w,h] != 19 {
 				instance_create_layer( 0 + (room_w * w), 0 + (room_h * h), "Instances", o_CollisionParent);
@@ -136,6 +136,32 @@ for (var w=0; w < map_w; w++) {
 					}
 				}
 			}
+			
+			var countvar = 0;
+			
+				var sector_tw = floor(((roomtype = ds_list_size(global.valleyareas)-1) ? 1920 : 960)/32);
+				var sector_th = floor(((roomtype = ds_list_size(global.valleyareas)-1) ? 1080 : 540)/32);
+				var layer_id_1 = layer_get_id("Tiles_1");
+				var layer_id_2 = layer_get_id("Tiles_2");
+				var layer_id_3 = layer_get_id("Tiles_3");
+				var map_id_1 = layer_tilemap_get_id(layer_id_1);
+				var map_id_2 = layer_tilemap_get_id(layer_id_2);
+				var map_id_3 = layer_tilemap_get_id(layer_id_3);
+				var tiles_1 = global.valleytiles[0]
+				var tiles_2 = global.valleytiles[1]
+				var tiles_3 = global.valleytiles[2]
+    
+				print(string(sector_tw) + "," + string(sector_th))
+
+				for(var tx = 0; tx < sector_tw; tx++){
+				    for(var ty = 0; ty < sector_th; ty++){
+				        tilemap_set_at_pixel(map_id_1, array_get(tiles_1,countvar), (room_w * w) + tx*32, (room_h * h) + ty*32);
+				        tilemap_set_at_pixel(map_id_2, array_get(tiles_2,countvar), (room_w * w) + tx*32, (room_h * h) + ty*32);
+				        tilemap_set_at_pixel(map_id_3, array_get(tiles_3,countvar), (room_w * w) + tx*32, (room_h * h) + ty*32);
+						countvar++;
+				    }    
+				}
+			
 			
 		}
 	}
