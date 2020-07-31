@@ -20,8 +20,7 @@ for (var w=0; w < map_w; w++) {
 				dist_from_spawn = (abs(w-origin_w)+abs(h-origin_h)) //Update distance
 				dw = w;
 				dh = h;
-				print(dw);
-				print(dh);
+
 			}
 			
 		}
@@ -139,28 +138,27 @@ for (var w=0; w < map_w; w++) {
 			
 			var countvar = 0;
 			
-				var sector_tw = floor(((roomtype = ds_list_size(global.valleyareas)-1) ? 1920 : 960)/32);
-				var sector_th = floor(((roomtype = ds_list_size(global.valleyareas)-1) ? 1080 : 540)/32);
-				var layer_id_1 = layer_get_id("Tiles_1");
-				var layer_id_2 = layer_get_id("Tiles_2");
-				var layer_id_3 = layer_get_id("Tiles_3");
-				var map_id_1 = layer_tilemap_get_id(layer_id_1);
-				var map_id_2 = layer_tilemap_get_id(layer_id_2);
-				var map_id_3 = layer_tilemap_get_id(layer_id_3);
-				var tiles_1 = global.valleytiles[0]
-				var tiles_2 = global.valleytiles[1]
-				var tiles_3 = global.valleytiles[2]
+			var sector_tw = floor(((roomtype = ds_list_size(global.valleyareas)-3) ? 960 : 960)/32); //TEMPORARY FIX DOES NOT WORK WITH LONG/WIDE ROOMS YET
+			var sector_th = floor(((roomtype = ds_list_size(global.valleyareas)-2) ? 540 : 540)/32); //TEMPORARY FIX DOES NOT WORK WITH LONG/WIDE ROOMS YET
+			var layer_id_1 = layer_get_id("Tiles_1");
+			var layer_id_2 = layer_get_id("Tiles_2");
+			var layer_id_3 = layer_get_id("Tiles_3");
+			var map_id_1 = layer_tilemap_get_id(layer_id_1);
+			var map_id_2 = layer_tilemap_get_id(layer_id_2);
+			var map_id_3 = layer_tilemap_get_id(layer_id_3);
+			var tiles_1 = global.valleytiles[rtsec,0]
+			var tiles_2 = global.valleytiles[rtsec,1]
+			var tiles_3 = global.valleytiles[rtsec,2]
     
-				print(string(sector_tw) + "," + string(sector_th))
 
-				for(var tx = 0; tx < sector_tw; tx++){
-				    for(var ty = 0; ty < sector_th; ty++){
-				        tilemap_set_at_pixel(map_id_1, array_get(tiles_1,countvar), (room_w * w) + tx*32, (room_h * h) + ty*32);
-				        tilemap_set_at_pixel(map_id_2, array_get(tiles_2,countvar), (room_w * w) + tx*32, (room_h * h) + ty*32);
-				        tilemap_set_at_pixel(map_id_3, array_get(tiles_3,countvar), (room_w * w) + tx*32, (room_h * h) + ty*32);
-						countvar++;
-				    }    
-				}
+			for(var tx = 0; tx < sector_tw; tx++){					
+				for(var ty = 0; ty < sector_th; ty++){
+				    tilemap_set_at_pixel(map_id_1, array_get(tiles_1,countvar), (room_w * w) + (tx*32), (room_h * h) + (ty*32));
+				    tilemap_set_at_pixel(map_id_2, array_get(tiles_2,countvar), (room_w * w) + (tx*32), (room_h * h) + (ty*32));
+				    tilemap_set_at_pixel(map_id_3, array_get(tiles_3,countvar), (room_w * w) + (tx*32), (room_h * h) + (ty*32));
+					countvar++;
+				}    
+			}
 			
 			
 		}

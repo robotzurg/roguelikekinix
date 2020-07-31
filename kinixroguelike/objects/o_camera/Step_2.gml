@@ -39,8 +39,8 @@ if (wheel != 0) {
 	wheel *= 0.2;
 	
 	//Add to size
-	var addW = camW * 0
-	var addH = camH * 0;
+	var addW = camW * wheel
+	var addH = camH * wheel;
 	
 	camW += addW
 	camH += addH

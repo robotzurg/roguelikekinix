@@ -43,9 +43,10 @@ if room != rm_valley && room != testroom && room != rm_init && room != rm_valley
 		}
 		
 		//Add in tile data
-		global.valleytiles[0] = room_tiles_1;
-		global.valleytiles[1] = room_tiles_2;
-		global.valleytiles[2] = room_tiles_3;
+		global.valleytiles[sec,0] = room_tiles_1;
+		global.valleytiles[sec,1] = room_tiles_2;
+		global.valleytiles[sec,2] = room_tiles_3;
+		print(sec)
 		
 		
 		if room_next(room) = testroom {

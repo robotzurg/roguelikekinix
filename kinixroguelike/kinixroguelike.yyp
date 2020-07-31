@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "01cb2ff0-00c1-4965-af4c-7c8112236186",
+            "Value": {
+                "id": "f135c0c1-43c3-4330-9603-1f4a235f2424",
+                "resourcePath": "views\\ed66ad5f-da95-4163-8986-4fcb7e65fee8-room.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "03e66f1f-eabf-4a35-99f2-6a7996692494",
             "Value": {
                 "id": "7bbb2822-6bb9-4c9b-92fc-0f219b156ef9",
@@ -420,6 +428,14 @@
                 "id": "0f8762a9-b502-4f9b-bcfc-f3022d95b04c",
                 "resourcePath": "rooms\\rm_valleyroomlong\\rm_valleyroomlong.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "399a2f22-f5d9-4cd0-944d-bd76ecbaddfc",
+            "Value": {
+                "id": "3a6b7e7c-e63f-48ad-9ff0-4827331df0b6",
+                "resourcePath": "sprites\\tileset_walls\\tileset_walls.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -871,6 +887,14 @@
             }
         },
         {
+            "Key": "8a0ccb0f-f50a-45eb-9746-b76bffd95cef",
+            "Value": {
+                "id": "67f00aa9-b9e8-4e26-be4e-ab50f54d3ec0",
+                "resourcePath": "tilesets\\valley_walls\\valley_walls.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "8b72a97a-b920-4ea8-b45f-05ad2237d72c",
             "Value": {
                 "id": "ae00fbaf-cfa6-4f61-84ef-f6b75b5e8eb4",
@@ -898,7 +922,7 @@
             "Key": "8e88015e-43ff-4892-9c25-fac5d5670d4c",
             "Value": {
                 "id": "152e9cf7-f50c-42b4-baef-05ba8e5101fe",
-                "resourcePath": "sprites\\s_wall\\s_wall.yy",
+                "resourcePath": "sprites\\s_wall_invisible\\s_wall_invisible.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1178,7 +1202,7 @@
             "Key": "b39f2ac5-f862-49a8-ac4a-60116c9a0736",
             "Value": {
                 "id": "b059004c-8cb9-46dc-b367-79f91cf7652c",
-                "resourcePath": "objects\\o_wall\\o_wall.yy",
+                "resourcePath": "objects\\o_wall_invisible\\o_wall_invisible.yy",
                 "resourceType": "GMObject"
             }
         },
