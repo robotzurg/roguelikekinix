@@ -479,6 +479,14 @@
             }
         },
         {
+            "Key": "49aa953d-59fb-4c6f-a502-b869258f8d5d",
+            "Value": {
+                "id": "b0c09709-380c-453a-9947-4d953b08bcd1",
+                "resourcePath": "scripts\\is_in_sector\\is_in_sector.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4a121b0e-85f8-454a-9c3b-21c16b60a5f6",
             "Value": {
                 "id": "c8e2972d-48d2-4410-8c81-953a5ab9fe3a",
@@ -868,6 +876,14 @@
                 "id": "a5fda5fe-c6ea-414f-bb96-5204a5b17e66",
                 "resourcePath": "scripts\\game_get_time\\game_get_time.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8ca00f9b-417f-4495-9993-1bb740a30107",
+            "Value": {
+                "id": "414e8d57-dbc0-4867-a8dd-c027c84db522",
+                "resourcePath": "shaders\\shd_white_spawn\\shd_white_spawn.yy",
+                "resourceType": "GMShader"
             }
         },
         {
@@ -1655,7 +1671,8 @@
         "047704e0-a43d-40f8-80cf-fe7941881394",
         "45dc5f02-858a-4421-8e11-a7b4ef264308",
         "f16ba3b9-1bcb-4cd0-935c-4d40bf8ad081",
-        "4671c3fb-6ba5-4826-9b68-14260f732b98"
+        "4671c3fb-6ba5-4826-9b68-14260f732b98",
+        "49aa953d-59fb-4c6f-a502-b869258f8d5d"
     ],
     "tutorial": ""
 }

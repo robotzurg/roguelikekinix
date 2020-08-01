@@ -1,3 +1,12 @@
+if(spawn_timer > 0){
+	spawn_timer --;
+}
+else if(spawn_fade_in > 0) {
+	spawn_fade_in-=4;
+	pixel_alpha = random_range(0,255);
+}
+else{
+
 atkcooldown -= 1;
 movetimer -= 1;
 
@@ -136,3 +145,5 @@ if(wall_col = true){
 x = x+(hspd*speed_multiplier);
 y = y+(vspd*speed_multiplier);
 #endregion
+
+}

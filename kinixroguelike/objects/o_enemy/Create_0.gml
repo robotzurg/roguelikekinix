@@ -30,3 +30,12 @@ kblen = 0;
 kbdir = 0;
 kbhalf = 0;
 kbspeed = 3;
+
+spawn_timer = random_range(0,120);
+spawn_fade_in = 100;
+
+image_alpha = 0;
+
+pixel_alpha = 1;
+shd_px_alpha = shader_get_uniform(shd_white_spawn,"shd_alpha");
+shd_px_alpha_fade = shader_get_uniform(shd_white_spawn,"shd_alpha_fade");

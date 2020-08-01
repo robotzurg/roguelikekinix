@@ -121,5 +121,6 @@ ds_map_add(global.rammap,"coldmg",true); //can colide with player
 #region Valley Spawn Pool
 global.valleyspawnpool = ds_list_create();
 ds_list_add(global.valleyspawnpool,global.rammap);
+ds_list_add(global.valleyspawnpool,global.batmap);
 #endregion
 

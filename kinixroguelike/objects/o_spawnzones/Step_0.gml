@@ -1,4 +1,4 @@
-if o_player.current_sector_x == sector_x && o_player.current_sector_y == sector_y {
+if o_player.current_sector_x == sector_x && o_player.current_sector_y == sector_y && is_in_sector(o_player,960,96){
 	with o_spawnzones {
 		if o_player.current_sector_x == sector_x && o_player.current_sector_y == sector_y {
 			start_spawning = true;
