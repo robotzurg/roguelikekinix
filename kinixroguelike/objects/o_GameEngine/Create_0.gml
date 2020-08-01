@@ -10,4 +10,4 @@ room_goto(rm_mainmenu);
 draw_set_color(c_white);
 
 global.maptoset = global.batmap;
-room_to_goto = rm_valley;
+room_to_goto = area_Valley;

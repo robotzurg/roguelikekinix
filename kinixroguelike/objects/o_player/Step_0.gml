@@ -19,7 +19,7 @@ if(flipped = 0) flipped ++;
 //Move onto next floor code
 if (place_meeting(x,y,o_staircase)) {
 	if keyboard_check_pressed(ord("E")) {
-		generate_world(rm_valleyarea2, 10, 15, true);
+		generate_world(area_Valley2, 10, 15, true);
 		room_goto(room_next(room));
 	}
 }

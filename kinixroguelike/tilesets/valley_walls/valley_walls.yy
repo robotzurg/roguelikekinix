@@ -4,7 +4,31 @@
     "mvc": "1.11",
     "name": "valley_walls",
     "auto_tile_sets": [
-        
+        {
+            "id": "cd7a94d0-1c6e-4b10-b0ba-e600d2199b7a",
+            "modelName": "GMAutoTileSet",
+            "mvc": "1.0",
+            "closed_edge": false,
+            "name": "autotile_1",
+            "tiles": [
+                11,
+                6,
+                7,
+                3,
+                14,
+                10,
+                5,
+                2,
+                15,
+                13,
+                12,
+                4,
+                19,
+                18,
+                20,
+                21
+            ]
+        }
     ],
     "macroPageTiles": {
         "SerialiseData": null,

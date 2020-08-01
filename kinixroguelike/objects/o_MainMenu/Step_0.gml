@@ -3,8 +3,8 @@ if point_in_rectangle(mouse_x,mouse_y,room_width/2-90,200,room_width/2+90,290) {
 		if keyboard_check(vk_shift) {
 			room_goto(testroom);
 		} else {
-			generate_world(rm_valley,10,10,true);
-			room_goto(rm_valleyroom1);
+			generate_world(area_Valley,10,10,true);
+			room_goto(rm_ValleyRoom1);
 		}
 	}
 } 

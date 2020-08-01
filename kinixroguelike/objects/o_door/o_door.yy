@@ -1,14 +1,23 @@
 {
-    "id": "36c31736-55b9-4614-ad8c-a3af24c58103",
+    "id": "0d060661-ca40-4272-ab54-21e1c22ded40",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_CollisionParent",
+    "name": "o_door",
     "eventList": [
-        
+        {
+            "id": "609bfef5-beef-4193-9af2-6727fa16e3ce",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "0d060661-ca40-4272-ab54-21e1c22ded40"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "36c31736-55b9-4614-ad8c-a3af24c58103",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -24,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "00000000-0000-0000-0000-000000000000",
+    "spriteId": "b5df1fb3-ffcc-406b-805a-fee6af6816ce",
     "visible": true
 }

@@ -1,1 +1,1 @@
-create_world();
+create_world(global.valleyareas);

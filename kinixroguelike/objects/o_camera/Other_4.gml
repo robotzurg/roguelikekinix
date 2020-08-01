@@ -9,7 +9,7 @@ view_visible[0] = true;
 global.zoom = 0;
 zoom = false;
 sector_width = 4320;
-sector_height = 2430;
+sector_height = 4320;
 room_num = 2*3*5*7;
 
 //Screenshake variables
