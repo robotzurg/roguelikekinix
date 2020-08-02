@@ -1,4 +1,4 @@
-if (live_call()) return live_result;
+
 //Set up local variables for keybinds
 var key_left = keyboard_check(ord("A"));
 var key_right = keyboard_check(ord("D"));

@@ -1,4 +1,4 @@
-if (live_call()) return live_result;
+
 
 if floor(image_index) == 2  {
 	draw_set_color(c_red);

@@ -1,4 +1,3 @@
-if (live_call()) return live_result;
 //Get current camera position
 var camX = camera_get_view_x(camera)
 var camY = camera_get_view_y(camera)
