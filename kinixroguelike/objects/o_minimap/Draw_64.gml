@@ -1,3 +1,8 @@
+if keyboard_check_pressed(vk_f1) {
+	show_minimap = !show_minimap; //Swap between true and false
+}
+
+if show_minimap == true {
 var map = global.worldgrid;
 
 var map_w = ds_grid_width(map);
@@ -87,11 +92,13 @@ for (var w=0; w < map_w; w++) {
 		}
 	}
 }
+}
 
 var window_width = RES_W * RES_SCALE;
 draw_set_color(c_white);
 draw_set_halign(fa_right)
-draw_text_transformed(window_width,0,"FPS:" + string(fps),2,2,0);
+draw_text_transformed(window_width,0,"FPS:" + string(fps),1.5,1.5,0);
+draw_set_halign(fa_left);
 
 
 
