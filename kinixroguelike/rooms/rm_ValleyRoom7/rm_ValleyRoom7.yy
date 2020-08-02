@@ -157,8 +157,8 @@
             "m_parentID": "f1b462cd-17df-40ad-b95d-65a0f4a51400",
             "m_serialiseFrozen": false,
             "modelName": "GMRTileLayer",
-            "prev_tileheight": 0,
-            "prev_tilewidth": 0,
+            "prev_tileheight": 32,
+            "prev_tilewidth": 32,
             "mvc": "1.0",
             "tiles": {
                 "SerialiseData": null,
@@ -222,8 +222,8 @@
             "m_parentID": "0894f0b0-e7ec-40cf-8531-51efd34bd9ae",
             "m_serialiseFrozen": false,
             "modelName": "GMRTileLayer",
-            "prev_tileheight": 0,
-            "prev_tilewidth": 0,
+            "prev_tileheight": 32,
+            "prev_tilewidth": 32,
             "mvc": "1.0",
             "tiles": {
                 "SerialiseData": null,
@@ -287,8 +287,8 @@
             "m_parentID": "ebdcca78-0082-4683-b020-93b7829efc6d",
             "m_serialiseFrozen": false,
             "modelName": "GMRTileLayer",
-            "prev_tileheight": 0,
-            "prev_tilewidth": 0,
+            "prev_tileheight": 32,
+            "prev_tilewidth": 32,
             "mvc": "1.0",
             "tiles": {
                 "SerialiseData": null,

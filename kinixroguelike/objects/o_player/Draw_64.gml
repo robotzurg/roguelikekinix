@@ -20,11 +20,11 @@ draw_set_alpha(.5);
 
 //RED HP Shape
 draw_set_color(c_red);
-	draw_primitive_begin(pr_trianglelist);
+	draw_primitive_begin(pr_trianglestrip);
 	draw_vertex(0, 0);
-	draw_vertex(0, 55*hp_percent);
+	draw_vertex(0, 55);
 	draw_vertex(200 * hp_percent, 0);
-	draw_vertex(107* hp_percent, 70);
+	draw_vertex(115 * hp_percent, 55+(15 * hp_percent));
 	draw_primitive_end();
 draw_set_color(c_white);
 draw_set_alpha(1);
