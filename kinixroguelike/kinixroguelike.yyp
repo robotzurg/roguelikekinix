@@ -799,6 +799,14 @@
             }
         },
         {
+            "Key": "804d52cd-7e76-4bd9-9d6f-3dce969f6e3e",
+            "Value": {
+                "id": "85aed931-0051-4f90-9075-dd28050cfd96",
+                "resourcePath": "shaders\\shd_white\\shd_white.yy",
+                "resourceType": "GMShader"
+            }
+        },
+        {
             "Key": "818252a4-aace-4f9c-83b7-bf09552ada22",
             "Value": {
                 "id": "ded30a26-6372-4da8-a414-8da18f459ce1",

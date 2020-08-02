@@ -5,6 +5,7 @@ var boxw = 1;
 var ammo_pcnt = ammo/ammo_max;
 var hp_percent = hp/hp_max;
 var slope = xoffset/yoffset;
+var time_sin = min(1,(sin(global.current_t/20)+1)/4);
 
 
 //MAIN UI BLACK TRIANGLE
@@ -72,7 +73,13 @@ draw_primitive_end();
 
 draw_set_color(c_white);
 
-draw_sprite_ext(gunmap[? "Sprite"],0,30,100,1,1,-25,image_blend,1);
+gpu_set_fog(true,c_white,0,1);
+	draw_sprite_ext(gunmap[? "Sprite"],0,31,100,1,1,-25,image_blend,time_sin);
+	draw_sprite_ext(gunmap[? "Sprite"],0,29,100,1,1,-25,image_blend,time_sin);
+	draw_sprite_ext(gunmap[? "Sprite"],0,30,101,1,1,-25,image_blend,time_sin);
+	draw_sprite_ext(gunmap[? "Sprite"],0,30,99,1,1,-25,image_blend,time_sin);
+gpu_set_fog(false,c_white,0,1);
+	draw_sprite_ext(gunmap[? "Sprite"],0,30,100,1,1,-25,image_blend,1);
 
 draw_set_font(font_hp);
 draw_text_transformed(55,8,hp,2,2,0);

@@ -31,7 +31,7 @@ kbdir = 0;
 kbhalf = 0;
 kbspeed = 3;
 
-spawn_timer = random_range(0,120);
+spawn_timer = random_range(0,60);
 spawn_fade_in = 100;
 
 image_alpha = 0;
