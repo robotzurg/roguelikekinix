@@ -2,6 +2,7 @@ x += x_vel;
 y += y_vel;
 direction = point_direction(x,y, x+x_vel, y+y_vel);
 image_angle = direction;
+var nearest_enemy = instance_nearest(x,y,o_enemy);
 
 if timer("homingstart",0.2) == true {
 	start_home = true;
@@ -23,13 +24,13 @@ if(b_bounce > 0){
 if(b_homing > 0) && instance_exists(o_enemy) && start_home == true {
 	var ybuffer = 1;
 	var xbuffer = 1;
-		if sign(o_enemy.x - x) != sign(x_vel){
+		if sign(nearest_enemy.x - x) != sign(x_vel){
 			xbuffer = 4;
 		}
-		if sign(o_enemy.y - y) != sign(y_vel){
+		if sign(nearest_enemy.y - y) != sign(y_vel){
 			ybuffer = 4;
 		}
-	x_vel+= sign(o_enemy.x - x)*b_homing*xbuffer;
-	y_vel+= sign(o_enemy.y - y)*b_homing*ybuffer;
+	x_vel+= sign(nearest_enemy.x - x)*b_homing*xbuffer;
+	y_vel+= sign(nearest_enemy.y - y)*b_homing*ybuffer;
 
 }
