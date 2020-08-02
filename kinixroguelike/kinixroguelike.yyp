@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "2ab023d3-2e1a-4529-a115-491048180667",
+            "Value": {
+                "id": "af7fd4e8-f177-4ed3-8ec8-381296f7af3f",
+                "resourcePath": "rooms\\rm_ValleyRoom6\\rm_ValleyRoom6.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "2b77a046-3d08-44b8-8a0e-ea3ce5213090",
             "Value": {
                 "id": "7b5c6dc9-66a8-4b1d-b615-43f46f6c97e4",
@@ -1247,6 +1255,14 @@
             }
         },
         {
+            "Key": "c25351d8-a1b4-4deb-9243-f4be826a741c",
+            "Value": {
+                "id": "0aac0322-7dd2-4304-895a-c7d90daec804",
+                "resourcePath": "rooms\\rm_ValleyRoom5\\rm_ValleyRoom5.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "c2941d4b-21a4-4fef-93ef-b2d9f3717cac",
             "Value": {
                 "id": "64124446-bd54-4d28-9495-e215460da3f1",
@@ -1268,6 +1284,14 @@
                 "id": "ab7e5936-142d-4a93-ba14-1bf9d91c00c1",
                 "resourcePath": "scripts\\timer\\timer.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c571135a-777b-4377-85c0-346424b6a175",
+            "Value": {
+                "id": "4e80bb6c-cdbe-4e3f-97b3-a3cd18fd3a22",
+                "resourcePath": "rooms\\rm_ValleyRoom7\\rm_ValleyRoom7.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
