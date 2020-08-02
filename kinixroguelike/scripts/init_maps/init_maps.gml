@@ -31,7 +31,7 @@ global.homingstaffmap = ds_map_create();
 
 ds_map_add(global.homingstaffmap,"Name","Homing Staff"); //Name of the Gun
 ds_map_add(global.homingstaffmap,"Sprite",s_homingWand); //Sprite of the Gun
-ds_map_add(global.homingstaffmap,"Damage",1); //Damage of the Gun
+ds_map_add(global.homingstaffmap,"Damage",2); //Damage of the Gun
 ds_map_add(global.homingstaffmap,"Fire Rate",0.2); //Measured in Seconds, time between shots
 ds_map_add(global.homingstaffmap,"Ammo Use",1) //Amount of Ammo the gun uses.
 ds_map_add(global.homingstaffmap,"Range", false); //How far the bullet can go (false means infinite)
@@ -46,7 +46,7 @@ ds_map_add(global.homingstaffmap,"Bullet Collision",true) //True means it destro
 ds_map_add(global.homingstaffmap,"Bullet Homing", .2) //How much bullets home in on their target
 ds_map_add(global.homingstaffmap,"Bullet Spread",0) //How much the bullets spread out
 ds_map_add(global.homingstaffmap,"Bullet Count",1) //How many bullets are fired per shot
-ds_map_add(global.homingstaffmap,"Hot Damage Time",1200) //How long target takes hot damage for (60 per tick of damage)
+ds_map_add(global.homingstaffmap,"Hot Damage Time",0) //How long target takes hot damage for (60 per tick of damage)
 ds_map_add(global.homingstaffmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
 ds_map_add(global.homingstaffmap,"Vertical Offset",20) //Vertical offset for the bullet spawns
 ds_map_add(global.homingstaffmap,"Horizontal Offset",-5) //How far out bullets are spawned from the weapon's center point
@@ -108,12 +108,12 @@ global.rammap = ds_map_create();
 ds_map_add(global.rammap,"Cost",5); //Number of spawn currency it takes to spawn the enemy in the room.
 ds_map_add(global.rammap,"Name","Ram"); //Name of the Enemy
 ds_map_add(global.rammap,"Sprite",s_ram);
-ds_map_add(global.rammap,"HP",20); //Enemy HP
+ds_map_add(global.rammap,"HP",12); //Enemy HP
 ds_map_add(global.rammap,"Speed",5); //Movement Speed for Enemy
 ds_map_add(global.rammap,"Cost",10); //Enemy Placement Currency Cost
 ds_map_add(global.rammap,"Spawn Area",1) // Area Enemy Spawns In
-ds_map_add(global.rammap,"Attack Cooldown",10); //Time between Special Attacks or Fire Rate (0 means no cooldown)
-ds_map_add(global.rammap,"Move Timer", 150); //Movement Timer
+ds_map_add(global.rammap,"Attack Cooldown",5); //Time between Special Attacks or Fire Rate (0 means no cooldown)
+ds_map_add(global.rammap,"Move Timer", 100); //Movement Timer
 ds_map_add(global.rammap,"coldmg",true); //can colide with player
 #endregion
 

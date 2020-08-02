@@ -8,6 +8,9 @@
         "4a84eca9-d5bf-4bce-9364-0b37bddfbe7b",
         "a7fd4258-ad0a-4ba8-996a-f7bfc183fa5b",
         "0b107aa0-4055-48a5-9618-dcb506effc27",
+        "c25351d8-a1b4-4deb-9243-f4be826a741c",
+        "2ab023d3-2e1a-4529-a115-491048180667",
+        "c571135a-777b-4377-85c0-346424b6a175",
         "add257c5-1f50-456c-8933-f664b42ad427"
     ],
     "filterType": "GMFolder",
