@@ -14,7 +14,9 @@ float random (vec2 st) {
 
 
 void main() {
+	gl_FragColor = v_vColour * texture2D(gm_BaseTexture, v_vTexcoord);
+	
     vec2 st = gl_FragCoord.xy/shd_alpha;
-    float rnd = random( st ) * shd_alpha * shd_alpha_fade;
-    gl_FragColor = vec4(1,1,1,rnd);
+    float rnd = random( st ) * shd_alpha_fade;
+    gl_FragColor = vec4(1,1,1,gl_FragColor.a * rnd);
 }
