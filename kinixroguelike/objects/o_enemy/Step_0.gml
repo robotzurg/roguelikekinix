@@ -4,6 +4,14 @@ if(spawn_timer > 0){
 else if(spawn_fade_in > 0) {
 	spawn_fade_in-=4;
 	pixel_alpha = random_range(0,255);
+	if(spawn_fade_in <= 0){
+		var sw = sprite_width/2;
+		var sh = sprite_height/2;
+		var near = instance_nearest(x,y,o_enemy);
+		for(var i = 24; i > 0; i--){			
+			create_particle(x+random_range(-sw,sw), y+random_range(-sw,sh),random_range(-5,5),random_range(-5,5),"Instances",s_spawn_particle,true);
+		} 
+	}
 }
 else{
 
@@ -23,7 +31,7 @@ if hp <= 0 {
 if cold_time > 0{
 	cold_time --;
 	speed_multiplier = .5;
-	create_particle(x+random_range(-30,30), y+random_range(-30,30), random_range(-1,1), random_range(-1,1),"Instances",s_ice_particle);
+	create_particle(x+random_range(-30,30), y+random_range(-30,30), random_range(-1,1), random_range(-1,1),"Instances",s_ice_particle,false);
 }
 else{
 	speed_multiplier = 1;	
@@ -36,7 +44,7 @@ if hot_time > 0{
 		hot_tick = 60;
 		hp -= fire_damage;
 		for(var i = 24; i > 0; i--){
-			create_particle(x+random_range(-30,30), y+random_range(-30,30),random_range(-2,2),-1,"Instances",s_fire_particle);
+			create_particle(x+random_range(-30,30), y+random_range(-30,30),random_range(-2,2),-1,"Instances",s_fire_particle,false);
 		}
 	}
 	else{

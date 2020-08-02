@@ -863,6 +863,14 @@
             }
         },
         {
+            "Key": "8a8b1d15-db95-449d-9784-b101c5256f75",
+            "Value": {
+                "id": "fc947aa7-e735-45e0-a83d-10ed147c8fd6",
+                "resourcePath": "sprites\\s_spawn_particle\\s_spawn_particle.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8b72a97a-b920-4ea8-b45f-05ad2237d72c",
             "Value": {
                 "id": "ae00fbaf-cfa6-4f61-84ef-f6b75b5e8eb4",
