@@ -1023,6 +1023,14 @@
             }
         },
         {
+            "Key": "a0309f0f-84ba-485a-b705-c701bc34d81e",
+            "Value": {
+                "id": "c96bf1e4-1c56-426c-b11c-ae824101329b",
+                "resourcePath": "sprites\\s_MouseCursor\\s_MouseCursor.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a1325f38-62b3-43e1-8a3e-2b3b7d8e8827",
             "Value": {
                 "id": "b77282a0-7ff8-413f-9a5d-73fc879f4fcf",
