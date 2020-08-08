@@ -28,5 +28,7 @@ melee_frames = 0;
 melee_rotation = 0; 
 
 state = "idle"
+invin_frames_var = 0;
+invin_frames = 30;
 
 arm_length = 12;

@@ -6,7 +6,9 @@ if floor(image_index) == 2  {
 	draw_set_color(c_white);
 }
 
+gpu_set_fog(invin_frames_var mod 2,c_red,0,1);
 draw_sprite_ext(sprite_index,image_index,x,y,flipped,image_yscale,image_angle,image_blend,image_alpha);
+
 
 //Draw the Gun
 draw_sprite_ext(gunmap[? "Sprite"],
@@ -39,3 +41,4 @@ draw_sprite_ext(s_playerarm,
 				flipped,
 				point_direction(x,y,mouse_x,mouse_y)+melee_rotation*sign(flipped),
 				image_blend, 1);
+gpu_set_fog(false,c_red,0,0);

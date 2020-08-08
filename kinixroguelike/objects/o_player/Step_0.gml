@@ -5,6 +5,10 @@ var key_right = keyboard_check(ord("D"));
 var key_up = keyboard_check(ord("W"));
 var key_down = keyboard_check(ord("S"));
 
+
+if (invin_frames_var != 0) invin_frames_var--;
+
+
 //STATE MACHINE SWITCH
 if (key_right or key_left or key_up or key_down) && state != "hit" {
 	state = "move";	
