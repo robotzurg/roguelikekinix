@@ -6,31 +6,41 @@ var map_w = ds_grid_width(global.worldgrid);
 var map_h = ds_grid_height(global.worldgrid);
 var room_size = 960;
 var dist_from_spawn = 0;
-var dw = 0;
-var dh = 0;
+//Victory Room Coordinates
+var vw = 0;
+var vh = 0;
 var origin_w = round((map_w-1)/2)
 var origin_h = round((map_h-1)/2)
 print("Origin W: " + string(origin_w));
 print("Origin H: " + string(origin_h));
 
-#region VICTORY ROOM PHASE
+#region SPECIAL ROOM PHASE
 
 //Check to see what the furthest room is, to place the victory room later.
 for (var w=0; w < map_w; w++) {
 	for (var h=0; h < map_h; h++) {
 		if global.worldgrid[# w,h] != 0 {
 			
-			//Update distance from spawn
+			//Update distance from spawn, picked the furthest spot from spawn for the victory room
 			if (abs(w-origin_w)+abs(h-origin_h)) > dist_from_spawn {
 				dist_from_spawn = (abs(w-origin_w)+abs(h-origin_h)) //Update distance
-				dw = w;
-				dh = h;
-
+				vw = w;
+				vh = h;
 			}
+			
+		
 			
 		}
 	}
 }
+
+//Shop Room Coordinates
+do {
+	var sw = irandom_range(0,ds_grid_width(global.worldgrid)-1);
+	var sh = irandom_range(0,ds_grid_height(global.worldgrid)-1);
+} until global.worldgrid[# sw,sh] != 0 and sw != origin_w and sh != origin_h and sw != vw and sh != vh
+print(sw);
+print(sh);
 
 #endregion
 
@@ -41,10 +51,14 @@ for (var w=0; w < map_w; w++) {
 			
 #region ROOM TYPE SELECTION PHASE
 
-			if w == dw && h == dh { //If the sector we are on is the victory room sector
+			if w == vw && h == vh { //If the sector we are on is the victory room sector
 				var roomtype = ds_list_size(area_list)-1; //Place the victory room in the furthest room (according to the for loop above)
+			} else if w == sw && h == sh {
+				var roomtype = ds_list_size(area_list)-2; //Place in victory room
+			} else if w == origin_w && h == origin_h {
+				var roomtype = ds_list_size(area_list)-3;
 			} else {
-				var roomtype = irandom_range(0,ds_list_size(area_list)-2); //Pick a random room (excluding victory room which is at the bottom of the list)
+				var roomtype = irandom_range(0,ds_list_size(area_list)-4); //Pick a random room (excluding victory room which is at the bottom of the list)
 			}
 
 #endregion
