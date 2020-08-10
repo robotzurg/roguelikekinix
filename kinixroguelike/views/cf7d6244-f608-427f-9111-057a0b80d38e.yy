@@ -8,7 +8,8 @@
         "cdcc02d4-960e-4ac6-88bd-1b51e7380a4f",
         "a2374dad-1a19-4fb8-ae9c-e8ef11d5700d",
         "872e585b-2e33-4dad-96d5-caf72466e0ee",
-        "7506bd7a-1021-4216-a3c5-5b25ff04dc89"
+        "7506bd7a-1021-4216-a3c5-5b25ff04dc89",
+        "40b4c6cf-b45d-4001-9011-3870769295c2"
     ],
     "filterType": "GMSprite",
     "folderName": "melee",

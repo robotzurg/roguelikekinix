@@ -455,6 +455,14 @@
             }
         },
         {
+            "Key": "40b4c6cf-b45d-4001-9011-3870769295c2",
+            "Value": {
+                "id": "a8898903-1abf-4463-8c9c-3b4105e3964d",
+                "resourcePath": "sprites\\s_golfclub\\s_golfclub.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "43579aea-f08a-474a-8949-5d21f48a301e",
             "Value": {
                 "id": "8daa658b-e5cd-44ad-9d20-383c456bc23b",
@@ -1463,6 +1471,14 @@
             }
         },
         {
+            "Key": "d69d2736-1a56-4db5-9c47-bc2619b21c10",
+            "Value": {
+                "id": "6a6d6fd1-4708-417d-aa34-0b4cceb96cd2",
+                "resourcePath": "sprites\\s_golfball\\s_golfball.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d7458461-e636-49e1-98dc-b227ef214df9",
             "Value": {
                 "id": "2411948b-e126-4d36-be87-cf7f76edc4c3",
@@ -1572,6 +1588,14 @@
                 "id": "214ecbe7-87db-4491-8b66-c25a4d719b50",
                 "resourcePath": "views\\ebdcedef-42be-43ef-9ae4-896478e044d2.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ece8affe-be5f-4428-8c48-cc9a784eae6e",
+            "Value": {
+                "id": "2dcdd7e7-a952-4c60-8d76-b7979b20ddc7",
+                "resourcePath": "sprites\\s_golfhit\\s_golfhit.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

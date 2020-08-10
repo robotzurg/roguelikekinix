@@ -9,6 +9,7 @@ ammo = map[? "Ammo"];
 ammo_max = ammo;
 rangedmap = map[? "Gun"];
 meleemap = map[? "Melee"];
+meleeprojmap = meleemap[? "Ranged"];
 iframes = map[? "iframes"];
 flipped = 1;
 current_sector_x = 0;
@@ -22,8 +23,8 @@ timer("reload");
 
 //Melee Variables
 melee_swing = false;
-melee_frames = 0;
 melee_rotation = 0; 
+melee_wait = 0;
 
 state = "idle"
 invin_frames_var = 0;
