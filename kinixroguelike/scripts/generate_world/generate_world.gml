@@ -2,6 +2,7 @@
 ///@param Map_Size
 ///@param Num_Of_Rooms
 ///@param In_Middle
+global.gamephase = phase.generation
 var worldroom = argument0;
 var mapsize = argument1;
 var maxrooms = argument2;

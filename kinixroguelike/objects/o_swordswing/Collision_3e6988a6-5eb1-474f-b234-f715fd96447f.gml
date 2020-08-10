@@ -1,4 +1,8 @@
-other.hp -= o_player.meleemap[? "Damage"];
+if o_player.cheats_enabled == false {
+	other.hp -= o_player.meleemap[? "Damage"];
+} else {
+	other.hp -= other.hp;	
+}
 
 other.kblen = o_player.meleemap[? "Knockback Distance"];
 other.kbhalf = (o_player.meleemap[? "Knockback Distance"])/2;

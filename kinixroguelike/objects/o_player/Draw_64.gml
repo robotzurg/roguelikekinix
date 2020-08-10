@@ -7,6 +7,15 @@ var hp_percent = hp/hp_max;
 var slope = xoffset/yoffset;
 var time_sin = min(1,(sin(global.current_t/20)+1)/4);
 
+//Draw Cheat Text
+if cheats_enabled {
+	draw_set_halign(fa_right);
+	draw_set_valign(fa_bottom);
+	draw_text_transformed(RES_W,RES_H,"CHEATS ENABLED!",2,2,0);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+}
+
 
 //MAIN UI BLACK TRIANGLE
 draw_set_color(c_black);
@@ -74,12 +83,12 @@ draw_primitive_end();
 draw_set_color(c_white);
 
 gpu_set_fog(true,c_white,0,1);
-	draw_sprite_ext(gunmap[? "Sprite"],0,31,100,1,1,-25,image_blend,time_sin);
-	draw_sprite_ext(gunmap[? "Sprite"],0,29,100,1,1,-25,image_blend,time_sin);
-	draw_sprite_ext(gunmap[? "Sprite"],0,30,101,1,1,-25,image_blend,time_sin);
-	draw_sprite_ext(gunmap[? "Sprite"],0,30,99,1,1,-25,image_blend,time_sin);
+	draw_sprite_ext(rangedmap[? "Sprite"],0,31,100,1,1,-25,image_blend,time_sin);
+	draw_sprite_ext(rangedmap[? "Sprite"],0,29,100,1,1,-25,image_blend,time_sin);
+	draw_sprite_ext(rangedmap[? "Sprite"],0,30,101,1,1,-25,image_blend,time_sin);
+	draw_sprite_ext(rangedmap[? "Sprite"],0,30,99,1,1,-25,image_blend,time_sin);
 gpu_set_fog(false,c_white,0,1);
-	draw_sprite_ext(gunmap[? "Sprite"],0,30,100,1,1,-25,image_blend,1);
+	draw_sprite_ext(rangedmap[? "Sprite"],0,30,100,1,1,-25,image_blend,1);
 
 draw_set_font(font_hp);
 draw_text_transformed(55,8,hp,2,2,0);

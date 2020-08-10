@@ -1,4 +1,5 @@
 ///@param area_list
+global.gamephase = phase.creation;
 
 var area_list = argument0;
 
@@ -26,8 +27,7 @@ for (var w=0; w < map_w; w++) {
 				dist_from_spawn = (abs(w-origin_w)+abs(h-origin_h)) //Update distance
 				vw = w;
 				vh = h;
-			}
-			
+			}	
 		
 			
 		}
@@ -38,7 +38,7 @@ for (var w=0; w < map_w; w++) {
 do {
 	var sw = irandom_range(0,ds_grid_width(global.worldgrid)-1);
 	var sh = irandom_range(0,ds_grid_height(global.worldgrid)-1);
-} until global.worldgrid[# sw,sh] != 0 and sw != origin_w and sh != origin_h and sw != vw and sh != vh
+} until global.worldgrid[# sw,sh] != 0;
 print(sw);
 print(sh);
 
@@ -160,3 +160,5 @@ for (var w=0; w < map_w; w++) {
 		} //End of room check if statement
 	} //End of h for loop
 } //End of w for loop
+
+global.gamephase = phase.play;

@@ -1,10 +1,14 @@
-
 //Set up local variables for keybinds
+var key_cheat = keyboard_check_pressed(vk_f2);
 var key_left = keyboard_check(ord("A"));
 var key_right = keyboard_check(ord("D"));
 var key_up = keyboard_check(ord("W"));
 var key_down = keyboard_check(ord("S"));
 
+//Cheats toggle
+if key_cheat {
+	cheats_enabled = !cheats_enabled; //Toggle between true and false
+}
 
 if (invin_frames_var != 0) invin_frames_var--;
 
@@ -28,8 +32,20 @@ if (place_meeting(x,y,o_staircase)) {
 	}
 }
 
+//Pickup Weapon
+if instance_place(x,y,o_weapon_pickup) && keyboard_check_pressed(ord("E")) {
+	var item = instance_place(x,y,o_weapon_pickup);
+	if item.type == "Melee" {
+		meleemap = item.map;	
+	} else if item.type == "Ranged" {
+		rangedmap = item.map;
+	}
+}
+
 #region Move State
 if state == "move" {
+	if cheats_enabled { spd = map[? "Speed"]*2  } else { spd = map[? "Speed"]; }
+	
 	//Movement code
 	hspd = (key_right - key_left) * spd
 	vspd = (key_down - key_up) * spd
@@ -46,22 +62,26 @@ if state == "idle" {
 	vspd = 0;
 }
 
-///Horizontal Collision
-if (place_meeting(x+hspd, y, o_CollisionParent)){
-    while (!place_meeting(x+sign(hspd), y, o_CollisionParent)){ 
-        x+=sign(hspd);
-    }
-    hspd=0;
+if !cheats_enabled {
+	///Horizontal Collision
+	if (place_meeting(x+hspd, y, o_CollisionParent)){
+	    while (!place_meeting(x+sign(hspd), y, o_CollisionParent)){ 
+	        x+=sign(hspd);
+	    }
+	    hspd=0;
+	}
 }
 x+=hspd;
 
 //Vertical Collision
-if (place_meeting(x, y+vspd, o_CollisionParent)){
-    while (!place_meeting(x, y+sign(vspd), o_CollisionParent)){
-        y+=sign(vspd);
-    }
-   vspd=0;
-} 
+if !cheats_enabled {
+	if (place_meeting(x, y+vspd, o_CollisionParent)){
+	    while (!place_meeting(x, y+sign(vspd), o_CollisionParent)){
+	        y+=sign(vspd);
+	    }
+	   vspd=0;
+	} 
+}
 y+=vspd;
 
 #endregion
@@ -71,16 +91,16 @@ y+=vspd;
 if timer("reload") == true {
 	if mouse_check_button(mb_left) && ammo != 0 {
 		wepequipped = "ranged";
-		for(var i = gunmap[? "Bullet Count"]; i > 0; i--){
+		for(var i = rangedmap[? "Bullet Count"]; i > 0; i--){
 			var bullet = instance_create_layer(x + (16 * sign(flipped)),y,layer,o_bullet);
 			with bullet {
 				x = o_player.x + lengthdir_x(o_player.arm_length + o_player.bullet_h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(o_player.bullet_v_offset,point_direction(x,y,mouse_x,mouse_y) * sign(o_player.flipped)));
 				y = o_player.y + lengthdir_y(o_player.arm_length + o_player.bullet_h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(o_player.bullet_v_offset,point_direction(x,y,mouse_x,mouse_y)) * -sign(o_player.flipped));
 			}
 		}
-		timer_set("reload",gunmap[? "Fire Rate"]);
-		shake_screen(gunmap[? "Screenshake Intensity"], gunmap[? "Screenshake Duration"]);
-		ammo -= gunmap[? "Ammo Use"];
+		timer_set("reload",rangedmap[? "Fire Rate"]);
+		shake_screen(rangedmap[? "Screenshake Intensity"], rangedmap[? "Screenshake Duration"]);
+		ammo -= rangedmap[? "Ammo Use"];
 	}
 }
 

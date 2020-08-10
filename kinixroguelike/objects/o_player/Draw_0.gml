@@ -1,5 +1,3 @@
-
-
 if floor(image_index) == 2  {
 	draw_set_color(c_red);
 	draw_rectangle(x + (20*flipped),y-10,x + (45*flipped),y+20,false);
@@ -11,7 +9,7 @@ draw_sprite_ext(sprite_index,image_index,x,y,flipped,image_yscale,image_angle,im
 
 
 //Draw the Gun
-draw_sprite_ext(gunmap[? "Sprite"],
+draw_sprite_ext(rangedmap[? "Sprite"],
 				image_index,
 				x - (arm_length * sign(flipped)) + lengthdir_x(20,point_direction(x,y,mouse_x,mouse_y)),
 				y+lengthdir_y(20,point_direction(x,y,mouse_x,mouse_y)),
@@ -42,3 +40,9 @@ draw_sprite_ext(s_playerarm,
 				point_direction(x,y,mouse_x,mouse_y)+melee_rotation*sign(flipped),
 				image_blend, 1);
 gpu_set_fog(false,c_red,0,0);
+
+//Draw tooltips for items we are touching
+if instance_place(x,y,o_weapon_pickup) {
+	var item = instance_place(x,y,o_weapon_pickup);
+	draw_text(x,y-50,item.name);
+}

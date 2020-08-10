@@ -1,5 +1,5 @@
 randomize();
-
+global.gamephase = phase.menu
 global.worldgrid = -1;
 global.valleyareas = -1;
 

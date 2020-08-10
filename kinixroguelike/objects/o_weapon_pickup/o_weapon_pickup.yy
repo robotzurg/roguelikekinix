@@ -1,23 +1,23 @@
 {
-    "id": "7e2c2ba5-5a79-4540-9766-eb2b8152ee9b",
+    "id": "f69a9213-3c4c-4546-b6ca-1ed3cd5877c5",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_shopstand",
+    "name": "o_weapon_pickup",
     "eventList": [
         {
-            "id": "9c5ad81a-00d0-4da0-b68e-a615d6992dde",
+            "id": "cb3549a4-ebba-4908-b504-3eb62787d7ff",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "7e2c2ba5-5a79-4540-9766-eb2b8152ee9b"
+            "m_owner": "f69a9213-3c4c-4546-b6ca-1ed3cd5877c5"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "36c31736-55b9-4614-ad8c-a3af24c58103",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -31,8 +31,10 @@
     "physicsShape": 1,
     "physicsShapePoints": null,
     "physicsStartAwake": true,
-    "properties": null,
+    "properties": [
+        
+    ],
     "solid": false,
-    "spriteId": "33d02dd4-840e-4f8a-91f9-04ac00ee8665",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }

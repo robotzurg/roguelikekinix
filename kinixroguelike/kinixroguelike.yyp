@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "06173c60-f461-43c4-b68d-879b1cf18f90",
+            "Value": {
+                "id": "e29545ea-1688-4249-b71c-019b36319ab8",
+                "resourcePath": "scripts\\instance_create_item\\instance_create_item.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0655e77b-2806-47e5-b306-7a0402370ee0",
             "Value": {
                 "id": "2cf56dc4-25f3-4ac1-95c7-fedc8cda6455",
@@ -1623,6 +1631,14 @@
             }
         },
         {
+            "Key": "f69a9213-3c4c-4546-b6ca-1ed3cd5877c5",
+            "Value": {
+                "id": "e675273b-d70e-474d-a5cb-762b057619af",
+                "resourcePath": "objects\\o_weapon_pickup\\o_weapon_pickup.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f7edf357-3cef-4d8f-b8b8-fc3617e7ebb7",
             "Value": {
                 "id": "33daa592-ebaa-4f33-a1ae-12396d64a78e",
@@ -1752,7 +1768,8 @@
         "45dc5f02-858a-4421-8e11-a7b4ef264308",
         "f16ba3b9-1bcb-4cd0-935c-4d40bf8ad081",
         "4671c3fb-6ba5-4826-9b68-14260f732b98",
-        "49aa953d-59fb-4c6f-a502-b869258f8d5d"
+        "49aa953d-59fb-4c6f-a502-b869258f8d5d",
+        "06173c60-f461-43c4-b68d-879b1cf18f90"
     ],
     "tutorial": ""
 }

@@ -1,4 +1,6 @@
 if playerbullet = false {
-	other.hp -= b_damage;
+	if o_player.cheats_enabled {
+		other.hp -= b_damage;
+	}
 	instance_destroy();
 }

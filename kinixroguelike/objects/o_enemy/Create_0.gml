@@ -3,6 +3,7 @@ sprite_index = map[? "Sprite"];
 name = map[? "Name"];
 hp = map[? "HP"] ;
 spd = map[? "Speed"];
+dmg = map[? "Damage"];
 spawncost = map[? "Cost"];
 spawnarea = map[? "Spawn Area"];
 atkcooldown = map[? "Attack Cooldown"];
