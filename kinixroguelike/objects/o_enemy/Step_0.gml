@@ -2,7 +2,7 @@ if(spawn_timer > 0){
 	spawn_timer --;
 }
 else if(spawn_fade_in > 0) {
-	spawn_fade_in-=4;
+	spawn_fade_in-=2;
 	pixel_alpha = random_range(0,255);
 	if(spawn_fade_in <= 0){
 		var sw = sprite_width/2;

@@ -1295,14 +1295,6 @@
             }
         },
         {
-            "Key": "bdc7e0a1-4cdf-4623-89f4-9b8a6da0c7eb",
-            "Value": {
-                "id": "5d2c8e23-f7ef-4c6a-86b2-614e041a0735",
-                "resourcePath": "rooms\\rm_ValleyRoom8\\rm_ValleyRoom8.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "be3a72e3-7e70-4299-bb57-025656ed6219",
             "Value": {
                 "id": "19671217-058d-4d3c-9d1d-08b87dd18c88",
@@ -1458,7 +1450,7 @@
             "Key": "d61eb37b-260b-4305-83a8-a41b24715719",
             "Value": {
                 "id": "46d443b8-6128-4e76-8c98-89db34920236",
-                "resourcePath": "rooms\\rm_ValleyRoom10\\rm_ValleyRoom10.yy",
+                "resourcePath": "rooms\\rm_ValleyRoom9\\rm_ValleyRoom9.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1546,7 +1538,7 @@
             "Key": "e27ca79c-43fd-4753-bc64-3a98faad5d1a",
             "Value": {
                 "id": "81aaa3f8-074a-46e5-9e62-f357108184a3",
-                "resourcePath": "rooms\\rm_ValleyRoom9\\rm_ValleyRoom9.yy",
+                "resourcePath": "rooms\\rm_ValleyRoom8\\rm_ValleyRoom8.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1666,7 +1658,7 @@
             "Key": "f6b0045c-fdac-4695-9297-cbd38279cb2b",
             "Value": {
                 "id": "ccd3463c-0cc9-427c-ac9a-4d4c376a3edc",
-                "resourcePath": "rooms\\rm_ValleyRoom11\\rm_ValleyRoom11.yy",
+                "resourcePath": "rooms\\rm_ValleyRoom10\\rm_ValleyRoom10.yy",
                 "resourceType": "GMRoom"
             }
         },

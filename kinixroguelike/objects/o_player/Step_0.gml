@@ -45,7 +45,7 @@ if instance_place(x,y,o_weapon_pickup) && keyboard_check_pressed(ord("E")) {
 #region Move State
 if state == "move" {
 	
-	if cheats_enabled { spd = map[? "Speed"]*2  } else { spd = map[? "Speed"]; }
+	if cheats_enabled { spd = map[? "Speed"]*2  } else if !instance_exists(o_enemy) { spd = map[? "Speed"]*1.5  } else { spd = map[? "Speed"]; }
 	
 	//Movement code
 	hspd = (key_right - key_left) * spd
@@ -96,8 +96,8 @@ if timer("reload") == true {
 		for(var i = rangedmap[? "Bullet Count"]; i > 0; i--){
 			var bullet = instance_create_layer(x + (16 * sign(flipped)),y,layer,o_bullet);
 			with bullet {
-				x = o_player.x + lengthdir_x(o_player.arm_length + o_player.bullet_h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(o_player.bullet_v_offset,point_direction(x,y,mouse_x,mouse_y) * sign(o_player.flipped)));
-				y = o_player.y + lengthdir_y(o_player.arm_length + o_player.bullet_h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(o_player.bullet_v_offset,point_direction(x,y,mouse_x,mouse_y)) * -sign(o_player.flipped));
+				x = o_player.x + lengthdir_x(o_player.arm_length + o_player.rangedmap[? "Horizontal Offset"],point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(o_player.rangedmap[? "Vertical Offset"],point_direction(x,y,mouse_x,mouse_y) * sign(o_player.flipped)));
+				y = o_player.y + lengthdir_y(o_player.arm_length + o_player.rangedmap[? "Horizontal Offset"],point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(o_player.rangedmap[? "Vertical Offset"],point_direction(x,y,mouse_x,mouse_y)) * -sign(o_player.flipped));
 			}
 		}
 		timer_set("reload",rangedmap[? "Fire Rate"]);

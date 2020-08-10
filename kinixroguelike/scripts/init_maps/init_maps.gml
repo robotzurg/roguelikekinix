@@ -22,11 +22,12 @@ ds_map_add(global.pistolmap,"Bullet Spread",0) //How much the bullets spread out
 ds_map_add(global.pistolmap,"Bullet Count",1) //How many bullets are fired per shot
 ds_map_add(global.pistolmap,"Hot Damage Time",0) //How long target takes hot damage for (60 per tick of damage)
 ds_map_add(global.pistolmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
-ds_map_add(global.pistolmap,"Vertical Offset",0) //Vertical offset for the bullet spawns
+ds_map_add(global.pistolmap,"Vertical Offset",3) //Vertical offset for the bullet spawns
 ds_map_add(global.pistolmap,"Horizontal Offset",16) //How far out bullets are spawned from the weapon's center point
 ds_map_add(global.pistolmap,"Screenshake Intensity",4); //How intense screenshake is when a bullet is shot. (0 means no screenshake)
 ds_map_add(global.pistolmap,"Screenshake Duration",0.1); //How long screenshake lasts (in seconds, invalid if screenshake intensity is 0)
 #endregion
+
 #region Homing Staff Map
 global.homingstaffmap = ds_map_create();
 
@@ -65,11 +66,10 @@ ds_map_add(global.swordmap,"Type","Melee"); //Weapon Type
 ds_map_add(global.swordmap,"Sprite",s_sword); //Sprite of the Melee
 ds_map_add(global.swordmap,"Damage",1); //Damage of the Melee
 ds_map_add(global.swordmap,"Deflect",false); //If it can deflect bullets or not.
+ds_map_add(global.swordmap,"Ranged",0); //Can shoot a projectile when swung (0 means no, if yes put in the object of the projectile)
 ds_map_add(global.swordmap,"Slash Sprite",s_swordswing); //Sprite of the slash
 ds_map_add(global.swordmap,"Slash Offset",24); //How far forward the slash is placed
 ds_map_add(global.swordmap,"Slash Speed",1); //How fast the attack is
-ds_map_add(global.swordmap,"Cooldown Time",.05); //How long the cooldown animation takes (in seconds)
-ds_map_add(global.swordmap,"Cooldown Angle",120); //How far back the reset swing is
 ds_map_add(global.swordmap,"Hot Damage Time",0) //How long target takes hot damage for (60 per tick of damage)
 ds_map_add(global.swordmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
 ds_map_add(global.swordmap,"Knockback Distance",20) //How far the target is knocked back (in pixels)

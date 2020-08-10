@@ -16,8 +16,6 @@ current_sector_y = 0;
 wepequipped = "ranged";
 hspd = 0;
 vspd = 0;
-bullet_v_offset = rangedmap[? "Vertical Offset"];
-bullet_h_offset = rangedmap[? "Horizontal Offset"];
 
 //Create the reload timer (for using the guns)
 timer("reload");
