@@ -44,6 +44,7 @@ if instance_place(x,y,o_weapon_pickup) && keyboard_check_pressed(ord("E")) {
 
 #region Move State
 if state == "move" {
+	
 	if cheats_enabled { spd = map[? "Speed"]*2  } else { spd = map[? "Speed"]; }
 	
 	//Movement code
@@ -61,6 +62,7 @@ if state == "idle" {
 	hspd = 0;
 	vspd = 0;
 }
+
 
 if !cheats_enabled {
 	///Horizontal Collision
