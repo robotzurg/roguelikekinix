@@ -4,13 +4,18 @@ var camY = camera_get_view_y(camera)
 var camW = camera_get_view_width(camera);
 var camH = camera_get_view_height(camera);
 
-//Set target camera positionsssd
-var targetX = camX + (o_player.x-camX)/2 - 960/4
-var targetY = camY + (o_player.y-camY)/2 - 540/4
+//Set target camera position
+var targetX = o_player.x - camW/2;
+var targetY = o_player.y - camH/2;
+
+if instance_exists(o_enemy) {
+	targetX = clamp(targetX, sector_width,  sector_width - (960/2));
+	targetY = clamp(targetY, sector_height - (960/2), sector_height - 120/2);
+}
 
 if shake == false {
-	camX = lerp(camX, targetX, CAM_SMOOTH);
-	camY = lerp(camY, targetY, CAM_SMOOTH);
+	camX = lerp(camX, targetX, CAM_SMOOTH-0.05);
+	camY = lerp(camY, targetY, CAM_SMOOTH-0.05);
 } else {
 	if timer("screenshake") == false {
 		camX = lerp(camX, targetX, CAM_SMOOTH) + random_range(-shake,shake);

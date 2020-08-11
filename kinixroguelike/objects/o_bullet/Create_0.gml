@@ -8,7 +8,7 @@ if(o_player.wepequipped = "ranged"){
 	maptouse = o_player.rangedmap;
 }
 else{
-	maptouse = o_player.meleeprojmap
+	maptouse = o_player.meleemap[? "Ranged"];
 }
 
 

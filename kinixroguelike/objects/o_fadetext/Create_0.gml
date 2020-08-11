@@ -3,4 +3,4 @@ a = 1;
 
 xscale = 1;
 yscale = 1;
-angle = 1;
+angle = 0;

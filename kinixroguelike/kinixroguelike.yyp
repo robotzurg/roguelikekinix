@@ -834,7 +834,7 @@
             "Key": "7e5ea86e-5618-4c49-bfb0-b6a0f7a8b9e9",
             "Value": {
                 "id": "e77c5fc0-973b-450f-a11c-afa187171d6d",
-                "resourcePath": "fonts\\font_hp\\font_hp.yy",
+                "resourcePath": "fonts\\font_main\\font_main.yy",
                 "resourceType": "GMFont"
             }
         },
@@ -956,6 +956,14 @@
                 "id": "414e8d57-dbc0-4867-a8dd-c027c84db522",
                 "resourcePath": "shaders\\shd_white_spawn\\shd_white_spawn.yy",
                 "resourceType": "GMShader"
+            }
+        },
+        {
+            "Key": "8d2f0b19-29a0-4e27-bb6d-160b058134de",
+            "Value": {
+                "id": "5ab8f45f-cc53-487e-abc8-889a78d58c3a",
+                "resourcePath": "sprites\\s_currencyicon\\s_currencyicon.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1260,6 +1268,14 @@
                 "id": "b059004c-8cb9-46dc-b367-79f91cf7652c",
                 "resourcePath": "objects\\o_wall_invisible\\o_wall_invisible.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b57c398e-2fe3-47df-9164-d60dc88d75c5",
+            "Value": {
+                "id": "19d2e658-2f2e-468b-a91e-661dfd0c469d",
+                "resourcePath": "fonts\\font_currency\\font_currency.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -1596,6 +1612,14 @@
                 "id": "2dcdd7e7-a952-4c60-8d76-b7979b20ddc7",
                 "resourcePath": "sprites\\s_golfhit\\s_golfhit.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "efaa711a-3f92-48d5-bdf2-a4891887192d",
+            "Value": {
+                "id": "8b75e48f-8dce-4822-aa6d-0e4f5075e9f9",
+                "resourcePath": "objects\\o_coin\\o_coin.yy",
+                "resourceType": "GMObject"
             }
         },
         {

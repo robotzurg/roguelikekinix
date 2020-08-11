@@ -6,12 +6,14 @@ var ammo_pcnt = ammo/ammo_max;
 var hp_percent = hp/hp_max;
 var slope = xoffset/yoffset;
 var time_sin = min(1,(sin(global.current_t/20)+1)/4);
+draw_set_font(font_currency)
 
 //Draw Cheat Text
 if cheats_enabled {
 	draw_set_halign(fa_right);
 	draw_set_valign(fa_bottom);
-	draw_text_transformed(RES_W,RES_H,"CHEATS ENABLED!",2,2,0);
+	draw_set_color(c_white);
+		draw_text_transformed(RES_W-5,RES_H+5,"CHEATS ENABLED!",1,1,0);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 }
@@ -39,7 +41,7 @@ draw_set_color(c_red);
 draw_set_color(c_white);
 draw_set_alpha(1);
 
-draw_text_transformed_color(0,14,"HP",1,1,40,c_black,c_black,c_black,c_black,1)
+draw_text_transformed_color(0,14,"HP",0.5,0.5,40,c_black,c_black,c_black,c_black,1)
 
 //HP "/" 
 draw_primitive_begin(pr_trianglestrip);
@@ -90,6 +92,18 @@ gpu_set_fog(true,c_white,0,1);
 gpu_set_fog(false,c_white,0,1);
 	draw_sprite_ext(rangedmap[? "Sprite"],0,30,100,1,1,-25,image_blend,1);
 
-draw_set_font(font_hp);
-draw_text_transformed(55,8,hp,2,2,0);
-draw_text_transformed(107,30,"10",1,1,0);
+//Draw HP Text
+draw_text_transformed(55,8,hp,1,1,0);
+draw_text_transformed(103,30,"10",0.5,0.5,0);
+
+//Draw FPS Text
+draw_set_halign(fa_right)
+	draw_text_transformed(955,0,"FPS:" + string(fps),1,1,0);
+draw_set_halign(fa_left);
+
+
+//Draw Currency Stuff
+draw_set_valign(fa_bottom)
+	draw_sprite(s_currencyicon,0,5,535);
+	draw_text(35,545,"x" + string(currency))
+draw_set_valign(fa_top);

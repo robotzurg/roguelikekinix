@@ -3,10 +3,15 @@
 ///@param x
 ///@param y
 ///@param item_map
+///@param shop_price[op]
 
-var ix = argument0;
-var iy = argument1;
-var item_map = argument2;
+var ix = argument[0];
+var iy = argument[1];
+var item_map = argument[2];
+
+if argument_count > 3 {
+	var shop_price = argument[3];
+}
 
 var item = instance_create_layer(ix,iy,"Instances",o_weapon_pickup);
 with item {
@@ -14,4 +19,5 @@ with item {
 	name = map[? "Name"];
 	sprite_index = map[? "Sprite"];;
 	type = map[? "Type"];
+	price = shop_price;
 } 

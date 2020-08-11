@@ -35,17 +35,25 @@ if (place_meeting(x,y,o_staircase)) {
 //Pickup Weapon
 if instance_place(x,y,o_weapon_pickup) && keyboard_check_pressed(ord("E")) {
 	var item = instance_place(x,y,o_weapon_pickup);
-	if item.type == "Melee" {
-		meleemap = item.map;	
-	} else if item.type == "Ranged" {
-		rangedmap = item.map;
+	if (currency >= item.price && meleemap != item.map && rangedmap != item.map) {
+		currency -= item.price
+		if item.type == "Melee" {
+			meleemap = item.map;	
+			wepequipped = "melee"
+		} else if item.type == "Ranged" {
+			rangedmap = item.map;
+			wepequipped = "ranged";
+		}
+		draw_fade_text(x-32,y-80,"Bought!");
+	} else {
+		draw_fade_text(x-32,y-80,"Not enough money or already owned!");
 	}
 }
 
 #region Move State
 if state == "move" {
 	
-	if cheats_enabled { spd = map[? "Speed"]*2  } else if !instance_exists(o_enemy) { spd = map[? "Speed"]*1.5  } else { spd = map[? "Speed"]; }
+	if cheats_enabled { spd = map[? "Speed"]*2  } else if !instance_exists(o_enemy) { spd = map[? "Speed"]*1.25  } else { spd = map[? "Speed"]; }
 	
 	//Movement code
 	hspd = (key_right - key_left) * spd
@@ -121,15 +129,16 @@ if mouse_check_button(mb_right) && melee_swing == false && melee_wait <= 0{
 		image_yscale = o_player.flipped;
 }
 	
-if(meleeprojmap != 0){
-	for(var i = meleeprojmap[? "Bullet Count"]; i > 0; i--){
+if(meleemap[? "Ranged"] != 0){
+	var mprojmap = o_player.meleemap[? "Ranged"];
+	for(var i = mprojmap[? "Bullet Count"]; i > 0; i--){
 		var bullet = instance_create_layer(x + (16 * sign(flipped)),y,layer,o_bullet);
 		with bullet {
-			x = o_player.x + lengthdir_x(o_player.arm_length + o_player.meleeprojmap[? "Horizontal Offset"],point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(o_player.meleeprojmap[? "Vertical Offset"],point_direction(x,y,mouse_x,mouse_y) * sign(o_player.flipped)));
-			y = o_player.y + lengthdir_y(o_player.arm_length + o_player.meleeprojmap[? "Horizontal Offset"],point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(o_player.meleeprojmap[? "Vertical Offset"],point_direction(x,y,mouse_x,mouse_y)) * -sign(o_player.flipped));
+			x = o_player.x + lengthdir_x(o_player.arm_length + mprojmap[? "Horizontal Offset"],point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(mprojmap[? "Vertical Offset"],point_direction(x,y,mouse_x,mouse_y) * sign(o_player.flipped)));
+			y = o_player.y + lengthdir_y(o_player.arm_length + mprojmap[? "Horizontal Offset"],point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(mprojmap[? "Vertical Offset"],point_direction(x,y,mouse_x,mouse_y)) * -sign(o_player.flipped));
 		}
 	}
-	shake_screen(meleeprojmap[? "Screenshake Intensity"], meleeprojmap[? "Screenshake Duration"]);
+	shake_screen(mprojmap[? "Screenshake Intensity"], mprojmap[? "Screenshake Duration"]);
 }
 	
 	

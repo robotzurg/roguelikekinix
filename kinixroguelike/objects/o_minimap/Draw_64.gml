@@ -95,11 +95,6 @@ for (var w=0; w < map_w; w++) {
 }
 
 var window_width = RES_W * RES_SCALE;
-draw_set_color(c_white);
-draw_set_halign(fa_right)
-draw_text_transformed(window_width,0,"FPS:" + string(fps),1.5,1.5,0);
-draw_set_halign(fa_left);
-
 
 
 

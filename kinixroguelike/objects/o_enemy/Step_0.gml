@@ -7,7 +7,7 @@ else if(spawn_fade_in > 0) {
 	if(spawn_fade_in <= 0){
 		var sw = sprite_width/2;
 		var sh = sprite_height/2;
-		var near = instance_nearest(x,y,o_enemy);
+		//var near = instance_nearest(x,y,o_enemy);
 		for(var i = 24; i > 0; i--){			
 			create_particle(x+random_range(-sw,sw), y+random_range(-sw,sh),random_range(-5,5),random_range(-5,5),"Instances",s_spawn_particle,true);
 		} 
@@ -21,8 +21,12 @@ movetimer -= 1;
 hspd = 0; 
 vspd = 0;
 
+//Destroy the enemy if its HP is below 0
 if hp <= 0 {
 	instance_destroy();	
+	if (chance(100)) {
+		instance_create_layer(x,y,layer,o_coin);
+	}
 }
 
 

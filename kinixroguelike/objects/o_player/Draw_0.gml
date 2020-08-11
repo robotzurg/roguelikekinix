@@ -44,5 +44,12 @@ gpu_set_fog(false,c_red,0,0);
 //Draw tooltips for items we are touching
 if instance_place(x,y,o_weapon_pickup) {
 	var item = instance_place(x,y,o_weapon_pickup);
-	draw_text(x,y-50,item.name);
+	draw_set_halign(fa_center);
+	if item.price == 0 {
+		draw_text_transformed(item.x,item.y-50,item.name,0.5,0.5,0);
+	} else {
+		if item.price > 1 { draw_text_transformed(item.x,item.y-50,string(item.name) + " (costs " + string(item.price) + " coins.)",0.5,0.5,0); }
+		else if item.price == 1 { draw_text_transformed(item.x,item.y-50,string(item.name) + " (costs " + string(item.price) + " coin.)",0.5,0.5,0); }
+	}
+	draw_set_halign(fa_left);
 }
