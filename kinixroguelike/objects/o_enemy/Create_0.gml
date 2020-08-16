@@ -11,6 +11,7 @@ movetimer = map[? "Move Timer"]
 coldmg = map[? "coldmg"];
 invin = false;
 wall_col = true;
+currencydrop = map[? "Currency"]
 
 speed_multiplier = 1;
 cold_time = 0;

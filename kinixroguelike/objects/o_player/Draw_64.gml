@@ -104,6 +104,6 @@ draw_set_halign(fa_left);
 
 //Draw Currency Stuff
 draw_set_valign(fa_bottom)
-	draw_sprite(s_currencyicon,0,5,535);
+	draw_sprite(s_currencyicon,0,18,520);
 	draw_text(35,545,"x" + string(currency))
 draw_set_valign(fa_top);

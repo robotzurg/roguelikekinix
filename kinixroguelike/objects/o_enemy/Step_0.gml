@@ -21,14 +21,15 @@ movetimer -= 1;
 hspd = 0; 
 vspd = 0;
 
-//Destroy the enemy if its HP is below 0
+
+#region Enemy Death State
+
 if hp <= 0 {
 	instance_destroy();	
-	if (chance(100)) {
-		instance_create_layer(x,y,layer,o_coin);
-	}
+	death_coindrop(currencydrop);
 }
 
+#endregion
 
 #region //Status Effects
 //ICE DAMAGE
@@ -58,7 +59,7 @@ if hot_time > 0{
 }
 #endregion
 
-#region // BAT ENEMY
+#region // BAT ENEMY AI
 if map = global.batmap {
 
 if atkcooldown = 0 {
@@ -91,7 +92,7 @@ if movetimer = 0 {
 }
 #endregion
 
-#region // RAM ENEMY
+#region // RAM ENEMY AI
 
 //Movement
 if (map = global.rammap) {

@@ -5,3 +5,10 @@ enum phase {
 	creation,
 	play
 }
+
+enum coin {
+	one,
+	three,
+	five,
+	ten
+}

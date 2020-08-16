@@ -156,6 +156,7 @@ ds_map_add(global.batmap,"Spawn Area",1) // Area Enemy Spawns In
 ds_map_add(global.batmap,"Attack Cooldown",10); //Time between Special Attacks or Fire Rate (0 means no cooldown)
 ds_map_add(global.batmap,"Move Timer", 10); //Movement Timer
 ds_map_add(global.batmap,"coldmg",true); //can colide with player
+ds_map_add(global.batmap,"Currency",4); //How much Currency it drops.
 #endregion
 #region Ram Map
 global.rammap = ds_map_create();
@@ -170,6 +171,7 @@ ds_map_add(global.rammap,"Spawn Area",1) // Area Enemy Spawns In
 ds_map_add(global.rammap,"Attack Cooldown",5); //Time between Special Attacks or Fire Rate (0 means no cooldown)
 ds_map_add(global.rammap,"Move Timer", 100); //Movement Timer
 ds_map_add(global.rammap,"coldmg",true); //can colide with player
+ds_map_add(global.rammap,"Currency",17); //How much Currency it drops.
 #endregion
 
 ///ENEMY SPAWN POOL LIST\\\

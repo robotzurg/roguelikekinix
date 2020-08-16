@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "1703a5ab-f326-42a7-84db-1928ac66dea1",
+            "Value": {
+                "id": "a06c9f41-441c-4051-90ad-ed49290195d3",
+                "resourcePath": "scripts\\spawn_coins\\spawn_coins.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "17531b03-4e2e-4186-913d-f69ba187c1a5",
             "Value": {
                 "id": "aadd6e51-d80e-436f-b4c1-d233268c14cd",
@@ -684,6 +692,14 @@
                 "id": "0f5a18f4-2c1a-4bc4-b833-bf88aaded545",
                 "resourcePath": "views\\66e1cc99-0c93-4a6d-ae2c-20ce5ba1b80f.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "67d75cb5-9e73-4fe1-a7f7-7170fc07f0d3",
+            "Value": {
+                "id": "af03734a-23a6-4ebb-ba82-f599d5389e61",
+                "resourcePath": "scripts\\death_coindrop\\death_coindrop.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1841,7 +1857,9 @@
         "f16ba3b9-1bcb-4cd0-935c-4d40bf8ad081",
         "4671c3fb-6ba5-4826-9b68-14260f732b98",
         "49aa953d-59fb-4c6f-a502-b869258f8d5d",
-        "06173c60-f461-43c4-b68d-879b1cf18f90"
+        "06173c60-f461-43c4-b68d-879b1cf18f90",
+        "1703a5ab-f326-42a7-84db-1928ac66dea1",
+        "67d75cb5-9e73-4fe1-a7f7-7170fc07f0d3"
     ],
     "tutorial": ""
 }
