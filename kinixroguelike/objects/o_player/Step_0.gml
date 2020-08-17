@@ -39,14 +39,15 @@ if instance_place(x,y,o_weapon_pickup) && keyboard_check_pressed(ord("E")) {
 		currency -= item.price
 		if item.type == "Melee" {
 			meleemap = item.map;	
-			wepequipped = "melee"
+			wepequipped = "Melee"
 		} else if item.type == "Ranged" {
 			rangedmap = item.map;
-			wepequipped = "ranged";
+			wepequipped = "Ranged";
 		}
-		draw_fade_text(x-32,y-80,"Bought!");
+		draw_fade_text(x,y-80,"Bought!",fa_middle,fa_top);
 	} else {
-		draw_fade_text(x-32,y-80,"Not enough money or already owned!");
+		draw_fade_text(x,y-80,"Not enough money or already owned!",fa_middle,fa_top);
+		shake_screen(3,0.15);
 	}
 }
 
@@ -100,7 +101,7 @@ y+=vspd;
 
 if timer("reload") == true {
 	if mouse_check_button(mb_left) && ammo != 0 {
-		wepequipped = "ranged";
+		wepequipped = "Ranged";
 		for(var i = rangedmap[? "Bullet Count"]; i > 0; i--){
 			var bullet = instance_create_layer(x + (16 * sign(flipped)),y,layer,o_bullet);
 			with bullet {
@@ -118,7 +119,7 @@ if timer("reload") == true {
 
 #region Melee
 if mouse_check_button(mb_right) && melee_swing == false && melee_wait <= 0{
-	wepequipped = "melee";
+	wepequipped = "Melee";
 	var dir_x = lengthdir_x(meleemap[? "Slash Offset"],  point_direction(o_player.x,o_player.y,mouse_x,mouse_y))
 	var dir_y = lengthdir_y(meleemap[? "Slash Offset"],  point_direction(o_player.x,o_player.y,mouse_x,mouse_y))
 	with instance_create_layer(o_player.x + dir_x, o_player.y + dir_y, layer,o_swordswing) {
@@ -143,7 +144,7 @@ if(meleemap[? "Ranged"] != 0){
 	
 	
 	melee_swing = true;
-	wepequipped = "melee";
+	wepequipped = "Melee";
 	melee_wait = meleemap[? "Wait Frames"]
 	
 }

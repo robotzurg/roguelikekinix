@@ -5,9 +5,19 @@
 ///@param yscale
 ///@param angle
 
-var fadetext = instance_create_layer(argument0,argument1,"Text",o_fadetext);
+if argument_count > 6 {
+	var halign = argument[6];
+	var valign = argument[7];
+} else {
+	var halign = fa_left;
+	var valign = fa_top;
+}
 
-fadetext.text_to_draw = argument2;
-fadetext.xscale = argument3;
-fadetext.yscale = argument4;
-fadetext.angle = argument5;
+var fadetext = instance_create_layer(argument[0],argument[1],"Text",o_fadetext);
+
+fadetext.text_to_draw = argument[2];
+fadetext.xscale = argument[3];
+fadetext.yscale = argument[4];
+fadetext.angle = argument[5];
+fadetext.halign = halign;
+fadetext.valign = valign;

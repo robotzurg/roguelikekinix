@@ -71,6 +71,8 @@ draw_primitive_end();
 
 draw_set_color(c_aqua);
 
+//Red HP Area (I think? Pines pls comment your code)
+
 for (var i=0; i< yoffset * ammo_pcnt; i+=yoffset/100) {
 draw_primitive_begin(pr_trianglestrip);
 	draw_vertex(xoffset - (i + boxw) * slope, i + boxh);
@@ -81,16 +83,28 @@ draw_primitive_end();
 
 }
 
-
+//Draw the Weapon in the UI.
 draw_set_color(c_white);
 
-gpu_set_fog(true,c_white,0,1);
-	draw_sprite_ext(rangedmap[? "Sprite"],0,31,100,1,1,-25,image_blend,time_sin);
-	draw_sprite_ext(rangedmap[? "Sprite"],0,29,100,1,1,-25,image_blend,time_sin);
-	draw_sprite_ext(rangedmap[? "Sprite"],0,30,101,1,1,-25,image_blend,time_sin);
-	draw_sprite_ext(rangedmap[? "Sprite"],0,30,99,1,1,-25,image_blend,time_sin);
-gpu_set_fog(false,c_white,0,1);
-	draw_sprite_ext(rangedmap[? "Sprite"],0,30,100,1,1,-25,image_blend,1);
+if wepequipped == "Ranged" {
+	gpu_set_fog(true,c_white,0,1);
+		draw_sprite_ext(rangedmap[? "Sprite"],0,31,100,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(rangedmap[? "Sprite"],0,29,100,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(rangedmap[? "Sprite"],0,30,101,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(rangedmap[? "Sprite"],0,30,99,1,1,-25,image_blend,time_sin);
+	gpu_set_fog(false,c_white,0,1);
+		draw_sprite_ext(rangedmap[? "Sprite"],0,30,100,1,1,-25,image_blend,1);
+		draw_sprite_ext(meleemap[? "Sprite"],0,75,70,0.75,0.75,-25,image_blend,0.55);
+} else if wepequipped == "Melee" {
+	gpu_set_fog(true,c_white,0,1);
+		draw_sprite_ext(meleemap[? "Sprite"],0,31,100,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(meleemap[? "Sprite"],0,29,100,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(meleemap[? "Sprite"],0,30,101,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(meleemap[? "Sprite"],0,30,99,1,1,-25,image_blend,time_sin);
+	gpu_set_fog(false,c_white,0,1);
+		draw_sprite_ext(meleemap[? "Sprite"],0,30,100,1,1,-25,image_blend,1);
+		draw_sprite_ext(rangedmap[? "Sprite"],0,75,70,0.75,0.75,-25,image_blend,0.55);
+}
 
 //Draw HP Text
 draw_text_transformed(55,8,hp,1,1,0);

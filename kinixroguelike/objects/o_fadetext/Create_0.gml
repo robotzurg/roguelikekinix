@@ -4,3 +4,5 @@ a = 1;
 xscale = 1;
 yscale = 1;
 angle = 0;
+halign = fa_left;
+valign = fa_top;

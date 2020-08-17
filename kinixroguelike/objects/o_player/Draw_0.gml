@@ -17,7 +17,7 @@ draw_sprite_ext(rangedmap[? "Sprite"],
 				flipped,
 				point_direction(x,y,mouse_x,mouse_y),
 				image_blend, 
-				(wepequipped == "ranged") ? 1 : 0);
+				(wepequipped == "Ranged") ? 1 : 0);
 
 //Draw the Melee
 draw_sprite_ext(meleemap[? "Sprite"],
@@ -28,7 +28,7 @@ draw_sprite_ext(meleemap[? "Sprite"],
 				flipped,
 				point_direction(x,y,mouse_x,mouse_y)+melee_rotation*sign(flipped),
 				image_blend, 
-				(wepequipped == "melee") ? 1 : 0);
+				(wepequipped == "Melee") ? 1 : 0);
 
 //Draw the Arm
 draw_sprite_ext(s_playerarm,

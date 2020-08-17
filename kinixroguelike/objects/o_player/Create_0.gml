@@ -14,7 +14,7 @@ currency = 0;
 flipped = 1;
 current_sector_x = 0;
 current_sector_y = 0;
-wepequipped = "ranged";
+wepequipped = "Ranged";
 hspd = 0;
 vspd = 0;
 

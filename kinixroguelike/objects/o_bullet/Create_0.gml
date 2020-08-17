@@ -4,7 +4,7 @@ x_vel = 0;
 y_vel = 0;
 direction = point_direction(x,y,mouse_x,mouse_y);
 
-if(o_player.wepequipped = "ranged"){
+if(o_player.wepequipped = "Ranged"){
 	maptouse = o_player.rangedmap;
 }
 else{
