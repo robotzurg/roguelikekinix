@@ -1303,6 +1303,14 @@
             }
         },
         {
+            "Key": "b85eefb7-176c-4a42-902c-6a30cf6eae93",
+            "Value": {
+                "id": "4ec1fa2c-68a9-4c96-ac1a-d0a2a90f3309",
+                "resourcePath": "sprites\\s_SniperWandBullet\\s_SniperWandBullet.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b8e230ae-c42f-4975-97f8-810c33ab2e0d",
             "Value": {
                 "id": "dbd17809-3cf9-4c74-88ca-4fc7cef89024",

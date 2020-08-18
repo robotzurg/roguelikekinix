@@ -1,3 +1,4 @@
+if (live_call()) return live_result;
 ///RANGED DATA MAPS\\\
 #region Pistol Map
 global.pistolmap = ds_map_create();
@@ -27,7 +28,6 @@ ds_map_add(global.pistolmap,"Horizontal Offset",16) //How far out bullets are sp
 ds_map_add(global.pistolmap,"Screenshake Intensity",4); //How intense screenshake is when a bullet is shot. (0 means no screenshake)
 ds_map_add(global.pistolmap,"Screenshake Duration",0.1); //How long screenshake lasts (in seconds, invalid if screenshake intensity is 0)
 #endregion
-
 #region Homing Staff Map
 global.homingstaffmap = ds_map_create();
 
@@ -55,6 +55,33 @@ ds_map_add(global.homingstaffmap,"Vertical Offset",20) //Vertical offset for the
 ds_map_add(global.homingstaffmap,"Horizontal Offset",-5) //How far out bullets are spawned from the weapon's center point
 ds_map_add(global.homingstaffmap,"Screenshake Intensity",4); //How intense screenshake is when a bullet is shot. (0 means no screenshake)
 ds_map_add(global.homingstaffmap,"Screenshake Duration",0.1); //How long screenshake lasts (in seconds, invalid if screenshake intensity is 0)
+#endregion
+#region Sniper Wand Map
+global.sniperwandmap = ds_map_create();
+ds_map_add(global.sniperwandmap,"Name","Sniper Staff"); //Name of the Gun
+ds_map_add(global.sniperwandmap,"Type","Ranged"); //Weapon Type
+ds_map_add(global.sniperwandmap,"Sprite",s_sniperWand); //Sprite of the Gun
+ds_map_add(global.sniperwandmap,"Damage",12); //Damage of the Gun
+ds_map_add(global.sniperwandmap,"Fire Rate",1.5); //Measured in Seconds, time between shots
+ds_map_add(global.sniperwandmap,"Ammo Use",5) //Amount of Ammo the gun uses.
+ds_map_add(global.sniperwandmap,"Range", false); //How far the bullet can go (false means infinite)
+ds_map_add(global.sniperwandmap,"Bullet Sprite",s_SniperWandBullet); //Self Explanatory.
+ds_map_add(global.sniperwandmap,"Bullet Trail",true); //If there is a trail or not (false means no trail)
+ds_map_add(global.sniperwandmap,"Bullet Speed",40); //Speed of the Bullets
+ds_map_add(global.sniperwandmap,"Bullet Bounce",0) //How many times the bullet can bounce (0 means never)
+ds_map_add(global.sniperwandmap,"Bullet Split", 0) //How many times the bullet can split up into more bullets (0 means never)
+ds_map_add(global.sniperwandmap,"Bullet Split Amount", 0) //How many bullets the bullet splits up into (Use 0 Bullet Split is 0)
+ds_map_add(global.sniperwandmap,"Bullet Split Angle", 0) //How wide of an angle to split into
+ds_map_add(global.sniperwandmap,"Bullet Collision",true) //True means it destroys upon hitting collision, false means it doesn't
+ds_map_add(global.sniperwandmap,"Bullet Homing", 0) //How much bullets home in on their target
+ds_map_add(global.sniperwandmap,"Bullet Spread",0) //How much the bullets spread out
+ds_map_add(global.sniperwandmap,"Bullet Count",1) //How many bullets are fired per shot
+ds_map_add(global.sniperwandmap,"Hot Damage Time",0) //How long target takes hot damage for (60 per tick of damage)
+ds_map_add(global.sniperwandmap,"Cold Damage Time",0) //How long target is slowed for (60 per second of cold)
+ds_map_add(global.sniperwandmap,"Vertical Offset",0) //Vertical offset for the bullet spawns
+ds_map_add(global.sniperwandmap,"Horizontal Offset",20) //How far out bullets are spawned from the weapon's center point
+ds_map_add(global.sniperwandmap,"Screenshake Intensity",3); //How intense screenshake is when a bullet is shot. (0 means no screenshake)
+ds_map_add(global.sniperwandmap,"Screenshake Duration",0.1); //How long screenshake lasts (in seconds, invalid if screenshake intensity is 0)
 #endregion
 
 #region Golfball Map (used with Golf Club melee weapon)
@@ -85,7 +112,6 @@ ds_map_add(global.golfballmap,"Horizontal Offset",2) //How far out bullets are s
 ds_map_add(global.golfballmap,"Screenshake Intensity",8); //How intense screenshake is when a bullet is shot. (0 means no screenshake)
 ds_map_add(global.golfballmap,"Screenshake Duration",0.2); //How long screenshake lasts (in seconds, invalid if screenshake intensity is 0)
 #endregion
-
 
 ///MELEE DATA MAPS\\\
 #region Sword Map
@@ -136,11 +162,10 @@ ds_map_add(global.playermap,"HP",10); //Maximum HP
 ds_map_add(global.playermap,"Speed",5); //Movement Speed
 ds_map_add(global.playermap,"Ammo",100); //Player's Ammo Count
 ds_map_add(global.playermap,"Ability",1); //Current Ability of the Player
-ds_map_add(global.playermap,"Gun",global.homingstaffmap); //ds_map of the Equipped Gun
+ds_map_add(global.playermap,"Gun",global.sniperwandmap); //ds_map of the Equipped Gun
 ds_map_add(global.playermap,"Melee",global.golfclubmap); //ds_map of the Equipped Melee
 ds_map_add(global.playermap,"iframes",3); // I-frames
 #endregion
-
 
 ///ENEMY DATA MAPS\\\
 #region Bat Map
@@ -158,6 +183,7 @@ ds_map_add(global.batmap,"Move Timer", 10); //Movement Timer
 ds_map_add(global.batmap,"coldmg",true); //can colide with player
 ds_map_add(global.batmap,"Currency",4); //How much Currency it drops.
 #endregion
+
 #region Ram Map
 global.rammap = ds_map_create();
 ds_map_add(global.rammap,"Cost",5); //Number of spawn currency it takes to spawn the enemy in the room.
@@ -180,4 +206,3 @@ global.valleyspawnpool = ds_list_create();
 ds_list_add(global.valleyspawnpool,global.rammap);
 ds_list_add(global.valleyspawnpool,global.batmap);
 #endregion
-

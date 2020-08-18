@@ -44,9 +44,9 @@ if instance_place(x,y,o_weapon_pickup) && keyboard_check_pressed(ord("E")) {
 			rangedmap = item.map;
 			wepequipped = "Ranged";
 		}
-		draw_fade_text(x,y-80,"Bought!",fa_middle,fa_top);
+		draw_fade_text(x,y-50,"Bought!",c_lime,fa_middle,fa_top);
 	} else {
-		draw_fade_text(x,y-80,"Not enough money or already owned!",fa_middle,fa_top);
+		draw_fade_text(x,y-50,"Not enough money or already owned!",c_red,fa_middle,fa_top);
 		shake_screen(3,0.15);
 	}
 }
