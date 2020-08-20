@@ -1,5 +1,5 @@
 function init_maps() {
-	if (live_call()) return live_result;
+
 	///RANGED DATA MAPS\\\
 #region Pistol Map
 	global.pistolmap = ds_map_create();
