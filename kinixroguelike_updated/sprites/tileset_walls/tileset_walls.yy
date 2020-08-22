@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d80154d7-350c-42a1-94ba-e80371959b26","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Sprites/Tile Sets.yy",
+    "name": "Tileset Sprite Files",
+    "path": "folders/Tile Sets/Tileset Sprite Files.yy",
   },
   "resourceVersion": "1.0",
   "name": "tileset_walls",

@@ -1,9 +1,0 @@
-NORMAL
-Top 2
-Right 3
-Bottom 5
-Left 7
-
-SPECIAL
-Tall Room 11
-Wide Room 13

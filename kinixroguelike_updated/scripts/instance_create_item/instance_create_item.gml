@@ -14,7 +14,7 @@ function instance_create_item() {
 		var shop_price = argument[3];
 	}
 
-	var item = instance_create_layer(ix,iy,"Instances",o_weapon_pickup);
+	var item = instance_create_layer(ix,iy,"Instances",obj_weapon_pickup);
 	with item {
 		map = item_map;
 		name = map[? "Name"];

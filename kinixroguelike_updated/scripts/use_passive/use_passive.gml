@@ -1,5 +1,0 @@
-function use_passive() {
-
-
-
-}

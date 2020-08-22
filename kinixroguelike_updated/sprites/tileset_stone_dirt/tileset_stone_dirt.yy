@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d3c44696-e8b0-4e7f-8279-7d4b8b479356","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Sprites/Tile Sets.yy",
+    "name": "Tileset Sprite Files",
+    "path": "folders/Tile Sets/Tileset Sprite Files.yy",
   },
   "resourceVersion": "1.0",
   "name": "tileset_stone_dirt",

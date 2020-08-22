@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "GML+",
-    "path": "folders/Objects/Extension Objects/GML+.yy",
+    "path": "folders/GML+/GML+.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_gmlp",

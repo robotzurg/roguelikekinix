@@ -25,14 +25,14 @@ body {
 	width: 100%;
 	min-height: 100%;
 	min-height: 100vh;
-	background-color: #f9f9f9;
+	background-color: #899FC6;
 }
 .page {
 	max-width: 656px;
 	background: #ffffff;
 	margin: 0 auto;
 	padding: 8px;
-	box-shadow: 0 0 0 2px #eee;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 	min-height: 100%;
 	min-height: 100vh;
 	box-sizing: border-box;
@@ -40,7 +40,6 @@ body {
 .page > p:first-child {
 	margin-top: 0;
 }
-
 #doc, #doc ul, #doc ol {
 	padding-left: 0;
 	margin: 0;
@@ -225,7 +224,7 @@ label[for="night"] {
 }
 #night:checked + .main .page {
 	background-color: #1A202D;
-	box-shadow: 0 0 0 2px #9bccff63;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 	color: white;
 }
 #night:checked + .main a,
@@ -307,9 +306,25 @@ label[for="night"] {
 	color: white;
 }
 </style>
+<style type="text/css" id="print_css">
+@media print {
+	.main { background-color: transparent }
+	.display-controls { display: none; }
+	.page { width: 100%; box-shadow: none; }
+	#doc .header::before,
+	#doc .item.open .header::before	{
+		content: "~";
+	}
+	#doc { display: inherit }
+	#doc .item:not(.open) > .content,
+	#doc[ready] .item:not(.open) > .content	{
+		display: inherit;
+	}
+}
+</style>
 <noscript><style>
 #doc .header::before {
-	display: none;
+	content: "~";
 }
 #doc .header:hover {
 	border-left-color: #f3f3f3;
@@ -340,7 +355,7 @@ label[for="night"] {
 <p>This is a "cheat sheet" for GMLive.gml extension by YellowAfterlife.
 The extension can be acquired from <a href="https://marketplace.yoyogames.com/assets/5992/_">GM:Marketplace</a> or <a href="https://yellowafterlife.itch.io/gamemaker-live">itch.io</a>.
 For questions/support, use <a href="https://yellowafterlife.itch.io/gamemaker-live/community">forums</a>, or <a href="mailto://yellowafterlife@hotmail.com">send me an email</a>.
-An up-to-date version of this document can always be found <a href="https://yal.cc/r/17/gmlive">online</a>.</p><p>
+An up-to-date version of this document can always be found <a href="https://yal.cc/r/17/gmlive">online</a>.</p><p class="display-controls">
 Click on sections to expand/collapse them.<br>Quick display controls: <a href="#" onclick="opt_none(); return false">Categories</a>
 &middot; <a href="#" onclick="opt_list(); return false">Sections</a>
 &middot; <a href="#" onclick="opt_all(); return false">Everything</a>
@@ -378,7 +393,7 @@ Click on sections to expand/collapse them.<br>Quick display controls: <a href="#
 			</li><li>	The file(s) in question should not be open in GM:S while you are editing them externally,
 				or GMS1 might overwrite them with additional version next time you save the project.
 				If accidents happen, copy the updated code from external editor back to GM:S.
-				Enabling built-in version control for the projct reduces the chances of this happening.
+				Enabling built-in version control for the project reduces the chances of this happening.
 		</li></ul><p class="pad">
 		
 		Once you are done setting things up, you can remove <strong>netlog.gmez</strong> and <strong>GMLiveHelper.gmez</strong> from Included Files.
@@ -399,20 +414,11 @@ Click on sections to expand/collapse them.<br>Quick display controls: <a href="#
 			</li><li>	Change the "live" scripts/events as you see fit and see the changes in-game
 				(if everything was done correctly). gmlive-server's window will report status updates.
 		</li></ul></div></div><div class="item"><a class="header" id="gms1-export" href="#gms1-export" title="(permalink)">Exporting</a><div class="content"><p>
-		Usually you do not want non-development builds
-		of the game to periodically ping a local or non-local address
-		- while not exactly resource-intensive,
-		this may raise warnings on some firewalls and anti-virus software.
-		</p><p>
-		For that reason it is suggested that you disable GMLive prior to exporting.
+		%<a href="#export1">export1</a>
 		</p><p>
 		To do so, open menu "Resources - Define Macros" (Ctrl+Shift+N), and change the value of previously defined <tt>live_enabled</tt> macro to <tt>0</tt>.
 		</p><p>
-		This will disable the logic inside all of GMLive's scripts
-		and return default values, having it that nothing will happen
-		when calling them, and that they will not influence compile times/output size much as such.
-		</p><p>
-		After exporting you can set <tt>live_enabled</tt> back to <tt>1</tt>.
+		%<a href="#export2">export2</a>
 	</p></div></div></div></div><div class="item"><a class="header" id="use2" href="#use2" title="(permalink)">Using GMLive.gml in GMS2</a><div class="content"><div class="item"><a class="header" id="gms2-setup" href="#gms2-setup" title="(permalink)">Initial setup</a><div class="content"><ul>
 		<li>	Import the GMLive asset the project.<br/>(with itch.io, you need to drag the <tt>.yymp</tt> file onto the workspace area)
 		</li><li>	Import the assets (extension, object, and included files) from the package.<br/>On Mac, omit importing Windows-specific <tt>exe</tt> and <tt>ndll</tt> files.
@@ -425,22 +431,13 @@ Click on sections to expand/collapse them.<br>Quick display controls: <a href="#
 			</li><li>	Run the game.
 			</li><li>	Change the "live" scripts/events as you see fit and see the changes in-game
 				(if everything was done correctly).
-				gmlive-server' window will report status updates.
+				gmlive-server's window will report status updates.
 		</li></ul></div></div><div class="item"><a class="header" id="gms2-export" href="#gms2-export" title="(permalink)">Exporting</a><div class="content"><p>
-		Usually you do not want non-development builds
-		of the game to periodically ping a local or non-local address
-		- while not exactly resource-intensive,
-		this may raise warnings on some firewalls and anti-virus software.
-		</p><p>
-		For that reason it is suggested that you disable GMLive prior to exporting.
+		%<a href="#export1">export1</a>
 		</p><p>
 		To do so, change the value of <tt>live_enabled</tt> macro in <tt>obj_gmlive</tt>'s Create event to <tt>0</tt>.
 		</p><p>
-		This will disable the logic inside all of GMLive's scripts
-		and return default values, having it that nothing will happen
-		when calling them, and that they will not influence compile times/output size much as such.
-		</p><p>
-		After exporting you can set <tt>live_enabled</tt> back to <tt>1</tt>.
+		%<a href="#export2">export2</a>
 	</p></div></div></div></div><div class="item"><span class="header">General functions</span><div class="content"><div class="item"><a class="header" id="live_init" href="#live_init" title="(permalink)">live_init(update_rate, url, password)</a><div class="content"><p>
 		<tt>update_rate</tt> is how often files should be checked for updates, in seconds.
 		<tt>1</tt> is a common value. Lower values can load changed files faster,
@@ -454,7 +451,7 @@ Click on sections to expand/collapse them.<br>Quick display controls: <a href="#
 		</p><pre class="gmlmd">
 <span class="sv">live_log_script</span> <span class="op">=</span> <span class="uf">scr_log</span><span class="op">;</span>
 </pre><p>If not assigned, plain <tt>show_debug_message</tt> calls are used.
-	</p></div></div><div class="item"><a class="header" id="live_execute_string" href="#live_execute_string" title="(permalink)">live_execute_string(gml_code)<span class="ret-arrow">&#10140;</span>ok?</a><div class="content"><p>
+	</p></div></div><div class="item"><a class="header" id="live_execute_string" href="#live_execute_string" title="(permalink)">live_execute_string(gml_code, ...arguments)<span class="ret-arrow">&#10140;</span>ok?</a><div class="content"><p>
 		Attempts to compile and run a snippet of GML code.
 		</p><p>
 		Returns whether execution succeeded. If it did, <tt>live_result</tt> contains the returned value (if any). If it didn't, <tt>live_result</tt> contains the error text.
@@ -535,7 +532,22 @@ Click on sections to expand/collapse them.<br>Quick display controls: <a href="#
 		A mix of <a href="#live_call_ext">live_call_ext</a> and <a href="#live_defcall">live_defcall</a> - you can both pass arguments as an array and a default return value.
 	</p></div></div><div class="item"><a class="header" id="live_result" href="#live_result" title="(permalink)">live_result</a><div class="content"><p>
 		Stores the returned value from the last <a href="#live_call">live_call</a> (or other "live" group functions) if execution succeeded. If the code did not return anything, holds <tt>0</tt> (GM default for <tt>exit</tt>).
-	</p></div></div></div></div><div class="item"><a class="header" id="sprite" href="#sprite" title="(permalink)">Sprite functions</a><div class="content"><div class="item"><a class="header" id="sprite_set_live" href="#sprite_set_live" title="(permalink)">sprite_set_live(sprite, enable)</a><div class="content"><p>
+	</p></div></div><div class="item"><a class="header" id="live_name" href="#live_name" title="(permalink)">live_name</a><div class="content"><p>
+		In GMS2.3+, it can be hard for GMLive to tell apart inline functions due to their
+		automatic naming. To mitigate this, a <tt>live_name</tt> variable is available and can be set
+		to any unique string prior to <tt>live_call</tt> for GMLive to know what function it is.
+		</p><p>
+		For example,
+		</p><pre class="gmlmd">
+<span class="uv">Greety</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="uv">_name</span><span class="op">)</span> <span class="kw">constructor</span> <span class="cb">{</span>
+    <span class="sv">name</span> <span class="op">=</span> <span class="uv">_name</span><span class="op">;</span>
+    <span class="kw">static</span> <span class="uv">greet</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="cb">{</span>
+        <span class="sv">live_name</span> <span class="op">=</span> <span class="st">"Greety:greet"</span><span class="op">;</span>
+        <span class="kw">if</span> <span class="op">(</span><a class="sf" href="#live_call">live_call</a><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="kw">return</span> <a class="sv" href="#live_result">live_result</a><span class="op">;</span>
+        <span class="uf">trace</span><span class="op">(</span><span class="st">"A greet from"</span><span class="op">,</span> <span class="sv">name</span><span class="op">)</span>
+    <span class="cb">}</span>
+<span class="cb">}</span>
+</pre></div></div></div></div><div class="item"><a class="header" id="sprite" href="#sprite" title="(permalink)">Sprite functions</a><div class="content"><div class="item"><a class="header" id="sprite_set_live" href="#sprite_set_live" title="(permalink)">sprite_set_live(sprite, enable)</a><div class="content"><p>
 		Enables/disables live reloading for a specific sprite.
 		</p><p>
 		Does not work for Spine/SWF sprites (as they cannot be reloaded at runtime).
@@ -686,40 +698,23 @@ neko gmlive-server.n
 		and only does "create-on-write" (replacing a value with a new array if it isn't yet).
 		</p><p>
 		If this doesn't make immediate sense, it is unlikely that you rely on this feature anywhere.
-	</p></div></div><div class="item"><a class="header" id="lim-dyn-switch" href="#lim-dyn-switch" title="(permalink)">Dynamic expressions in switch-cases</a><div class="content"><p>
-		GML itself allows to put dynamic expressions into switch's cases, meaning that you could do
-		</p><pre class="gmlmd">
-<span class="kw">switch</span> <span class="op">(</span><span class="kw">global</span><span class="op">.</span><span class="gv">a</span><span class="op">)</span> <span class="cb">{</span>
-    <span class="kw">case</span> <span class="kw">global</span><span class="op">.</span><span class="gv">b</span><span class="op">:</span> <span class="kw">return</span> <span class="st">"a == b"</span><span class="op">;</span>
-    <span class="kw">case</span> <span class="kw">global</span><span class="op">.</span><span class="gv">c</span><span class="op">:</span> <span class="kw">return</span> <span class="st">"a == c"</span><span class="op">;</span>
-    <span class="kw">default</span><span class="op">:</span> <span class="kw">return</span> <span class="st">"etc"</span><span class="op">;</span>
-<span class="cb">}</span>
-</pre><p>and it would be compiled to an equivalent of
-		</p><pre class="gmlmd">
-<span class="kw">var</span> <span class="lv">temp</span> <span class="op">=</span> <span class="kw">global</span><span class="op">.</span><span class="gv">a</span><span class="op">;</span>
-<span class="kw">if</span> <span class="op">(</span><span class="lv">temp</span> <span class="op">==</span> <span class="kw">global</span><span class="op">.</span><span class="gv">b</span><span class="op">)</span> <span class="cb">{</span>
-    <span class="kw">return</span> <span class="st">"a == b"</span><span class="op">;</span>
-<span class="cb">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="lv">temp</span> <span class="op">==</span> <span class="kw">global</span><span class="op">.</span><span class="gv">c</span><span class="op">)</span> <span class="cb">{</span>
-    <span class="kw">return</span> <span class="st">"a == c"</span><span class="op">;</span>
-<span class="cb">}</span> <span class="kw">else</span> <span class="kw">return</span> <span class="st">"etc"</span><span class="op">;</span>
-</pre><p>Needless to say, that does get a little nastier with fall-through cases, and GMLive currently
-		may not agree to compile a "case" if it's expression cannot be computed compile-time (things like <tt>ord("A")</tt> are fine though).
-	</p></div></div><div class="item"><a class="header" id="lim-weird-macros" href="#lim-weird-macros" title="(permalink)">Unusual expressions in macros</a><div class="content"><p>
+	</p></div></div><div class="item"><a class="header" id="lim-weird-macros" href="#lim-weird-macros" title="(permalink)">Partial expressions in macros</a><div class="content"><p>
 		GML itself, for what can be considered interesting reasons, allows to put pretty much
 		anything into a macro, <em>except</em> for the <tt>argument</tt> variables.
 		</p><p>
 		This means that you can technically have a macro called <tt>ohno</tt> with value <tt>1 return "oh no"</tt>, and do
 		</p><pre class="gmlmd">
-<span class="kw">var</span> <span class="lv">r</span> <span class="op">=</span> <span class="sv">ohno</span><span class="op">;</span>
+<span class="kw">var</span> <span class="sv">r</span> <span class="op">=</span> <span class="sv">ohno</span><span class="op">;</span>
 <span class="kw">return</span> <span class="st">"ok"</span><span class="op">;</span>
 </pre><p>and that would actually return "oh no" from the script while looking like a regular variable assignment.
 		</p><p>
 		GMS2 further expands on macro support, allowing to put entire blocks of code inside of a macros if you much desire.
 		</p><p>
-		GMLive currently sticks with "pure" macros, meaning that you can only put things that could
-		have been put as a function argument in them (in other words, "values" / "expressions", rather than complete or partial "statements").
+		GMLive currently sticks with "pure" macros,
+		meaning that macro value should be a single expression or statement.
 		</p><p>
-		If you have "unusual" macros in the project, GMLive will still work, but you will not be able to use them in "live" code.
+		If you have "unusual" macros in the project,
+		GMLive will still work, but you will not be able to use them in "live" code.
 	</p></div></div></div></div><div class="item"><a class="header" id="troubleshooting" href="#troubleshooting" title="(permalink)">Troubleshooting</a><div class="content"><div class="item"><a class="header" id="no-updates" href="#no-updates" title="(permalink)">Code does not update</a><div class="content"><ul>
 		<li>	Make sure that you are saving the file (Ctrl+S).
 		</li><li>	Make sure that gmlive-server is running.
@@ -731,8 +726,8 @@ neko gmlive-server.n
 		<li>	You are calling the script with fewer arguments than you have the code expect<br/>(in which case GM would throw you an error as well).
 		</li><li>	You forgot to add script arguments to <a href="#live_call">live_call</a>/<a href="#live_call_ext">live_call_ext</a>.
 		</li></ul></div></div><div class="item"><a class="header" id="error-inst-call" href="#error-inst-call" title="(permalink)">"Can't call instance-specific function - instance does not exist."</a><div class="content"><p>
-		You can occsaionally get this error in output log when calling scripts for instances
-		after deactivating/destroing them - currently the only way <tt>self</tt>/<tt>other</tt>
+		You can occasionally get this error in output log when calling scripts for instances
+		after deactivating/destroying them - currently the only way <tt>self</tt>/<tt>other</tt>
 		instances can be set up for a call is via <tt>with</tt> blocks,
 		and these do not work with deactivated/destroyed instance IDs.
 		</p><p>

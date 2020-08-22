@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"83885ebc-0794-40d5-ae2b-f3584cd80d35","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Sprites/Tile Sets.yy",
+    "name": "Tileset Sprite Files",
+    "path": "folders/Tile Sets/Tileset Sprite Files.yy",
   },
   "resourceVersion": "1.0",
   "name": "tileset_grass",
