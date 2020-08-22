@@ -24,11 +24,14 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objectless Objects",
-    "path": "folders/Objectless Objects.yy",
+    "name": "Spriteless Objects",
+    "path": "folders/Spriteless Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_minimap",
-  "tags": [],
+  "tags": [
+    "Object",
+    "Spriteless",
+  ],
   "resourceType": "GMObject",
 }

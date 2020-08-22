@@ -73,6 +73,9 @@
   },
   "resourceVersion": "1.0",
   "name": "spr_player",
-  "tags": [],
+  "tags": [
+    "Sprite",
+    "Being",
+  ],
   "resourceType": "GMSprite",
 }

@@ -34,6 +34,8 @@
   },
   "resourceVersion": "1.0",
   "name": "obj_wall_invisible",
-  "tags": [],
+  "tags": [
+    "Collidable",
+  ],
   "resourceType": "GMObject",
 }

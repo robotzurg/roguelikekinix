@@ -91,7 +91,7 @@ if !cheats_enabled {
 	        y+=sign(vspd);
 	    }
 	   vspd=0;
-	} 
+	}
 }
 y+=vspd;
 
