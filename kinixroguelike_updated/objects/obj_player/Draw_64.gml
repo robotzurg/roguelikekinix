@@ -88,27 +88,27 @@ draw_set_color(c_white);
 
 if wepequipped == "Ranged" {
 	gpu_set_fog(true,c_white,0,1);
-		draw_sprite_ext(rangedmap[? "Sprite"],0,31,100,1,1,-25,image_blend,time_sin);
-		draw_sprite_ext(rangedmap[? "Sprite"],0,29,100,1,1,-25,image_blend,time_sin);
-		draw_sprite_ext(rangedmap[? "Sprite"],0,30,101,1,1,-25,image_blend,time_sin);
-		draw_sprite_ext(rangedmap[? "Sprite"],0,30,99,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(ranged.sprite,0,31,100,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(ranged.sprite,0,29,100,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(ranged.sprite,0,30,101,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(ranged.sprite,0,30,99,1,1,-25,image_blend,time_sin);
 	gpu_set_fog(false,c_white,0,1);
-		draw_sprite_ext(rangedmap[? "Sprite"],0,30,100,1,1,-25,image_blend,1);
-		draw_sprite_ext(meleemap[? "Sprite"],0,75,70,0.75,0.75,-25,image_blend,0.55);
+		draw_sprite_ext(ranged.sprite,0,30,100,1,1,-25,image_blend,1);
+		draw_sprite_ext(melee.sprite,0,75,70,0.75,0.75,-25,image_blend,0.55);
 } else if wepequipped == "Melee" {
 	gpu_set_fog(true,c_white,0,1);
-		draw_sprite_ext(meleemap[? "Sprite"],0,31,100,1,1,-25,image_blend,time_sin);
-		draw_sprite_ext(meleemap[? "Sprite"],0,29,100,1,1,-25,image_blend,time_sin);
-		draw_sprite_ext(meleemap[? "Sprite"],0,30,101,1,1,-25,image_blend,time_sin);
-		draw_sprite_ext(meleemap[? "Sprite"],0,30,99,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(melee.sprite,0,31,100,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(melee.sprite,0,29,100,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(melee.sprite,0,30,101,1,1,-25,image_blend,time_sin);
+		draw_sprite_ext(melee.sprite,0,30,99,1,1,-25,image_blend,time_sin);
 	gpu_set_fog(false,c_white,0,1);
-		draw_sprite_ext(meleemap[? "Sprite"],0,30,100,1,1,-25,image_blend,1);
-		draw_sprite_ext(rangedmap[? "Sprite"],0,75,70,0.75,0.75,-25,image_blend,0.55);
+		draw_sprite_ext(melee.sprite,0,30,100,1,1,-25,image_blend,1);
+		draw_sprite_ext(ranged.sprite,0,75,70,0.75,0.75,-25,image_blend,0.55);
 }
 
 //Draw HP Text
 draw_text_transformed(55,8,hp,1,1,0);
-draw_text_transformed(103,30,"10",0.5,0.5,0);
+draw_text_transformed(103,30,hp_max,0.5,0.5,0);
 
 //Draw FPS Text
 draw_set_halign(fa_right)

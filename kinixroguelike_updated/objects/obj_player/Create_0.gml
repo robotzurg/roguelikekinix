@@ -1,15 +1,15 @@
 //Player Identifier Init
-map = global.playermap;
-sprite_index = map[? "Sprite"];
-name = map[? "Name"];
-hp = map[? "HP"];
-hp_max = hp;
-spd = map[? "Speed"];
-ammo = map[? "Ammo"];
+struct = global.PlayerData
+sprite_index = struct.sprite
+name = struct.name
+hp = struct.hp;
+hp_max = struct.hp
+spd = struct.spd
+ammo = struct.ammo
 ammo_max = ammo;
-rangedmap = map[? "Gun"];
-meleemap = map[? "Melee"];
-iframes = map[? "iframes"];
+ranged = struct.ranged
+melee = struct.melee;
+iframes = struct.iframes
 currency = 0;
 flipped = 1;
 current_sector_x = 0;

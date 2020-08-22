@@ -32,8 +32,8 @@ if obj_player.current_sector_x == sector_x && obj_player.current_sector_y == sec
 if start_spawning == true {
 	if global.spawn_currency > 0 {
 		var enemyselection = global.valleyspawnpool[| irandom_range(0,ds_list_size(global.valleyspawnpool)-1)];
-		global.spawn_currency -= enemyselection[? "Cost"];
-		global.maptoset = enemyselection;
+		global.spawn_currency -= enemyselection.cost;
+		global.struct_to_set = enemyselection;
 		instance_create_layer(random_range(x,x+sprite_width),random_range(y,y+sprite_height),"Instances",obj_enemy);
 	}
 	else {

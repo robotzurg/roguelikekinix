@@ -35,13 +35,13 @@ if (place_meeting(x,y,obj_staircase)) {
 //Pickup Weapon
 if instance_place(x,y,obj_weapon_pickup) && keyboard_check_pressed(ord("E")) {
 	var item = instance_place(x,y,obj_weapon_pickup);
-	if (currency >= item.price && meleemap != item.map && rangedmap != item.map) {
+	if (currency >= item.price && melee != item.struct && ranged != item.struct) {
 		currency -= item.price
 		if item.type == "Melee" {
-			meleemap = item.map;	
+			melee = item.struct	
 			wepequipped = "Melee"
 		} else if item.type == "Ranged" {
-			rangedmap = item.map;
+			ranged = item.struct
 			wepequipped = "Ranged";
 		}
 		draw_fade_text(x,y-50,"Bought!",c_lime,fa_middle,fa_top);
@@ -54,7 +54,7 @@ if instance_place(x,y,obj_weapon_pickup) && keyboard_check_pressed(ord("E")) {
 #region Move State
 if state == "move" {
 	
-	if cheats_enabled { spd = map[? "Speed"]*2  } else if !instance_exists(obj_enemy) { spd = map[? "Speed"]*1.25  } else { spd = map[? "Speed"]; }
+	if cheats_enabled { spd = struct.spd*2  } else if !instance_exists(obj_enemy) { spd = struct.spd*1.25  } else { spd = struct.spd; }
 	
 	//Movement code
 	hspd = (key_right - key_left) * spd
@@ -102,16 +102,16 @@ y+=vspd;
 if timer("reload") == true {
 	if mouse_check_button(mb_left) && ammo != 0 {
 		wepequipped = "Ranged";
-		for(var i = rangedmap[? "Bullet Count"]; i > 0; i--){
+		for(var i = ranged.bullet_count; i > 0; i--){
 			var bullet = instance_create_layer(x + (16 * sign(flipped)),y,layer,obj_bullet);
 			with bullet {
-				x = obj_player.x + lengthdir_x(obj_player.arm_length + obj_player.rangedmap[? "Horizontal Offset"],point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(obj_player.rangedmap[? "Vertical Offset"],point_direction(x,y,mouse_x,mouse_y) * sign(obj_player.flipped)));
-				y = obj_player.y + lengthdir_y(obj_player.arm_length + obj_player.rangedmap[? "Horizontal Offset"],point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(obj_player.rangedmap[? "Vertical Offset"],point_direction(x,y,mouse_x,mouse_y)) * -sign(obj_player.flipped));
+				x = obj_player.x + lengthdir_x(obj_player.arm_length + obj_player.ranged.h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(obj_player.ranged.v_offset,point_direction(x,y,mouse_x,mouse_y) * sign(obj_player.flipped)));
+				y = obj_player.y + lengthdir_y(obj_player.arm_length + obj_player.ranged.h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(obj_player.ranged.v_offset,point_direction(x,y,mouse_x,mouse_y)) * -sign(obj_player.flipped));
 			}
 		}
-		timer_set("reload",rangedmap[? "Fire Rate"]);
-		shake_screen(rangedmap[? "Screenshake Intensity"], rangedmap[? "Screenshake Duration"]);
-		ammo -= rangedmap[? "Ammo Use"];
+		timer_set("reload",ranged.fire_rate);
+		shake_screen(ranged.ss_intensity,ranged.ss_duration);
+		ammo -= ranged.ammo_use
 	}
 }
 
@@ -120,32 +120,32 @@ if timer("reload") == true {
 #region Melee
 if mouse_check_button(mb_right) && melee_swing == false && melee_wait <= 0{
 	wepequipped = "Melee";
-	var dir_x = lengthdir_x(meleemap[? "Slash Offset"],  point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y))
-	var dir_y = lengthdir_y(meleemap[? "Slash Offset"],  point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y))
+	var dir_x = lengthdir_x(melee.slash_offset,  point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y))
+	var dir_y = lengthdir_y(melee.slash_offset,  point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y))
 	with instance_create_layer(obj_player.x + dir_x, obj_player.y + dir_y, layer,obj_swordswing) {
-		sprite_index = obj_player.meleemap[? "Slash Sprite"];
+		sprite_index = obj_player.melee.slash_sprite;
 		
 		direction = point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y);
 		image_angle = point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y);
 		image_yscale = obj_player.flipped;
 }
 	
-if(meleemap[? "Ranged"] != 0){
-	var mprojmap = obj_player.meleemap[? "Ranged"];
-	for(var i = mprojmap[? "Bullet Count"]; i > 0; i--){
+if(melee.ranged_atk != 0){
+	var mprojstruct = obj_player.melee.ranged_atk;
+	for(var i = mprojstruct.bullet_count; i > 0; i--){
 		var bullet = instance_create_layer(x + (16 * sign(flipped)),y,layer,obj_bullet);
 		with bullet {
-			x = obj_player.x + lengthdir_x(obj_player.arm_length + mprojmap[? "Horizontal Offset"],point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(mprojmap[? "Vertical Offset"],point_direction(x,y,mouse_x,mouse_y) * sign(obj_player.flipped)));
-			y = obj_player.y + lengthdir_y(obj_player.arm_length + mprojmap[? "Horizontal Offset"],point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(mprojmap[? "Vertical Offset"],point_direction(x,y,mouse_x,mouse_y)) * -sign(obj_player.flipped));
+			x = obj_player.x + lengthdir_x(obj_player.arm_length + mprojstruct.h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(mprojstruct.v_offset,point_direction(x,y,mouse_x,mouse_y) * sign(obj_player.flipped)));
+			y = obj_player.y + lengthdir_y(obj_player.arm_length + mprojstruct.h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(mprojstruct.v_offset,point_direction(x,y,mouse_x,mouse_y)) * -sign(obj_player.flipped));
 		}
 	}
-	shake_screen(mprojmap[? "Screenshake Intensity"], mprojmap[? "Screenshake Duration"]);
+	shake_screen(mprojstruct.ss_intensity, mprojstruct.ss_duration);
 }
 	
 	
 	melee_swing = true;
 	wepequipped = "Melee";
-	melee_wait = meleemap[? "Wait Frames"]
+	melee_wait = melee.wait_frames;
 	
 }
 if(melee_wait > 0){

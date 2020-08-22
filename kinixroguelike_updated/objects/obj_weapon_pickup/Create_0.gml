@@ -1,6 +1,6 @@
-map = global.pistolmap;
-name = map[? "Name"];
-sprite_index = map[? "Sprite"];
-type = map[? "Type"];
+struct = global.RangedWeapon[rID.pistol];
+name = struct.name
+sprite_index = struct.sprite
+type = struct.type
 
 price = 0;

@@ -60,10 +60,10 @@ if hot_time > 0{
 #endregion
 
 #region // BAT ENEMY AI
-if map = global.batmap {
+if struct = global.Enemy[eID.bat] {
 
 if atkcooldown = 0 {
-	atkcooldown = map[? "Attack Cooldown"];
+	atkcooldown = struct.atk_cooldown
 }
 	
 //Movement
@@ -95,7 +95,7 @@ if movetimer = 0 {
 #region // RAM ENEMY AI
 
 //Movement
-if (map = global.rammap) {
+if (struct = global.Enemy[eID.ram]) {
 
 	if i_timer = 0{
 		vspd_mod = 0;

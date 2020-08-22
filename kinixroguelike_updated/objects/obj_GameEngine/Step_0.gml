@@ -1,7 +1,3 @@
-//ONLY UNCOMMENT THIS IF YOU ARE NEEDING TO USE GM_LIVE WITH INIT_MAPS.
-//if (live_call()) return live_result;
-//init_maps();
-
 if keyboard_check_pressed(ord("R")) {
 	game_restart();	
 }

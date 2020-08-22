@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Enum_Init",
+  "name": "Init_Script",
   "tags": [],
   "resourceType": "GMScript",
 }
