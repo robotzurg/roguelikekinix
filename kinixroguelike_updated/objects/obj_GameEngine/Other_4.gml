@@ -44,7 +44,6 @@ if room != area_Valley && room != area_Valley2 && room != testroom && room != rm
 			i++;
 		}
 	}
-	
 #endregion
 	
 	//Add in tile data
@@ -56,8 +55,9 @@ if room != area_Valley && room != area_Valley2 && room != testroom && room != rm
 		room_goto(room_to_goto);
 	} else {
 		room_goto_next();
+		print("Next Room!");
 	}
 	
-	print("Next Room!");
+	
 	
 }

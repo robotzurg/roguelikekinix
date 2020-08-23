@@ -1,4 +1,6 @@
 //Set up local variables for keybinds
+var mouse_ranged = (ranged.automatic) ? mouse_check_button(mb_left) : mouse_check_button_pressed(mb_left); 
+var mouse_melee = (melee.autoswing) ? mouse_check_button(mb_right) : mouse_check_button_pressed(mb_right);
 var key_cheat = keyboard_check_pressed(vk_f2);
 var key_left = keyboard_check(ord("A"));
 var key_right = keyboard_check(ord("D"));
@@ -100,7 +102,7 @@ y+=vspd;
 #region Shooting with Gun
 
 if timer("reload") == true {
-	if mouse_check_button(mb_left) && ammo != 0 {
+	if mouse_ranged && ammo != 0 {
 		wepequipped = "Ranged";
 		for(var i = ranged.bullet_count; i > 0; i--){
 			var bullet = instance_create_layer(x + (16 * sign(flipped)),y,layer,obj_bullet);
@@ -118,7 +120,7 @@ if timer("reload") == true {
 #endregion
 
 #region Melee
-if mouse_check_button(mb_right) && melee_swing == false && melee_wait <= 0{
+if mouse_melee && melee_swing == false && melee_wait <= 0{
 	wepequipped = "Melee";
 	var dir_x = lengthdir_x(melee.slash_offset,  point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y))
 	var dir_y = lengthdir_y(melee.slash_offset,  point_direction(obj_player.x,obj_player.y,mouse_x,mouse_y))

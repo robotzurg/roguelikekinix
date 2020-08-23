@@ -56,12 +56,13 @@ function create_world(argument0) {
 				if w == vw && h == vh { //If the sector we are on is the victory room sector
 					var roomtype = ds_list_size(area_list)-1; //Place the victory room in the furthest room (according to the for loop above)
 				} else if w == sw && h == sh {
-					var roomtype = ds_list_size(area_list)-2; //Place in victory room
+					var roomtype = ds_list_size(area_list)-2; //Place in shop room
 				} else if w == origin_w && h == origin_h {
-					var roomtype = ds_list_size(area_list)-3;
+					var roomtype = ds_list_size(area_list)-3; //Place in spawn room
 				} else {
-					var roomtype = irandom_range(0,ds_list_size(area_list)-4); //Pick a random room (excluding victory room which is at the bottom of the list)
+					var roomtype = irandom_range(0,ds_list_size(area_list)-4); //Pick a random room (excluding victory room which is at the bottom of the list)	
 				}
+				print(roomtype);
 
 #endregion
 

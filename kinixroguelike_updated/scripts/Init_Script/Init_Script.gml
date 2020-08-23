@@ -15,8 +15,14 @@ enum eID { //Enemy ID enum.
 
 enum rID { //Ranged Weapon ID enum.
 	pistol,
+	crossbow,
+	dakka,
 	homingwand,
 	sniperwand,
+	shotgunwand,
+	icejavelin,
+	magmasling,
+	cross_bow,
 	golfball,
 }
 

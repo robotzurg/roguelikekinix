@@ -8,6 +8,11 @@ if timer("homingstart",0.2) == true {
 	start_home = true;
 }
 
+if b_range != 0 {
+	if timer("death",b_range) == true {
+		instance_destroy();	
+	}
+}
 
 //Bullet Bouncing
 if(b_bounce > 0){
