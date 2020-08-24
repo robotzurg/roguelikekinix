@@ -81,7 +81,7 @@ global.RangedWeapon[rID.homingwand] = {
 	hot_damage_time : 0, //How long target takes hot damage for, measured in frames.
 	cold_damage_time : 0, //Same as above but for cold.
 	h_offset : -5, //Horizontal bullet spawn offset from weapon centerpoint
-	v_offset : 20, //Vertical of the above.
+	v_offset : 20, //Vertical version of the above comment.
 	ss_intensity : 4, //Screenshake intensity.
 	ss_duration : 0.1 //Screenshake Duration, measured in seconds.
 }
@@ -91,7 +91,7 @@ global.RangedWeapon[rID.sniperwand] = {
 	type : "Ranged",
 	sprite : spr_sniperWand,
 	damage : 12,
-	fire_rate : 1.5, //Measured in Seconds, time between shots
+	fire_rate : 2, //Measured in Seconds, time between shots
 	automatic : false, //If the weapon can be held down to autofire or not
 	ammo_use : 5,
 	bullet_range : 0,  //How far the bullet can go (0 means infinite)
@@ -110,7 +110,7 @@ global.RangedWeapon[rID.sniperwand] = {
 	hot_damage_time : 0, //How long target takes hot damage for, measured in frames.
 	cold_damage_time : 0, //Same as above but for cold.
 	h_offset : 20, //Horizontal bullet spawn offset from weapon centerpoint
-	v_offset : 0, //Vertical of the above.
+	v_offset : -7, //Vertical version of the above comment.
 	ss_intensity : 3, //Screenshake intensity.
 	ss_duration : 0.1 //Screenshake Duration, measured in seconds.
 }
@@ -149,7 +149,7 @@ global.RangedWeapon[rID.icejavelin] = {
 	type : "Ranged",
 	sprite : spr_iceJavelin,
 	damage : 8,
-	fire_rate : 1, //Measured in Seconds, time between shots
+	fire_rate : 5, //Measured in Seconds, time between shots
 	automatic : false, //If the weapon can be held down to autofire or not
 	ammo_use : 1,
 	bullet_range : 0,  //How long the bullet lives (in seconds)
@@ -245,7 +245,7 @@ global.PlayerData = {
 	spd : 5,
 	ammo : 100,
 	ability : 1,
-	ranged : global.RangedWeapon[rID.icejavelin],
+	ranged : global.RangedWeapon[rID.sniperwand],
 	melee : global.MeleeWeapon[mID.sword],
 	iframes : 3
 }

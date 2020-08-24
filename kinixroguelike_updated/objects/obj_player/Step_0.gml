@@ -102,14 +102,13 @@ y+=vspd;
 #region Shooting with Gun
 
 if timer("reload") == true {
+	ranged_frame = 0;
 	if mouse_ranged && ammo != 0 {
 		wepequipped = "Ranged";
 		for(var i = ranged.bullet_count; i > 0; i--){
-			var bullet = instance_create_layer(x + (16 * sign(flipped)),y,layer,obj_bullet);
-			with bullet {
-				x = obj_player.x + lengthdir_x(obj_player.arm_length + obj_player.ranged.h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(obj_player.ranged.v_offset,point_direction(x,y,mouse_x,mouse_y) * sign(obj_player.flipped)));
-				y = obj_player.y + lengthdir_y(obj_player.arm_length + obj_player.ranged.h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(obj_player.ranged.v_offset,point_direction(x,y,mouse_x,mouse_y)) * -sign(obj_player.flipped));
-			}
+			var xx = x + lengthdir_x(arm_length + ranged.h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(ranged.v_offset,point_direction(x,y,mouse_x,mouse_y) * sign(flipped)));
+			var yy = y + lengthdir_y(arm_length + ranged.h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(ranged.v_offset,point_direction(x,y,mouse_x,mouse_y)) * -sign(flipped));
+			var bullet = instance_create_layer(xx,yy,layer,obj_bullet);
 		}
 		timer_set("reload",ranged.fire_rate);
 		shake_screen(ranged.ss_intensity,ranged.ss_duration);
@@ -117,6 +116,14 @@ if timer("reload") == true {
 	}
 }
 
+if timer("reload") == false {
+	if timer("animation reload",((ranged.fire_rate/sprite_get_number(ranged.sprite)/2))) == true {
+		if ranged_frame != sprite_get_number(ranged.sprite)-1 {
+			ranged_frame += 1
+		} 
+	timer_set("animation reload", ((ranged.fire_rate/sprite_get_number(ranged.sprite)/2)));
+	}	
+}
 #endregion
 
 #region Melee
@@ -153,7 +160,5 @@ if(melee.ranged_atk != 0){
 if(melee_wait > 0){
 	melee_wait --;
 }
-
-
 
 #endregion

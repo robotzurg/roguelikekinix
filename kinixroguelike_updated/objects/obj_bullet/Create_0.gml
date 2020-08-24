@@ -3,6 +3,7 @@ playerbullet = true;
 x_vel = 0;
 y_vel = 0;
 direction = point_direction(x,y,mouse_x,mouse_y);
+image_angle = direction;
 
 if(obj_player.wepequipped = "Ranged"){
 	struct_to_use = obj_player.ranged;

@@ -10,7 +10,7 @@ draw_sprite_ext(sprite_index,image_index,x,y,flipped,image_yscale,image_angle,im
 
 //Draw the Gun
 draw_sprite_ext(ranged.sprite,
-				image_index,
+				ranged_frame,
 				x - (arm_length * sign(flipped)) + lengthdir_x(20,point_direction(x,y,mouse_x,mouse_y)),
 				y+lengthdir_y(20,point_direction(x,y,mouse_x,mouse_y)),
 				image_xscale,

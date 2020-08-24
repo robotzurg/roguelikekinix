@@ -20,6 +20,8 @@ vspd = 0;
 
 //Create the reload timer (for using the guns)
 timer("reload");
+ranged_frame = 0;
+
 
 //Melee Variables
 melee_swing = false;
@@ -31,5 +33,4 @@ invin_frames_var = 0;
 invin_frames = 30;
 
 arm_length = 12;
-
 cheats_enabled = false;
