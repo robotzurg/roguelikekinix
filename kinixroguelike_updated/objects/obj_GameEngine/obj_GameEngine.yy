@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Spriteless Objects",
-    "path": "folders/Spriteless Objects.yy",
+    "name": "Managers",
+    "path": "folders/Managers.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_GameEngine",

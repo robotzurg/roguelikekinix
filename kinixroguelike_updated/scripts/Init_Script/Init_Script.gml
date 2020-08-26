@@ -57,6 +57,20 @@ enum area {
 	limbo
 }
 
+//List UI Enums
+
+//List Types
+enum LIST_TYPE {
+	GAME_OPTIONS,
+}
+
+//Option Properties
+enum PR {
+	NAME,
+	SELECTED,
+	VALUES
+}
+
 //GLOBAL VARIABLE INIT
 global.gamephase = phase.menu; //Keeps track of the current game phase (including generation phases.)
 global.worldgrid = -1; //Holds the Generated World Grid.
