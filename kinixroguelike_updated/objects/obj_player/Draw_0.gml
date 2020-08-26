@@ -5,7 +5,7 @@ if floor(image_index) == 2  {
 }
 
 gpu_set_fog(invin_frames_var mod 2,c_red,0,1);
-draw_sprite_ext(sprite_index,image_index,x,y,flipped,image_yscale,image_angle,image_blend,image_alpha);
+//draw_sprite_ext(sprite_index,image_index,x,y,flipped,image_yscale,image_angle,image_blend,image_alpha);
 
 
 //Draw the Gun
@@ -33,7 +33,7 @@ draw_sprite_ext(melee.sprite,
 //Draw the Arm
 draw_sprite_ext(spr_playerarm,
 				image_index,
-				x - (arm_length * sign(flipped)),
+				x - (arm_length * flipped),
 				y,
 				image_xscale,
 				flipped,

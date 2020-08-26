@@ -105,13 +105,18 @@ if timer("reload") == true {
 	ranged_frame = 0;
 	if mouse_ranged && ammo != 0 {
 		wepequipped = "Ranged";
+		var mousedir = point_direction(x,y,mouse_x,mouse_y);
+		var cx = ((arm_length) + ranged.h_offset);
+		var cy = (ranged.v_offset)
+		var xx = x + ((cx*dcos(mousedir)) - (cy*dsin(mousedir))) * flipped;
+		var yy = y + ((cx*dsin(mousedir)) + (cy*dcos(mousedir)));
+
+		
 		for(var i = ranged.bullet_count; i > 0; i--){
-			var xx = x + lengthdir_x(arm_length + ranged.h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_y(ranged.v_offset,point_direction(x,y,mouse_x,mouse_y) * sign(flipped)));
-			var yy = y + lengthdir_y(arm_length + ranged.h_offset,point_direction(x,y,mouse_x,mouse_y)) + (lengthdir_x(ranged.v_offset,point_direction(x,y,mouse_x,mouse_y)) * -sign(flipped));
 			var bullet = instance_create_layer(xx,yy,layer,obj_bullet);
 		}
 		timer_set("reload",ranged.fire_rate);
-		shake_screen(ranged.ss_intensity,ranged.ss_duration);
+		//shake_screen(ranged.ss_intensity,ranged.ss_duration);
 		ammo -= ranged.ammo_use
 	}
 }

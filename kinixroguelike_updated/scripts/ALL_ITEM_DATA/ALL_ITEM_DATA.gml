@@ -245,7 +245,7 @@ global.PlayerData = {
 	spd : 5,
 	ammo : 100,
 	ability : 1,
-	ranged : global.RangedWeapon[rID.sniperwand],
+	ranged : global.RangedWeapon[rID.homingwand],
 	melee : global.MeleeWeapon[mID.sword],
 	iframes : 3
 }
