@@ -2,22 +2,31 @@
 if gamepad_is_connected(0) { //If gamepad is connected, change keybinds to gamepad keybinds.
 	gamepad_set_axis_deadzone(0, 0.5);       // Set the "deadzone" for the axis
     gamepad_set_button_threshold(0, 0.1);    // Set the "threshold" for the triggers
-	print(gamepad_get_description(0))
-
-	var h_move = gamepad_axis_value(0, gp_axislh);
-	var v_move = gamepad_axis_value(0, gp_axislv);
-	var mouse_ranged = (ranged.automatic) ? gamepad_button_check(0,gp_shoulderlb) : gamepad_button_check_pressed(0,gp_shoulderlb);
-	var mouse_melee = (melee.autoswing) ? gamepad_button_check(0,gp_shoulderrb) : gamepad_button_check_pressed(0,gp_shoulderrb);
-	var key_cheat = keyboard_check_pressed(vk_f2);
-} else { //Set normal keybinds for keyboard and mouse
-	var mouse_ranged = (ranged.automatic) ? mouse_check_button(mb_left) : mouse_check_button_pressed(mb_left); 
-	var mouse_melee = (melee.autoswing) ? mouse_check_button(mb_right) : mouse_check_button_pressed(mb_right);
-	var key_cheat = keyboard_check_pressed(vk_f2);
-	var key_left = keyboard_check(ord("A"));
-	var key_right = keyboard_check(ord("D"));
-	var key_up = keyboard_check(ord("W"));
-	var key_down = keyboard_check(ord("S"));
 }
+
+	var mouse_ranged = (ranged.automatic) ? (gamepad_button_check(0,global.ct_Ranged)||mouse_check_button(global.kb_Ranged)) : (gamepad_button_check_pressed(0,global.ct_Ranged)||mouse_check_button_pressed(global.kb_Ranged));
+	var mouse_melee = (melee.autoswing) ? gamepad_button_check(0,global.ct_Melee)||mouse_check_button(global.kb_Melee) : (gamepad_button_check_pressed(0,global.ct_Melee)||mouse_check_button_pressed(global.kb_Melee));
+
+	var h_move = gamepad_axis_value(0, global.ct_MoveHorizontal);
+	var v_move = gamepad_axis_value(0, global.ct_MoveVertical);
+	var key_left = keyboard_check(global.kb_Left) || 0 < gamepad_axis_value(0, global.ct_MoveHorizontal);
+	var key_right = keyboard_check(global.kb_Right) || 0 > gamepad_axis_value(0, global.ct_MoveHorizontal);;
+	var key_up = keyboard_check(global.kb_Up) || 0 > gamepad_axis_value(0, global.ct_MoveVertical);
+	var key_down = keyboard_check(global.kb_Down) || 0 < gamepad_axis_value(0, global.ct_MoveVertical);
+	
+	var key_cheat = keyboard_check_pressed(vk_f2);
+	
+	if(h_move = 0 && v_move = 0){
+		h_move = (key_right - key_left);
+		v_move = (key_down - key_up);
+	}
+	
+	print(h_move);
+	print(v_move);
+	print(" ");
+
+
+
 //Cheats toggle
 if key_cheat {
 	cheats_enabled = !cheats_enabled; //Toggle between true and false
@@ -52,20 +61,12 @@ if (place_meeting(x,y,obj_staircase)) {
 #endregion
 
 #region State Machine
-if !gamepad_is_connected(0) {
 	//STATE MACHINE SWITCH
 	if (key_right or key_left or key_up or key_down) && state != "hit" {
 		state = "move";	
 	} else if state != "hit" {
 		state = "idle";	
 	}
-} else {
-	if (h_move <= 0.2 && v_move <= 0.2) && state != "hit" {
-		state = "move";	
-	} else if state != "hit" {
-		state = "idle";	
-	}
-}
 #endregion
 
 #region Pickup Weapon
@@ -89,31 +90,19 @@ if instance_place(x,y,obj_weapon_pickup) && keyboard_check_pressed(ord("E")) {
 #endregion
 
 #region Move State (keyboard)
-if !gamepad_is_connected(0) {
-	if state == "move" {
-	
-		if cheats_enabled { spd = struct.spd*2  } else if !instance_exists(obj_enemy) { spd = struct.spd*1.25  } else { spd = struct.spd; }
-	
-		//Movement code
-		hspd = (key_right - key_left) * spd
-		vspd = (key_down - key_up) * spd
 
-		//Diagonal movement reduction code
-		if hspd != 0 && vspd != 0 {
-			hspd *= 0.75;
-			vspd *= 0.75;
-		}
-	} 
-} else { //Gamepad
-	if state == "move" {
-		
-		if cheats_enabled { spd = struct.spd*2  } else if !instance_exists(obj_enemy) { spd = struct.spd*1.25  } else { spd = struct.spd; }
-		
-		if ((h_move != 0) || (v_move != 0)) {
-		    hspd = h_move * spd;
-		    vspd = v_move * spd;
-	    }
+if state == "move" {
 	
+	if cheats_enabled { spd = struct.spd*2  } else if !instance_exists(obj_enemy) { spd = struct.spd*1.25  } else { spd = struct.spd; }
+	
+	//Movement code
+	hspd = (h_move) * spd
+	vspd = (v_move) * spd
+
+	//Diagonal movement reduction code
+	if hspd != 0 && vspd != 0 {
+		hspd *= 0.75;
+		vspd *= 0.75;
 	}
 }
 

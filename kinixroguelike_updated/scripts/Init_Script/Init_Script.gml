@@ -77,3 +77,45 @@ global.worldgrid = -1; //Holds the Generated World Grid.
 global.valleyareas = ds_list_create(); //Holds a list of all the valley room types to pick from.
 global.valleytiles = array_create(3); //Holds a list of all the valley tiles during room data collection.
 global.current_t = 0; //Keeps track of how long the game has been open.
+
+
+
+if !file_exists("controls.ini"){ //Sets up default controls
+	ini_open("controls.ini");
+	
+	//Default Controller Inputs
+	ini_write_real("controls","ct_mov_horizontal",gp_axislh);
+	ini_write_real("controls","ct_mov_vertical",gp_axislv);
+	ini_write_real("controls","ct_look_horizontal",gp_axisrh);
+	ini_write_real("controls","ct_look_vertical",gp_axisrv);
+	ini_write_real("controls","ct_melee",gp_shoulderrb);
+	ini_write_real("controls","ct_ranged",gp_shoulderlb);
+	
+	//Default Keyboard Inputs
+	ini_write_real("controls","kb_up",ord("W"));
+	ini_write_real("controls","kb_down",ord("S"));
+	ini_write_real("controls","kb_left",ord("A"));
+	ini_write_real("controls","kb_right",ord("D"));
+	ini_write_real("controls","kb_melee",mb_right);
+	ini_write_real("controls","kb_ranged",mb_left);
+	
+	ini_close();
+}
+//Reads the saved controls and attaches them to global variables
+ini_open("controls.ini");
+global.ct_MoveHorizontal = ini_read_real("controls","ct_mov_horizontal",0);
+global.ct_MoveVertical = ini_read_real("controls","ct_mov_vertical",0);
+global.ct_LookHorizontal =  ini_read_real("controls","ct_look_horizontal",0);
+global.ct_LookVertical = ini_read_real("controls","ct_look_vertical",0);
+global.ct_Melee = ini_read_real("controls","ct_melee",0);
+global.ct_Ranged = ini_read_real("controls","ct_ranged",0);
+
+global.kb_Up = ini_read_real("controls","kb_up",0);
+global.kb_Down = ini_read_real("controls","kb_down",0);
+global.kb_Left = ini_read_real("controls","kb_left",0);
+global.kb_Right = ini_read_real("controls","kb_right",0);
+global.kb_Melee = ini_read_real("controls","kb_melee",0);
+global.kb_Ranged = ini_read_real("controls","kb_ranged",0);
+ini_close();
+
+
