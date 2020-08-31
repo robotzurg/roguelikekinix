@@ -5,7 +5,7 @@ if floor(image_index) == 2  {
 }
 
 gpu_set_fog(invin_frames_var mod 2,c_red,0,1);
-//draw_sprite_ext(sprite_index,image_index,x,y,flipped,image_yscale,image_angle,image_blend,image_alpha);
+draw_sprite_ext(sprite_index,image_index,x,y,flipped,image_yscale,image_angle,image_blend,image_alpha);
 
 
 //Draw the Gun

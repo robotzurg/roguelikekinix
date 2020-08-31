@@ -25,7 +25,33 @@ if key_cheat {
 
 if (invin_frames_var != 0) invin_frames_var--;
 
+//Switch direction we're facing based on mouse cursor
+flipped = sign(mouse_x-x);
+if(flipped = 0) flipped ++;
 
+//Move onto next floor code
+if (place_meeting(x,y,obj_staircase)) {
+	if keyboard_check_pressed(ord("E")) {
+		generate_world(area_Valley2, 10, 15, true);
+		room_goto(room_next(room));
+	}
+}
+
+#region Cheats
+	if cheats_enabled {
+		if keyboard_check_pressed(ord("1")) {
+			if global.RangedWeapon[ranged.ID+1] != 0 { //Apparently trying to reference something that is not a struct as a struct returns a 0. Huh.
+				ranged = global.RangedWeapon[ranged.ID+1];	//Swap to the next weapon ID
+			} else {
+				ranged = global.RangedWeapon[rID.pistol] //this is ID 0, overflow code	
+				print(global.RangedWeapon[rID.dakka].ID);
+				print(global.RangedWeapon[ranged.ID+1]);
+			}
+		}
+	}
+#endregion
+
+#region State Machine
 if !gamepad_is_connected(0) {
 	//STATE MACHINE SWITCH
 	if (key_right or key_left or key_up or key_down) && state != "hit" {
@@ -40,20 +66,9 @@ if !gamepad_is_connected(0) {
 		state = "idle";	
 	}
 }
+#endregion
 
-//Switch direction we're facing based on mouse cursor
-flipped = sign(mouse_x-x);
-if(flipped = 0) flipped ++;
-
-//Move onto next floor code
-if (place_meeting(x,y,obj_staircase)) {
-	if keyboard_check_pressed(ord("E")) {
-		generate_world(area_Valley2, 10, 15, true);
-		room_goto(room_next(room));
-	}
-}
-
-//Pickup Weapon
+#region Pickup Weapon
 if instance_place(x,y,obj_weapon_pickup) && keyboard_check_pressed(ord("E")) {
 	var item = instance_place(x,y,obj_weapon_pickup);
 	if (currency >= item.price && melee != item.struct && ranged != item.struct) {
@@ -71,6 +86,7 @@ if instance_place(x,y,obj_weapon_pickup) && keyboard_check_pressed(ord("E")) {
 		shake_screen(3,0.15);
 	}
 }
+#endregion
 
 #region Move State (keyboard)
 if !gamepad_is_connected(0) {
@@ -140,12 +156,11 @@ if timer("reload") == true {
 		var mousedir = point_direction(x,y,mouse_x,mouse_y)*-flipped;
 		var offx = x - (arm_length * flipped) + lengthdir_x(20 + ranged.h_offset,mousedir) - lengthdir_y(ranged.v_offset,mousedir);
 		var offy = y + (lengthdir_y(20 + ranged.h_offset,mousedir) + lengthdir_x(ranged.v_offset,mousedir))*-flipped;
-		print(flipped);
 		for(var i = ranged.bullet_count; i > 0; i--){
 			var bullet = instance_create_layer(offx,offy,layer,obj_bullet);
 		}
 		timer_set("reload",ranged.fire_rate);
-		//shake_screen(ranged.ss_intensity,ranged.ss_duration);
+		shake_screen(ranged.ss_intensity,ranged.ss_duration);
 		ammo -= ranged.ammo_use
 	}
 }

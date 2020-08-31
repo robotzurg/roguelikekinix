@@ -1,5 +1,6 @@
 ///RANGED DATA STRUCTS\\\
 global.RangedWeapon[rID.pistol] = {
+	ID : rID.pistol,
 	name : "Pistol",
 	type : "Ranged",
 	sprite : spr_gun,
@@ -29,6 +30,7 @@ global.RangedWeapon[rID.pistol] = {
 } 
 
 global.RangedWeapon[rID.dakka] = {
+	ID : rID.dakka,
 	name : "Dakka",
 	type : "Ranged",
 	sprite : spr_dakka,
@@ -58,6 +60,7 @@ global.RangedWeapon[rID.dakka] = {
 } 
 
 global.RangedWeapon[rID.homingwand] = {
+	ID : rID.homingwand,
 	name : "Homing Staff",
 	type : "Ranged",
 	sprite : spr_homingWand,
@@ -87,6 +90,7 @@ global.RangedWeapon[rID.homingwand] = {
 }
 
 global.RangedWeapon[rID.sniperwand] = {
+	ID : rID.sniperwand,
 	name : "Sniper Wand",
 	type : "Ranged",
 	sprite : spr_sniperWand,
@@ -116,6 +120,7 @@ global.RangedWeapon[rID.sniperwand] = {
 }
 
 global.RangedWeapon[rID.shotgunwand] = {
+	ID : rID.shotgunwand,
 	name : "Shotgun Wand",
 	type : "Ranged",
 	sprite : spr_shotgunWand,
@@ -145,6 +150,7 @@ global.RangedWeapon[rID.shotgunwand] = {
 }
 
 global.RangedWeapon[rID.icejavelin] = {
+	ID : rID.icejavelin,
 	name : "Ice Javelin",
 	type : "Ranged",
 	sprite : spr_iceJavelin,
@@ -174,6 +180,7 @@ global.RangedWeapon[rID.icejavelin] = {
 }
 
 global.RangedWeapon[rID.golfball] = {
+	ID : rID.golfball,
 	name : "Golf Ball",
 	type : "Ranged",
 	sprite : spr_golfclub,
@@ -202,38 +209,9 @@ global.RangedWeapon[rID.golfball] = {
 	ss_duration : 0.2 //Screenshake Duration, measured in seconds.
 }
 
-
-global.RangedWeapon[rID.offsettestgun] = {
-	name : "Offset Testing Weapon",
-	type : "Ranged",
-	sprite : spr_testgun,
-	damage : 1,
-	fire_rate : 0.02, //Measured in Seconds, time between shots
-	automatic : true, //If the weapon can be held down to autofire or not
-	ammo_use : 0,
-	bullet_range : false,  //How far the bullet can go (false means infinite)
-	bullet_sprite : spr_TestBullet,
-	bullet_trail : false,
-	bullet_speed : 0,
-	bullet_speed_random : 0, //Random bullet speed (0 means not
-	bullet_bounce : 0, //How many times the bullet can bounce (0 means never)
-	bullet_split : 0, //How many times the bullet can split up into more bullets (0 means never)
-	bullet_split_amount : 0, //How many bullets the bullet splits up into (Use 0 if Bullet Split is 0)
-	bullet_split_angle : 0, //How wide of an angle to split into
-	bullet_collision : true, //True means it destroys upon hitting collision, false means it doesn't
-	bullet_homing : 0.2, //How much bullets home in on their target
-	bullet_spread : 0, //How much bullets are spread out
-	bullet_count : 1,
-	hot_damage_time : 0, //How long target takes hot damage for, measured in frames.
-	cold_damage_time : 0, //Same as above but for cold.
-	h_offset : 64, //Horizontal bullet spawn offset from weapon centerpoint
-	v_offset : 64, //Vertical version of the above comment.
-	ss_intensity : 4, //Screenshake intensity.
-	ss_duration : 0.1 //Screenshake Duration, measured in seconds.
-}
-
 ///MELEE STRUCTS\\\
 global.MeleeWeapon[mID.sword] = { 
+	ID : mID.sword,
 	name : "Sword",
 	type : "Melee",
 	sprite : spr_sword,
@@ -251,6 +229,7 @@ global.MeleeWeapon[mID.sword] = {
 }
 
 global.MeleeWeapon[mID.golfclub] = { 
+	ID : mID.golfclub,
 	name : "Golf Club",
 	type : "Melee",
 	sprite : spr_golfclub,
@@ -275,13 +254,14 @@ global.PlayerData = {
 	spd : 5,
 	ammo : 100,
 	ability : 1,
-	ranged : global.RangedWeapon[rID.offsettestgun],
+	ranged : global.RangedWeapon[rID.homingwand],
 	melee : global.MeleeWeapon[mID.sword],
 	iframes : 3
 }
 
 	///ENEMY DATA MAPS\\\
 global.Enemy[eID.bat] = {
+	ID : eID.bat,
 	name : "Bat",
 	sprite : spr_bat,
 	hp : 10,
@@ -296,6 +276,7 @@ global.Enemy[eID.bat] = {
 }
 
 global.Enemy[eID.ram] = {
+	ID : eID.ram,
 	name : "Ram",
 	sprite : spr_ram,
 	hp : 12,
