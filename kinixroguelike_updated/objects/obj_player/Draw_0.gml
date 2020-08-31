@@ -12,7 +12,7 @@ gpu_set_fog(invin_frames_var mod 2,c_red,0,1);
 draw_sprite_ext(ranged.sprite,
 				ranged_frame,
 				x - (arm_length * sign(flipped)) + lengthdir_x(20,point_direction(x,y,mouse_x,mouse_y)),
-				y+lengthdir_y(20,point_direction(x,y,mouse_x,mouse_y)),
+				y + lengthdir_y(20,point_direction(x,y,mouse_x,mouse_y)),
 				image_xscale,
 				flipped,
 				point_direction(x,y,mouse_x,mouse_y),

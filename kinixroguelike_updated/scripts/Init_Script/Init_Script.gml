@@ -24,6 +24,7 @@ enum rID { //Ranged Weapon ID enum.
 	magmasling,
 	cross_bow,
 	golfball,
+	offsettestgun,
 }
 
 enum mID { //Melee Weapon ID enum.

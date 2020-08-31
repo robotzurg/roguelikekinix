@@ -202,6 +202,36 @@ global.RangedWeapon[rID.golfball] = {
 	ss_duration : 0.2 //Screenshake Duration, measured in seconds.
 }
 
+
+global.RangedWeapon[rID.offsettestgun] = {
+	name : "Offset Testing Weapon",
+	type : "Ranged",
+	sprite : spr_testgun,
+	damage : 1,
+	fire_rate : 0.02, //Measured in Seconds, time between shots
+	automatic : true, //If the weapon can be held down to autofire or not
+	ammo_use : 0,
+	bullet_range : false,  //How far the bullet can go (false means infinite)
+	bullet_sprite : spr_TestBullet,
+	bullet_trail : false,
+	bullet_speed : 0,
+	bullet_speed_random : 0, //Random bullet speed (0 means not
+	bullet_bounce : 0, //How many times the bullet can bounce (0 means never)
+	bullet_split : 0, //How many times the bullet can split up into more bullets (0 means never)
+	bullet_split_amount : 0, //How many bullets the bullet splits up into (Use 0 if Bullet Split is 0)
+	bullet_split_angle : 0, //How wide of an angle to split into
+	bullet_collision : true, //True means it destroys upon hitting collision, false means it doesn't
+	bullet_homing : 0.2, //How much bullets home in on their target
+	bullet_spread : 0, //How much bullets are spread out
+	bullet_count : 1,
+	hot_damage_time : 0, //How long target takes hot damage for, measured in frames.
+	cold_damage_time : 0, //Same as above but for cold.
+	h_offset : 64, //Horizontal bullet spawn offset from weapon centerpoint
+	v_offset : 64, //Vertical version of the above comment.
+	ss_intensity : 4, //Screenshake intensity.
+	ss_duration : 0.1 //Screenshake Duration, measured in seconds.
+}
+
 ///MELEE STRUCTS\\\
 global.MeleeWeapon[mID.sword] = { 
 	name : "Sword",
@@ -245,7 +275,7 @@ global.PlayerData = {
 	spd : 5,
 	ammo : 100,
 	ability : 1,
-	ranged : global.RangedWeapon[rID.homingwand],
+	ranged : global.RangedWeapon[rID.offsettestgun],
 	melee : global.MeleeWeapon[mID.sword],
 	iframes : 3
 }
