@@ -137,7 +137,7 @@ if timer("reload") == true {
 	ranged_frame = 0;
 	if mouse_ranged && ammo != 0 {
 		wepequipped = "Ranged";
-		var mousedir = point_direction(x,y,mouse_x,mouse_y);
+		var mousedir = point_direction(x,y,mouse_x,mouse_y)*-flipped;
 		var offx = x - (arm_length * flipped) + lengthdir_x(20 + ranged.h_offset,mousedir) - lengthdir_y(ranged.v_offset,mousedir);
 		var offy = y + (lengthdir_y(20 + ranged.h_offset,mousedir) + lengthdir_x(ranged.v_offset,mousedir))*-flipped;
 		print(flipped);
