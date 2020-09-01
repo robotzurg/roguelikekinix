@@ -10,6 +10,9 @@ hover = 0;
 // Click Function
 click_func = -1;
 
+//Control Menu Variables
+keybind_tie = -1;
+waiting_for_input = -1;
 
 ///BUTTON FUNCTIONS\\\
 function get_hover() {

@@ -4,8 +4,8 @@ if gamepad_is_connected(0) { //If gamepad is connected, change keybinds to gamep
     gamepad_set_button_threshold(0, 0.1);    // Set the "threshold" for the triggers
 }
 
-	var mouse_ranged = (ranged.automatic) ? (gamepad_button_check(0,global.ct_Ranged)||mouse_check_button(global.kb_Ranged)) : (gamepad_button_check_pressed(0,global.ct_Ranged)||mouse_check_button_pressed(global.kb_Ranged));
-	var mouse_melee = (melee.autoswing) ? gamepad_button_check(0,global.ct_Melee)||mouse_check_button(global.kb_Melee) : (gamepad_button_check_pressed(0,global.ct_Melee)||mouse_check_button_pressed(global.kb_Melee));
+	var mouse_ranged = (ranged.automatic) ? (gamepad_button_check(0,global.ct_Ranged)||mouse_check_button(global.kb_Ranged)) || keyboard_check(global.kb_Ranged) : (gamepad_button_check_pressed(0,global.ct_Ranged)||mouse_check_button_pressed(global.kb_Ranged) || keyboard_check_pressed(global.kb_Ranged));
+	var mouse_melee = (melee.autoswing) ? gamepad_button_check(0,global.ct_Melee)||mouse_check_button(global.kb_Melee) || keyboard_check(global.kb_Melee) : (gamepad_button_check_pressed(0,global.ct_Melee)||mouse_check_button_pressed(global.kb_Melee) || keyboard_check_pressed(global.kb_Melee));
 
 	var h_move = gamepad_axis_value(0, global.ct_MoveHorizontal);
 	var v_move = gamepad_axis_value(0, global.ct_MoveVertical);
@@ -20,11 +20,6 @@ if gamepad_is_connected(0) { //If gamepad is connected, change keybinds to gamep
 		h_move = (key_right - key_left);
 		v_move = (key_down - key_up);
 	}
-	
-	print(h_move);
-	print(v_move);
-	print(" ");
-
 
 
 //Cheats toggle

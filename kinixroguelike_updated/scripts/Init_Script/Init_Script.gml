@@ -6,7 +6,7 @@
 cursor_sprite = spr_MouseCursor;
 window_set_cursor(cr_none);
 
-//ENUM INIT
+#region ENUM INIT
 enum eID { //Enemy ID enum.
 	bat,
 	ram,
@@ -71,15 +71,20 @@ enum PR {
 	VALUES
 }
 
-//GLOBAL VARIABLE INIT
+#endregion 
+
+#region GLOBAL VARIABLE INIT
+
 global.gamephase = phase.menu; //Keeps track of the current game phase (including generation phases.)
 global.worldgrid = -1; //Holds the Generated World Grid.
 global.valleyareas = ds_list_create(); //Holds a list of all the valley room types to pick from.
 global.valleytiles = array_create(3); //Holds a list of all the valley tiles during room data collection.
 global.current_t = 0; //Keeps track of how long the game has been open.
+global.input_check_obj = -1; //Keeps track of what button object is being checked for input, for the control menu.
 
+#endregion
 
-
+#region CONTROL SCHEME INIT
 if !file_exists("controls.ini"){ //Sets up default controls
 	ini_open("controls.ini");
 	
@@ -101,6 +106,7 @@ if !file_exists("controls.ini"){ //Sets up default controls
 	
 	ini_close();
 }
+
 //Reads the saved controls and attaches them to global variables
 ini_open("controls.ini");
 global.ct_MoveHorizontal = ini_read_real("controls","ct_mov_horizontal",0);
@@ -117,5 +123,5 @@ global.kb_Right = ini_read_real("controls","kb_right",0);
 global.kb_Melee = ini_read_real("controls","kb_melee",0);
 global.kb_Ranged = ini_read_real("controls","kb_ranged",0);
 ini_close();
-
+#endregion
 

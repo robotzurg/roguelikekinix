@@ -1,5 +1,9 @@
 //Set Color
-draw_set_color(merge_color(c_ltgray, c_white, hover));
+if waiting_for_input == -1 or waiting_for_input == false {
+	draw_set_color(merge_color(c_ltgray, c_white, hover));
+} else if waiting_for_input == true {
+	draw_set_color(c_lime);
+}
 
 // Draw rounded rectangle
 draw_roundrect(x, y, x + width, y + height, 0);

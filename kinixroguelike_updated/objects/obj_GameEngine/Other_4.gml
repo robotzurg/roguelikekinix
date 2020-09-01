@@ -1,5 +1,5 @@
 //Go through all the possible room layouts, and save every instance in that room into a ds_grid, so we can place it into the full world later.
-if room != area_Valley && room != area_Valley2 && room != testroom && room != rm_init && room != rm_ValleyTemplate && room != rm_mainmenu {
+if room != area_Valley && room != area_Valley2 && room != testroom && room != rm_init && room != rm_ValleyTemplate && room != rm_mainmenu && room != rm_controlsetup{
 	global.gamephase = phase.inst_collect;
 #region TILE COLLECTION PHASE 
 
