@@ -95,6 +95,8 @@ if !file_exists("controls.ini"){ //Sets up default controls
 	ini_write_real("controls","ct_look_vertical",gp_axisrv);
 	ini_write_real("controls","ct_melee",gp_shoulderrb);
 	ini_write_real("controls","ct_ranged",gp_shoulderlb);
+	ini_write_real("controls","ct_ability",gp_shoulderr); 
+	ini_write_real("controls","ct_interact",gp_face1); //A on xbox 360 controller
 	
 	//Default Keyboard Inputs
 	ini_write_real("controls","kb_up",ord("W"));
@@ -103,6 +105,8 @@ if !file_exists("controls.ini"){ //Sets up default controls
 	ini_write_real("controls","kb_right",ord("D"));
 	ini_write_real("controls","kb_melee",mb_right);
 	ini_write_real("controls","kb_ranged",mb_left);
+	ini_write_real("controls","kb_ability",ord("Q"));
+	ini_write_real("controls","kb_interact",ord("E"));
 	
 	ini_close();
 }
@@ -115,6 +119,8 @@ global.ct_LookHorizontal =  ini_read_real("controls","ct_look_horizontal",0);
 global.ct_LookVertical = ini_read_real("controls","ct_look_vertical",0);
 global.ct_Melee = ini_read_real("controls","ct_melee",0);
 global.ct_Ranged = ini_read_real("controls","ct_ranged",0);
+global.ct_Ability = ini_read_real("controls","ct_ability",0);
+global.ct_Interact = ini_read_real("controls","ct_interact",0);
 
 global.kb_Up = ini_read_real("controls","kb_up",0);
 global.kb_Down = ini_read_real("controls","kb_down",0);
@@ -122,6 +128,8 @@ global.kb_Left = ini_read_real("controls","kb_left",0);
 global.kb_Right = ini_read_real("controls","kb_right",0);
 global.kb_Melee = ini_read_real("controls","kb_melee",0);
 global.kb_Ranged = ini_read_real("controls","kb_ranged",0);
+global.kb_Ability = ini_read_real("controls","kb_ability",0);
+global.kb_Interact = ini_read_real("controls","kb_interact",0);
 ini_close();
 #endregion
 

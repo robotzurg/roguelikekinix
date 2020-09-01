@@ -1,5 +1,5 @@
 ///@param output
-function print(argument0) {
+function log(argument0) {
 	show_debug_message(argument0);
 }
 
@@ -198,4 +198,60 @@ function key_to_string(argument0) {
 
 
 
+}
+	
+function gp_to_string(argument0) {
+	/*
+	Note: Converts a GM gamepad constant into a string representing the button!
+	*/
+
+	switch (argument0){
+	    // Constant         // Buttons Description      // Constant Number      // Type
+	    case gp_face1:      return "gp_face1";          // [32769]              // Button
+	    case gp_face2:      return "gp_face2";          // [32770]              // Button
+	    case gp_face3:      return "gp_face3";          // [32771]              // Button
+	    case gp_face4:      return "gp_face4";          // [32772]              // Button
+	    case gp_shoulderl:  return "gp_shoulderl";      // [32773]              // Button
+	    case gp_shoulderr:  return "gp_shoulderr";      // [32774]              // Button
+	    case gp_shoulderlb: return "gp_shoulderlb";     // [32775]              // Button
+	    case gp_shoulderrb: return "gp_shoulderrb";     // [32776]              // Button
+	    case gp_select:     return "gp_select";         // [32777]              // Button
+	    case gp_start:      return "gp_start";          // [32778]              // Button
+	    case gp_stickl:     return "gp_stickl";         // [32779]              // Button
+	    case gp_stickr:     return "gp_stickr";         // [32780]              // Button
+	    case gp_padu:       return "gp_padu";           // [32781]              // Button
+	    case gp_padd:       return "gp_padd";           // [32782]              // Button
+	    case gp_padl:       return "gp_padl";           // [32783]              // Button
+	    case gp_padr:       return "gp_padr";           // [32784]              // Button
+	    case gp_axislh:     return "gp_axislh";         // [32785]              // Analog
+	    case gp_axislv:     return "gp_axislv";         // [32786]              // Analog
+	    case gp_axisrh:     return "gp_axisrh";         // [32787]              // Analog
+	    case gp_axisrv:     return "gp_axisrv";         // [32788]              // Analog
+	    default: return "unrecognized"                          // Failsafe - EDIT: EGGCEPTION @ hypnozizziz
+	}
+}
+	
+function gamepad_key(argument0) {
+
+	/* 
+	Note:   - emulates keyboard_key behaviour.
+	        - returns 0 if no input deteced
+	        - susceptible to future gp_constant order changes
+	        - ideally set up an axis deadzone to avoid unwanted return values
+	*/
+
+	if gamepad_is_supported() && gamepad_is_connected(argument0) {
+	    for (var i=gp_face1;i<=gp_padr;i++) { //see gp_strings - loop all buttons
+	        if gamepad_button_check(argument0,i) return i}
+	    for (var i=gp_axislh;i<=gp_axisrv;i++) {    // loop analogue axis
+	        if gamepad_axis_value(argument0,i)!=0 return i}
+	}
+	return 0;
+}
+	
+function gp_any() {
+	for ( var i = gp_face1; i < gp_axisrv; i++ ) {
+	    if ( gamepad_button_check( 0, i ) ) return i;
+	}
+	return false;
 }

@@ -14,8 +14,6 @@ function create_world(argument0) {
 	var vh = 0;
 	var origin_w = round((map_w-1)/2)
 	var origin_h = round((map_h-1)/2)
-	print("Origin W: " + string(origin_w));
-	print("Origin H: " + string(origin_h));
 
 #region SPECIAL ROOM PHASE
 
@@ -41,8 +39,8 @@ function create_world(argument0) {
 		var sw = irandom_range(0,ds_grid_width(global.worldgrid)-1);
 		var sh = irandom_range(0,ds_grid_height(global.worldgrid)-1);
 	} until global.worldgrid[# sw,sh] != 0;
-	print(sw);
-	print(sh);
+	log("Shop X: " + string(sw));
+	log("Shop Y: " + string(sh));
 
 #endregion
 
@@ -62,7 +60,6 @@ function create_world(argument0) {
 				} else {
 					var roomtype = irandom_range(0,ds_list_size(area_list)-4); //Pick a random room (excluding victory room which is at the bottom of the list)	
 				}
-				print(roomtype);
 
 #endregion
 

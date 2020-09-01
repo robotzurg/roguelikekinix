@@ -146,7 +146,7 @@ function generate_world(argument0, argument1, argument2, argument3) {
 		}
 	}
 
-	print("Total Rooms: " + string(roomcount));
+	log("Total Rooms: " + string(roomcount));
 
 	for (var w=1; w < map_width; w++) {
 		for (var h=1; h < map_height; h++) {

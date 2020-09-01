@@ -3,9 +3,17 @@ if gamepad_is_connected(0) { //If gamepad is connected, change keybinds to gamep
 	gamepad_set_axis_deadzone(0, 0.5);       // Set the "deadzone" for the axis
     gamepad_set_button_threshold(0, 0.1);    // Set the "threshold" for the triggers
 }
-
-	var mouse_ranged = (ranged.automatic) ? (gamepad_button_check(0,global.ct_Ranged)||mouse_check_button(global.kb_Ranged)) || keyboard_check(global.kb_Ranged) : (gamepad_button_check_pressed(0,global.ct_Ranged)||mouse_check_button_pressed(global.kb_Ranged) || keyboard_check_pressed(global.kb_Ranged));
-	var mouse_melee = (melee.autoswing) ? gamepad_button_check(0,global.ct_Melee)||mouse_check_button(global.kb_Melee) || keyboard_check(global.kb_Melee) : (gamepad_button_check_pressed(0,global.ct_Melee)||mouse_check_button_pressed(global.kb_Melee) || keyboard_check_pressed(global.kb_Melee));
+	if key_to_string(global.kb_Ranged) == "Left Mouse Button" or key_to_string(global.kb_Ranged) == "Right Mouse Button" {
+		var mouse_ranged = (ranged.automatic) ? (gamepad_button_check(0,global.ct_Ranged)||mouse_check_button(global.kb_Ranged)) : (gamepad_button_check_pressed(0,global.ct_Ranged)||mouse_check_button_pressed(global.kb_Ranged));
+	} else if key_to_string(global.kb_Ranged) != "Left Mouse Button" && key_to_string(global.kb_Ranged) != "Right Mouse Button" {
+		var mouse_ranged = (ranged.automatic) ? (gamepad_button_check(0,global.ct_Ranged)||keyboard_check(global.kb_Ranged)) : (gamepad_button_check_pressed(0,global.ct_Ranged)||keyboard_check_pressed(global.kb_Ranged));
+	}
+	
+	if key_to_string(global.kb_Melee) == "Left Mouse Button" or key_to_string(global.kb_Melee) == "Right Mouse Button" {
+		var mouse_melee = (melee.autoswing) ? (gamepad_button_check(0,global.ct_Melee)||mouse_check_button(global.kb_Melee)) : (gamepad_button_check_pressed(0,global.ct_Melee)||mouse_check_button_pressed(global.kb_Melee));
+	} else if key_to_string(global.kb_Melee) != "Left Mouse Button" && key_to_string(global.kb_Melee) != "Right Mouse Button" {
+		var mouse_melee = (melee.autoswing) ? (gamepad_button_check(0,global.ct_Melee)||keyboard_check(global.kb_Melee)) : (gamepad_button_check_pressed(0,global.ct_Melee)||keyboard_check_pressed(global.kb_Melee));
+	}
 
 	var h_move = gamepad_axis_value(0, global.ct_MoveHorizontal);
 	var v_move = gamepad_axis_value(0, global.ct_MoveVertical);
@@ -13,7 +21,8 @@ if gamepad_is_connected(0) { //If gamepad is connected, change keybinds to gamep
 	var key_right = keyboard_check(global.kb_Right) || 0 > gamepad_axis_value(0, global.ct_MoveHorizontal);;
 	var key_up = keyboard_check(global.kb_Up) || 0 > gamepad_axis_value(0, global.ct_MoveVertical);
 	var key_down = keyboard_check(global.kb_Down) || 0 < gamepad_axis_value(0, global.ct_MoveVertical);
-	
+	var key_ability = keyboard_check_pressed(global.kb_Ability) || gamepad_button_check_pressed(0,global.ct_Ability);
+	var key_interact = keyboard_check_pressed(global.kb_Interact) || gamepad_button_check_pressed(0,global.ct_Interact);
 	var key_cheat = keyboard_check_pressed(vk_f2);
 	
 	if(h_move = 0 && v_move = 0){
@@ -35,7 +44,7 @@ if(flipped = 0) flipped ++;
 
 //Move onto next floor code
 if (place_meeting(x,y,obj_staircase)) {
-	if keyboard_check_pressed(ord("E")) {
+	if key_interact {
 		generate_world(area_Valley2, 10, 15, true);
 		room_goto(room_next(room));
 	}
@@ -48,8 +57,6 @@ if (place_meeting(x,y,obj_staircase)) {
 				ranged = global.RangedWeapon[ranged.ID+1];	//Swap to the next weapon ID
 			} else {
 				ranged = global.RangedWeapon[rID.pistol] //this is ID 0, overflow code	
-				print(global.RangedWeapon[rID.dakka].ID);
-				print(global.RangedWeapon[ranged.ID+1]);
 			}
 		}
 	}
@@ -65,7 +72,7 @@ if (place_meeting(x,y,obj_staircase)) {
 #endregion
 
 #region Pickup Weapon
-if instance_place(x,y,obj_weapon_pickup) && keyboard_check_pressed(ord("E")) {
+if instance_place(x,y,obj_weapon_pickup) && key_interact {
 	var item = instance_place(x,y,obj_weapon_pickup);
 	if (currency >= item.price && melee != item.struct && ranged != item.struct) {
 		currency -= item.price

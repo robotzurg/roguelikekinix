@@ -113,8 +113,8 @@ global.RangedWeapon[rID.sniperwand] = {
 	bullet_count : 1,
 	hot_damage_time : 0, //How long target takes hot damage for, measured in frames.
 	cold_damage_time : 0, //Same as above but for cold.
-	h_offset : 20, //Horizontal bullet spawn offset from weapon centerpoint
-	v_offset : -7, //Vertical version of the above comment.
+	h_offset : 34, //Horizontal bullet spawn offset from weapon centerpoint
+	v_offset : 5, //Vertical version of the above comment.
 	ss_intensity : 3, //Screenshake intensity.
 	ss_duration : 0.1 //Screenshake Duration, measured in seconds.
 }

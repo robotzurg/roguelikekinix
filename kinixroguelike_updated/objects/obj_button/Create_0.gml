@@ -12,6 +12,7 @@ click_func = -1;
 
 //Control Menu Variables
 keybind_tie = -1;
+gp_button = false;
 waiting_for_input = -1;
 
 ///BUTTON FUNCTIONS\\\
