@@ -36,10 +36,12 @@ if hp <= 0 {
 if cold_time > 0{
 	cold_time --;
 	speed_multiplier = .5;
+	fire_rate =  struct.fire_rate*2; 
 	create_particle(x+random_range(-30,30), y+random_range(-30,30), random_range(-1,1), random_range(-1,1),"Instances",par_ice_particle,false);
 }
 else{
 	speed_multiplier = 1;	
+	fire_rate = struct.fire_rate;
 }
 
 //FIRE DAMAGE

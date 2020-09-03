@@ -154,7 +154,7 @@ global.RangedWeapon[rID.icejavelin] = {
 	name : "Ice Javelin",
 	type : "Ranged",
 	sprite : spr_iceJavelin,
-	damage : 8,
+	damage : 4,
 	fire_rate : 5, //Measured in Seconds, time between shots
 	automatic : false, //If the weapon can be held down to autofire or not
 	ammo_use : 1,
@@ -269,7 +269,8 @@ global.Enemy[eID.bat] = {
 	damage : 1,
 	cost : 2, //Number of spawn currency it costs to place enemy in room
 	spawn_area : area.valley, //Which area the enemy spawns in
-	atk_cooldown : 10, //Fire Rate/Time Between Special Attacks
+	fire_rate : 0,
+	atk_cooldown : 10, //Time Between Special Attacks
 	move_timer : 10,
 	collision_dmg : true, //Can do damage with collision or not
 	money_drop : 4, //How much money it drops on death.
@@ -284,7 +285,8 @@ global.Enemy[eID.ram] = {
 	damage : 2,
 	cost : 5, //Number of spawn currency it costs to place enemy in room
 	spawn_area : area.valley,//Which area the enemy spawns in
-	atk_cooldown : 5, //Fire Rate/Time Between Special Attacks
+	fire_rate : 0,
+	atk_cooldown : 5, //Time Between Special Attacks
 	move_timer : 100,
 	collision_dmg : true, //Can do damage with collision or not
 	money_drop : 17 //How much money it drops on death.
