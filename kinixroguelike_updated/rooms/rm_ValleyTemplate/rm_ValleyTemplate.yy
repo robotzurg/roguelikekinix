@@ -58,7 +58,7 @@
 11,7,3,3,3,3,3,3,3,3,3,4,21,21,21,21,21,21,2,3,3,3,3,3,3,3,3,3,6,11,
 11,11,11,11,11,11,11,11,11,11,11,12,21,21,21,21,21,21,10,11,11,11,11,11,11,11,11,11,11,11,
 ],},"visible":true,"depth":400,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Tiles_3","tags":[],"resourceType":"GMRTileLayer",},
-    {"tilesetId":{"name":"valley_grass","path":"tilesets/valley_grass/valley_grass.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":30,"SerialiseHeight":30,"TileSerialiseData":[
+    {"tilesetId":{"name":"valley_grass2","path":"tilesets/valley_grass2/valley_grass2.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":30,"SerialiseHeight":30,"TileSerialiseData":[
 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
@@ -90,7 +90,7 @@
 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
 ],},"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Tiles_2","tags":[],"resourceType":"GMRTileLayer",},
-    {"tilesetId":{"name":"valley_stone_dirt","path":"tilesets/valley_stone_dirt/valley_stone_dirt.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":30,"SerialiseHeight":30,"TileSerialiseData":[
+    {"tilesetId":{"name":"valley_stone_dirt2","path":"tilesets/valley_stone_dirt2/valley_stone_dirt2.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":30,"SerialiseHeight":30,"TileSerialiseData":[
 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
