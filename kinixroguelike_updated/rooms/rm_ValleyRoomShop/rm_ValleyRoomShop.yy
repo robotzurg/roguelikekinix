@@ -63,7 +63,7 @@
       ],"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Wall","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[],"visible":true,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Staircase","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[],"visible":true,"depth":300,"userdefinedDepth":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Spawn_Zones","tags":[],"resourceType":"GMRInstanceLayer",},
-    {"tilesetId":{"name":"valley_walls","path":"tilesets/valley_walls/valley_walls.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":30,"SerialiseHeight":30,"TileSerialiseData":[
+    {"tilesetId":{"name":"valley_walls2","path":"tilesets/valley_walls2/valley_walls2.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":30,"SerialiseHeight":30,"TileSerialiseData":[
 2147483659,11,11,11,11,11,11,11,11,11,2147483659,2147483660,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483658,2147483659,2147483659,11,11,11,11,2147483659,2147483659,2147483659,2147483659,2147483659,
 11,11,11,11,11,11,11,11,11,11,15,2147483668,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483666,14,11,11,11,11,11,11,11,11,11,2147483659,
 11,11,11,11,11,11,11,11,11,11,12,2147483669,2147483669,2147483669,2147483669,2147483669,2147483669,2147483669,2147483669,10,11,11,11,11,11,11,11,11,11,2147483659,
