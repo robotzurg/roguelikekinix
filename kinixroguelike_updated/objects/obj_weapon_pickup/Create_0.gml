@@ -1,4 +1,4 @@
-struct = global.RangedWeapon[rID.pistol];
+struct = global.RangedWeapon[rID.slingshot];
 name = struct.name
 sprite_index = struct.sprite
 type = struct.type

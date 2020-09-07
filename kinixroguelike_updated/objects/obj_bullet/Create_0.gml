@@ -18,6 +18,7 @@ b_range = struct_to_use.bullet_range;
 b_speed = struct_to_use.bullet_speed;
 b_sprite = struct_to_use.bullet_sprite
 b_trail  = struct_to_use.bullet_trail
+b_piercing = (struct_to_use.bullet_piercing+1)
 b_bounce = struct_to_use.bullet_bounce
 b_split = struct_to_use.bullet_split
 b_split_amount = struct_to_use.bullet_split_amount
@@ -32,7 +33,7 @@ b_cone = random_range(-b_spread/2,b_spread/2);
 x_vel = lengthdir_x(b_speed,direction + b_cone) *  random_range(1-struct_to_use.bullet_speed_random,1);
 y_vel = lengthdir_y(b_speed,direction + b_cone) *  random_range(1-struct_to_use.bullet_speed_random,1);
 
-
+enemy_hitlist = ds_list_create();
 start_home = false;
 
 sprite_index = b_sprite;

@@ -56,7 +56,7 @@ if (place_meeting(x,y,obj_staircase)) {
 			if global.RangedWeapon[ranged.ID+1] != 0 { //Apparently trying to reference something that is not a struct as a struct returns a 0. Huh.
 				ranged = global.RangedWeapon[ranged.ID+1];	//Swap to the next weapon ID
 			} else {
-				ranged = global.RangedWeapon[rID.pistol] //this is ID 0, overflow code	
+				ranged = global.RangedWeapon[rID.slingshot] //this is ID 0, overflow code	
 			}
 		}
 	}

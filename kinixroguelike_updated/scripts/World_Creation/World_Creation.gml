@@ -120,7 +120,7 @@ function create_world(argument0) {
 					with obj {
 						image_xscale = rtsec[# ix, 2];
 						image_yscale = rtsec[# ix, 3];
-						if object_index = obj_spawnzones {
+						if object_index = obj_spawnzones or object_index = obj_ruinedturret {
 							sector_x = w;
 							sector_y = h;
 						}
