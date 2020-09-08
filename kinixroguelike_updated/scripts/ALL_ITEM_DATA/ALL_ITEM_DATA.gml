@@ -353,6 +353,6 @@ global.Enemy[eID.ram] = {
 
 #region Valley Spawn Pool
 	global.valleyspawnpool = ds_list_create();
-	ds_list_add(global.valleyspawnpool,global.Enemy[eID.bat]);
-	ds_list_add(global.valleyspawnpool,global.Enemy[eID.ram]);
+	ds_list_add(global.valleyspawnpool,obj_bat);
+	ds_list_add(global.valleyspawnpool,obj_ram);
 #endregion

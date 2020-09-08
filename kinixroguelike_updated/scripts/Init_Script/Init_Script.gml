@@ -79,6 +79,7 @@ global.valleyareas = ds_list_create(); //Holds a list of all the valley room typ
 global.valleytiles = array_create(3); //Holds a list of all the valley tiles during room data collection.
 global.current_t = 0; //Keeps track of how long the game has been open.
 global.input_check_obj = -1; //Keeps track of what button object is being checked for input, for the control menu.
+global.lapstart = false //Changes to true if a limbo access point event has begun.
 
 #endregion
 

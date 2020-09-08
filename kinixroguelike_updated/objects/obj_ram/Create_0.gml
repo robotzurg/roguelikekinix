@@ -1,4 +1,4 @@
-struct = global.struct_to_set;
+struct = global.Enemy[eID.ram]
 sprite_index = struct.sprite
 name = struct.name
 hp = struct.hp

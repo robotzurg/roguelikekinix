@@ -8,7 +8,7 @@ var camH = camera_get_view_height(camera);
 var targetX = obj_player.x - camW/2;
 var targetY = obj_player.y - camH/2;
 
-if instance_exists(obj_enemy) {
+if instance_exists(obj_ParentEnemy) && zoom == false {
 	targetX = clamp(targetX, sector_width,  sector_width - (960/2));
 	targetY = clamp(targetY, sector_height - (960/2), sector_height - 120/2);
 }
@@ -30,6 +30,7 @@ var wheel = mouse_wheel_down() - mouse_wheel_up();
 if (wheel != 0) {
 	wheel *= 0.2;
 	
+	zoom = true;
 	//Add to size
 	var addW = camW * wheel
 	var addH = camH * wheel;

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_ruinedturret",
-    "path": "sprites/spr_ruinedturret/spr_ruinedturret.yy",
+    "name": "spr_limboaccesspoint",
+    "path": "sprites/spr_limboaccesspoint/spr_limboaccesspoint.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,17 +24,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_ruinedturret","path":"objects/obj_ruinedturret/obj_ruinedturret.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_ruinedturret","path":"objects/obj_ruinedturret/obj_ruinedturret.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_limboaccesspoint","path":"objects/obj_limboaccesspoint/obj_limboaccesspoint.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Beings/Enemies.yy",
+    "name": "Room Building",
+    "path": "folders/Room Building.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_ruinedturret",
+  "name": "obj_limboaccesspoint",
   "tags": [],
   "resourceType": "GMObject",
 }

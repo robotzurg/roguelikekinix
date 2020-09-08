@@ -35,7 +35,7 @@ if room != area_Valley && room != area_Valley2 && room != testroom && room != rm
 	var sec = global.valleyareas[| ds_list_size(global.valleyareas)-1]
 	var i = 0;
 	with all {
-		if object_index != obj_CollisionParent && object_index != obj_gmlp /*&& object_index != obj_gmlive*/ && object_index != obj_GameEngine {
+		if object_index != obj_CollisionParent && object_index != obj_gmlp && object_index != obj_gmlive && object_index != obj_GameEngine {
 			ds_grid_add(sec, i, 0, x);
 			ds_grid_add(sec, i, 1, y);
 			ds_grid_add(sec, i, 2, image_xscale);

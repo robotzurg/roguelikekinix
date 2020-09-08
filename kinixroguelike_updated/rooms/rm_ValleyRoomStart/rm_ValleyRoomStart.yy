@@ -16,7 +16,9 @@
     {"inherit":true,"visible":false,"xview":0,"yview":0,"wview":1024,"hview":768,"xport":0,"yport":0,"wport":1024,"hport":768,"hborder":32,"vborder":32,"hspeed":-1,"vspeed":-1,"objectId":null,},
   ],
   "layers": [
-    {"instances":[],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
+    {"instances":[
+        {"properties":[],"isDnd":false,"objectId":{"name":"obj_limboaccesspoint","path":"objects/obj_limboaccesspoint/obj_limboaccesspoint.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":736.0,"y":224.0,"resourceVersion":"1.0","name":"inst_29A80426","tags":[],"resourceType":"GMRInstance",},
+      ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":true,"inheritLayerSettings":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_wall_invisible","path":"objects/obj_wall_invisible/obj_wall_invisible.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.5,"scaleY":6.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":{"name":"inst_3D4F0A9","path":"rooms/rm_ValleyTemplate/rm_ValleyTemplate.yy",},"frozen":false,"ignore":false,"inheritItemSettings":true,"x":864.0,"y":576.0,"resourceVersion":"1.0","name":"inst_36A5EEDB","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_wall_invisible","path":"objects/obj_wall_invisible/obj_wall_invisible.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.5,"scaleY":6.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":{"name":"inst_5213955B","path":"rooms/rm_ValleyTemplate/rm_ValleyTemplate.yy",},"frozen":false,"ignore":false,"inheritItemSettings":true,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"inst_399282DB","tags":[],"resourceType":"GMRInstance",},
@@ -139,6 +141,7 @@
     {"name":"inst_7D463B8","path":"rooms/rm_ValleyRoomStart/rm_ValleyRoomStart.yy",},
     {"name":"inst_FCC0FD3","path":"rooms/rm_ValleyRoomStart/rm_ValleyRoomStart.yy",},
     {"name":"inst_2AE71F10","path":"rooms/rm_ValleyRoomStart/rm_ValleyRoomStart.yy",},
+    {"name":"inst_29A80426","path":"rooms/rm_ValleyRoomStart/rm_ValleyRoomStart.yy",},
   ],
   "inheritCreationOrder": true,
   "sequenceId": null,

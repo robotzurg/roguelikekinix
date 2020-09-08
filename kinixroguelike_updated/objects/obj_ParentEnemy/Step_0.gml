@@ -7,7 +7,7 @@ else if(spawn_fade_in > 0) {
 	if(spawn_fade_in <= 0){
 		var sw = sprite_width/2;
 		var sh = sprite_height/2;
-		//var near = instance_nearest(x,y,obj_enemy);
+		//var near = instance_nearest(x,y,obj_ParentEnemy);
 		for(var i = 24; i > 0; i--){			
 			create_particle(x+random_range(-sw,sw), y+random_range(-sw,sh),random_range(-5,5),random_range(-5,5),"Instances",par_spawn_particle,true);
 		} 

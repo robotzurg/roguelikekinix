@@ -16,8 +16,21 @@ for (var w=0; w < map_w; w++) {
 	}
 }
 
-if (room == area_Valley or room == area_Valley2) && instance_exists(obj_enemy) {
+if (room == area_Valley or room == area_Valley2) && instance_exists(obj_ParentEnemy) {
 	instance_activate_object(obj_door);
 } else {
 	instance_deactivate_object(obj_door);
+}
+
+
+if global.lapstart == true {
+	if limit < 5 {
+		if (wait(1)) {
+			limit++
+			instance_create_layer(obj_limboaccesspoint.x,obj_limboaccesspoint.y+150,"Instances",obj_bat)
+		}
+	} else {
+		global.lapstart = false;	
+		limit = 0;
+	}
 }

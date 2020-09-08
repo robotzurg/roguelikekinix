@@ -30,7 +30,6 @@ if gamepad_is_connected(0) { //If gamepad is connected, change keybinds to gamep
 		v_move = (key_down - key_up);
 	}
 
-
 //Cheats toggle
 if key_cheat {
 	cheats_enabled = !cheats_enabled; //Toggle between true and false
@@ -95,7 +94,7 @@ if instance_place(x,y,obj_weapon_pickup) && key_interact {
 
 if state == "move" {
 	
-	if cheats_enabled { spd = struct.spd*2  } else if !instance_exists(obj_enemy) { spd = struct.spd*1.25  } else { spd = struct.spd; }
+	if cheats_enabled { spd = struct.spd*2  } else if !instance_exists(obj_ParentEnemy) { spd = struct.spd*1.25  } else { spd = struct.spd; }
 	
 	//Movement code
 	hspd = (h_move) * spd
@@ -138,7 +137,7 @@ y+=vspd;
 
 #endregion
 
-#region Shooting with Gun
+#region Ranged
 
 if timer("reload") == true {
 	ranged_frame = 0;

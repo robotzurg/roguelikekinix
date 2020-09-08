@@ -2,7 +2,7 @@ x += x_vel;
 y += y_vel;
 direction = point_direction(x,y, x+x_vel, y+y_vel);
 image_angle = direction;
-var nearest_enemy = instance_nearest(x,y,obj_enemy);
+var nearest_enemy = instance_nearest(x,y,obj_ParentEnemy);
 
 if timer("homingstart",0.2) == true {
 	start_home = true;
@@ -26,7 +26,7 @@ if(b_bounce > 0){
 	}
 }
 //Bullet Homing
-if(b_homing > 0) && instance_exists(obj_enemy) && start_home == true {
+if(b_homing > 0) && instance_exists(obj_ParentEnemy) && start_home == true {
 	var ybuffer = 1;
 	var xbuffer = 1;
 		if sign(nearest_enemy.x - x) != sign(x_vel){

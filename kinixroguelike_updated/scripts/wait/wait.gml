@@ -47,7 +47,7 @@ function wait() {
 
 	//Get wait timer ID
 	var ar_temp = debug_get_callstack(),
-		w_id = ar_temp[array_length_1d(ar_temp) - 2];
+		w_id = ar_temp[array_length(ar_temp) - 2];
 
 	//Initialize new wait timer, if it doesn't exist
 	if (!variable_instance_exists(id, w_id + "_offset")) {
