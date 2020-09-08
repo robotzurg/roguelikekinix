@@ -29,6 +29,10 @@ b_count = struct_to_use.bullet_count
 b_spread = struct_to_use.bullet_spread
 b_hot_time = struct_to_use.hot_damage_time
 b_cold_time = struct_to_use.cold_damage_time
+b_damage_falloff = struct_to_use.damage_falloff
+b_damage_falloff_range = struct_to_use.damage_falloff_range
+
+
 b_cone = random_range(-b_spread/2,b_spread/2);
 x_vel = lengthdir_x(b_speed,direction + b_cone) *  random_range(1-struct_to_use.bullet_speed_random,1);
 y_vel = lengthdir_y(b_speed,direction + b_cone) *  random_range(1-struct_to_use.bullet_speed_random,1);

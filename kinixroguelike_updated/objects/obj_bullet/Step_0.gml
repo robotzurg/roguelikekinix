@@ -39,3 +39,15 @@ if(b_homing > 0) && instance_exists(obj_ParentEnemy) && start_home == true {
 	y_vel+= sign(nearest_enemy.y - y)*b_homing*ybuffer;
 
 }
+
+//Bullet Damage Falloff
+if(b_damage_falloff != -1 && b_damage_falloff_range != -1){
+	if(distance_to_point(xstart,ystart) < b_damage_falloff_range)
+	b_damage = 	struct_to_use.damage + ((b_damage_falloff - b_damage) * (distance_to_point(xstart,ystart) / b_damage_falloff_range));
+	
+	
+}
+
+
+
+

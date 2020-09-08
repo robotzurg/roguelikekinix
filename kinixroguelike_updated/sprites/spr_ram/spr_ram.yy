@@ -112,8 +112,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3779583e-0e0a-41ff-bfdd-e95e3cecd304","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Beings/Enemies.yy",
+    "name": "Sprites",
+    "path": "folders/Beings/Enemies/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_ram",

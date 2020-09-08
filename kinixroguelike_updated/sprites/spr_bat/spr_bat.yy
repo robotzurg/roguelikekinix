@@ -80,8 +80,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"88872884-9611-4c1d-9d28-414352ab6107","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Beings/Enemies.yy",
+    "name": "Sprites",
+    "path": "folders/Beings/Enemies/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_bat",
