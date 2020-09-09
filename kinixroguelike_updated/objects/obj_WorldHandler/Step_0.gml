@@ -27,10 +27,13 @@ if global.lapstart == true {
 	if limit < 5 {
 		if (wait(1)) {
 			limit++
-			instance_create_layer(obj_limboaccesspoint.x,obj_limboaccesspoint.y+150,"Instances",obj_bat)
+			instance_create_layer(obj_limboaccesspoint.x,obj_limboaccesspoint.y+150,"Instances",choose(obj_bat,obj_ram))
 		}
-	} else {
-		global.lapstart = false;	
-		limit = 0;
 	}
+}
+
+if en_left == 0 && global.lapstart == true {
+	global.lapstart = 2;	
+	en_left = 5;
+	limit = 0;
 }

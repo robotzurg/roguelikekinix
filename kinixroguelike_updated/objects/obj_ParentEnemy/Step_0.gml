@@ -160,5 +160,4 @@ if(wall_col = true){
 x = x+(hspd*speed_multiplier);
 y = y+(vspd*speed_multiplier);
 #endregion
-
 }

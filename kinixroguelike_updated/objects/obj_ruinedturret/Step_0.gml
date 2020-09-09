@@ -1,3 +1,4 @@
+if instance_exists(obj_ParentEnemy) {
 if obj_player.current_sector_x == sector_x && obj_player.current_sector_y == sector_y && is_in_sector(obj_player,960,96) {
     image_speed = 1;
         
@@ -34,4 +35,11 @@ else{
     else {
         image_speed = 0;    
     }
+}
+} else { //If no enemies are in the room
+	 if (floor(image_index) != 1){
+        image_speed = -1;
+    } else {
+		image_speed = 0;	
+	}
 }
