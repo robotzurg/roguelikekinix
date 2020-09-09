@@ -115,8 +115,8 @@ if state == "idle" {
 
 if !cheats_enabled {
 	///Horizontal Collision
-	if (place_meeting(x+hspd, y, obj_CollisionParent)){
-	    while (!place_meeting(x+sign(hspd), y, obj_CollisionParent)){ 
+	if (place_meeting(x+hspd, y, obj_CollisionParent) or place_meeting(x+hspd, y, obj_HalfColParent)){
+	    while (!place_meeting(x+sign(hspd), y, obj_CollisionParent) or !place_meeting(x+sign(hspd), y, obj_HalfColParent)){ 
 	        x+=sign(hspd);
 	    }
 	    hspd=0;
@@ -126,8 +126,8 @@ x+=hspd;
 
 //Vertical Collision
 if !cheats_enabled {
-	if (place_meeting(x, y+vspd, obj_CollisionParent)){
-	    while (!place_meeting(x, y+sign(vspd), obj_CollisionParent)){
+	if (place_meeting(x, y+vspd, obj_CollisionParent) or place_meeting(x, y+vspd, obj_HalfColParent)){
+	    while (!place_meeting(x, y+sign(vspd), obj_CollisionParent) or place_meeting(x, y+sign(vspd), obj_HalfColParent)){
 	        y+=sign(vspd);
 	    }
 	   vspd=0;

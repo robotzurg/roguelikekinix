@@ -151,7 +151,7 @@ if kblen > 0 {
 
 #region //Collision
 if(wall_col = true){
-	if(place_meeting(x+hspd, y+vspd, obj_CollisionParent)){
+	if(place_meeting(x+hspd, y+vspd, obj_CollisionParent) or place_meeting(x+hspd, y+vspd, obj_HalfColParent)){
 		hspd = 0
 		vspd = 0;
 	}
