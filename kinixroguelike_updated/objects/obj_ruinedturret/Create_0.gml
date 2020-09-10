@@ -1,3 +1,4 @@
+event_inherited();
 sector_x = 0;
 sector_y = 0;
 image_speed = 0;

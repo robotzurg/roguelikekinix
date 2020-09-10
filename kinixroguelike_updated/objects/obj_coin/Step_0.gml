@@ -5,7 +5,7 @@ switch (type) {
 	case coin.ten: image_index = 3; break;	
 }
 
-if !(place_meeting(x,y,obj_CollisionParent) or !place_meeting(x, y, obj_HalfColParent)) {
+if !(place_meeting(x,y,obj_CollisionParent)) {
 	x = lerp(x,xcoord,0.2);
 	y = lerp(y,ycoord,0.2);
 }

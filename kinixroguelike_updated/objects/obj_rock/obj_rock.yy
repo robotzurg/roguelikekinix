@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_HalfColParent",
-    "path": "objects/obj_HalfColParent/obj_HalfColParent.yy",
+    "name": "obj_CollisionParent",
+    "path": "objects/obj_CollisionParent/obj_CollisionParent.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -23,7 +23,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
