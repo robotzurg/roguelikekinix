@@ -7,3 +7,11 @@ if keyboard_check_pressed(vk_f11) {
 }
 
 global.current_t++;
+
+if keyboard_check_pressed(vk_f12) {
+	live_reload_data = !live_reload_data	
+}
+
+if live_reload_data == true {
+	init_data()
+}

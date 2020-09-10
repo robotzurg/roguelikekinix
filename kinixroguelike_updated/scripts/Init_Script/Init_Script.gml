@@ -1,3 +1,4 @@
+function init() {
 ///This script is run at the beginning of the entire game. Put anything that needs to be initialized at the start in here, not in an object. Do NOT make this a function, and do not put **ANY** REFERENCE TO THE ALL_ITEM_DATA SCRIPT IN THIS SCRIPT.
 ///SERIOUSLY DON'T DO IT. PLEASE. THANK YOU. :)
  randomize(); //Randomize the game seed before ANYTHING else.
@@ -132,3 +133,9 @@ global.kb_Interact = ini_read_real("controls","kb_interact",0);
 ini_close();
 #endregion
 
+#region Valley Spawn Pool
+	global.valleyspawnpool = ds_list_create();
+	ds_list_add(global.valleyspawnpool,obj_bat);
+	ds_list_add(global.valleyspawnpool,obj_ram);
+#endregion
+}

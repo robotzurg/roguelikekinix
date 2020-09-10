@@ -1,14 +1,12 @@
 //Get current camera position
 var camX = camera_get_view_x(camera)
 var camY = camera_get_view_y(camera)
-var camW = camera_get_view_width(camera);
-var camH = camera_get_view_height(camera);
 
 //Set target camera position
 var targetX = obj_player.x - camW/2;
 var targetY = obj_player.y - camH/2;
 
-if instance_exists(obj_ParentEnemy) && zoom == false {
+if instance_exists(obj_ParentEnemy) && zoom == 0 {
 	targetX = clamp(targetX, sector_width,  sector_width - (960/2));
 	targetY = clamp(targetY, sector_height - (960/2), sector_height - 120/2);
 }
@@ -25,23 +23,26 @@ if shake == false {
 	}
 }
 
+log(camW)
+log(camH);
 //Zoom
-var wheel = mouse_wheel_down() - mouse_wheel_up();
-if (wheel != 0) {
-	wheel *= 0.2;
+if (zoom_start == true ) {
 	
-	zoom = true;
 	//Add to size
-	var addW = camW * wheel
-	var addH = camH * wheel;
+	var addW = camW * zoom;
+	var addH = camH * zoom;
 	
 	camW += addW
 	camH += addH
 
+
 	//Position
 	camX -= addW / 2;
 	camY -= addH / 2;
+} else {	
 }
+
+zoom = clamp(zoom,-1,1);
 
 //Apply camera position
 camera_set_view_pos(camera, camX, camY);

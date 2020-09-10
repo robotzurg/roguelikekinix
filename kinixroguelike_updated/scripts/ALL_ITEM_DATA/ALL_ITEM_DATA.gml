@@ -1,3 +1,5 @@
+function init_data() {
+if (live_call()) return live_result;
 #region RANGED STRUCTS
 global.RangedWeapon[rID.slingshot] = {
 	ID : rID.slingshot,
@@ -6,6 +8,7 @@ global.RangedWeapon[rID.slingshot] = {
 	sprite : spr_slingshot,
 	damage : 8,
 	damage_falloff : -1,
+	damage_falloff_start : 0,
 	damage_falloff_range : -1,
 	fire_rate : 0.2, //Measured in Seconds, time between shots
 	automatic : false, //If the weapon can be held down to autofire or not
@@ -39,6 +42,7 @@ global.RangedWeapon[rID.homingwand] = {
 	sprite : spr_homingWand,
 	damage : 2,
 	damage_falloff : -1,
+	damage_falloff_start : 0,
 	damage_falloff_range : -1,
 	fire_rate : 0.4, //Measured in Seconds, time between shots
 	automatic : false, //If the weapon can be held down to autofire or not
@@ -70,9 +74,10 @@ global.RangedWeapon[rID.sniperwand] = {
 	name : "Sniper Wand",
 	type : "Ranged",
 	sprite : spr_sniperWand,
-	damage : 12,
-	damage_falloff : -1,
-	damage_falloff_range : -1,
+	damage : 3,
+	damage_falloff : 15,
+	damage_falloff_start : 0,
+	damage_falloff_range : 250,
 	fire_rate : 2, //Measured in Seconds, time between shots
 	automatic : false, //If the weapon can be held down to autofire or not
 	ammo_use : 5,
@@ -105,6 +110,7 @@ global.RangedWeapon[rID.shotgunwand] = {
 	sprite : spr_shotgunWand,
 	damage : 2,
 	damage_falloff : -1,
+	damage_falloff_start : 0,
 	damage_falloff_range : -1,
 	fire_rate : 1, //Measured in Seconds, time between shots
 	automatic : false, //If the weapon can be held down to autofire or not
@@ -136,9 +142,10 @@ global.RangedWeapon[rID.crossbow] = {
 	name : "Crossbow",
 	type : "Ranged",
 	sprite : spr_crossbow,
-	damage : 8,
-	damage_falloff : 3,
-	damage_falloff_range : 400,
+	damage : 12,
+	damage_falloff : 5,
+	damage_falloff_start : 0,
+	damage_falloff_range : 300,
 	fire_rate : 1.25, //Measured in Seconds, time between shots
 	automatic : false, //If the weapon can be held down to autofire or not
 	ammo_use : 1,
@@ -164,6 +171,8 @@ global.RangedWeapon[rID.crossbow] = {
 	ss_duration : 0.2 //Screenshake Duration, measured in seconds.
 }
 
+if instance_exists(obj_player) { obj_player.ranged = global.RangedWeapon[rID.sniperwand] } 
+
 global.RangedWeapon[rID.dakka] = {
 	ID : rID.dakka,
 	name : "Dakka",
@@ -171,6 +180,7 @@ global.RangedWeapon[rID.dakka] = {
 	sprite : spr_dakka,
 	damage : 2,
 	damage_falloff : -1,
+	damage_falloff_start : 0,
 	damage_falloff_range : -1,
 	fire_rate : 0.08, //Measured in Seconds, time between shots
 	automatic : true, //If the weapon can be held down to autofire or not
@@ -204,6 +214,7 @@ global.RangedWeapon[rID.icejavelin] = {
 	sprite : spr_iceJavelin,
 	damage : 4,
 	damage_falloff : -1,
+	damage_falloff_start : 0,
 	damage_falloff_range : -1,
 	fire_rate : 5, //Measured in Seconds, time between shots
 	automatic : false, //If the weapon can be held down to autofire or not
@@ -309,9 +320,9 @@ global.PlayerData = {
 	sprite : spr_player,
 	hp : 15,
 	spd : 5,
-	ammo : 100,
+	ammo : 1000,
 	ability : 1,
-	ranged : global.RangedWeapon[rID.crossbow],
+	ranged : global.RangedWeapon[rID.sniperwand],
 	melee : global.MeleeWeapon[mID.sword],
 	iframes : 3
 }
@@ -338,7 +349,7 @@ global.Enemy[eID.ram] = {
 	ID : eID.ram,
 	name : "Ram",
 	sprite : spr_ram,
-	hp : 12,
+	hp : 9999,
 	spd : 5,
 	damage : 2,
 	cost : 5, //Number of spawn currency it costs to place enemy in room
@@ -350,9 +361,4 @@ global.Enemy[eID.ram] = {
 	money_drop : 17 //How much money it drops on death.
 }
 #endregion
-
-#region Valley Spawn Pool
-	global.valleyspawnpool = ds_list_create();
-	ds_list_add(global.valleyspawnpool,obj_bat);
-	ds_list_add(global.valleyspawnpool,obj_ram);
-#endregion
+}
