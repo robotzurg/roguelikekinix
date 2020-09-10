@@ -14,6 +14,8 @@ if(b_split > 1){
 				b_homing = other.b_homing;
 				b_count = other.b_count;
 				b_split_angle = other.b_split_angle;
+				b_damage_falloff = other.damage_falloff
+				b_damage_falloff_range = other.damage_falloff_range
 			}
 	}
 }

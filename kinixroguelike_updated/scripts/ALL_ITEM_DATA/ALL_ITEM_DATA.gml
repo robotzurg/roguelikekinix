@@ -138,7 +138,7 @@ global.RangedWeapon[rID.crossbow] = {
 	sprite : spr_crossbow,
 	damage : 8,
 	damage_falloff : 3,
-	damage_falloff_range : 100,
+	damage_falloff_range : 400,
 	fire_rate : 1.25, //Measured in Seconds, time between shots
 	automatic : false, //If the weapon can be held down to autofire or not
 	ammo_use : 1,
