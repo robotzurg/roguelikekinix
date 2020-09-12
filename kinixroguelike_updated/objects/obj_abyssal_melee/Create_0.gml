@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 // Inherit the parent event
-struct = global.Enemy[eID.bat]
+struct = global.Enemy[eID.abyssal_melee]
 sprite_index = struct.sprite
 name = struct.name
 hp = struct.hp
@@ -47,9 +47,5 @@ shd_px_alpha = shader_get_uniform(shd_white_spawn,"shd_alpha");
 shd_px_alpha_fade = shader_get_uniform(shd_white_spawn,"shd_alpha_fade");
 
 //FANCY ABYSSLAD STUFF
-sprite_index = spr_abyssal_melee;
 i_timer = 60;
-spd = 2;
-
-
 ai_mode = "idle";

@@ -23,8 +23,6 @@ if shake == false {
 	}
 }
 
-log(camW)
-log(camH);
 //Zoom
 if (zoom_start == true ) {
 	

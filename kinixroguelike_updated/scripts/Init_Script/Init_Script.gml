@@ -12,6 +12,7 @@ enum eID { //Enemy ID enum.
 	bat,
 	ram,
 	brick,
+	abyssal_melee
 }
 
 enum rID { //Ranged Weapon ID enum.
@@ -53,7 +54,8 @@ enum area {
 	valley,
 	village,
 	basement,
-	limbo
+	limbo,
+	abyss_access
 }
 
 //List UI Enums

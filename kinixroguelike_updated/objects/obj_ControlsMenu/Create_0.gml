@@ -1,4 +1,4 @@
-if (live_call()) return live_result;
+//if (live_call()) return live_result;
 for (var i=0; i<8;i++) { //6 is the number of keybinds. Update as more are needed, but I made this hard coded as I expect we won't need much more - Jeff
 	switch(i) {
 		case 0: var kb = "kb_up"; break;

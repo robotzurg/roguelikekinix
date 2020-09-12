@@ -123,22 +123,10 @@ if kblen > 0 {
 
 #region //Collision
 	if(place_meeting(x+(hspd*speed_multiplier), y, obj_CollisionParent)){
-		for(var ix = 0; ix > -1; ix++){
-			ix++;
-			if(place_meeting(x+(ix*speed_multiplier), y, obj_CollisionParent)){
-				hspd = max(ix-1,0);
-				ix = -1;
-			}
-		}
+		hspd = 0;
 	}
 	if(place_meeting(x, y+(vspd*speed_multiplier), obj_CollisionParent)){
-		for(var iy = 0; iy > -1; iy++){
-			iy++;
-			if(place_meeting(x+(ix*speed_multiplier), y, obj_CollisionParent)){
-				vspd = max(iy-1,0);
-				iy = -1;
-			}
-		}
+		vspd = 0;
 	}
 
 x = x+(hspd*speed_multiplier);

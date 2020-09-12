@@ -1,5 +1,5 @@
 function init_data() {
-if (live_call()) return live_result;
+//if (live_call()) return live_result;
 #region RANGED STRUCTS
 global.RangedWeapon[rID.slingshot] = {
 	ID : rID.slingshot,
@@ -359,6 +359,22 @@ global.Enemy[eID.ram] = {
 	move_timer : 100,
 	collision_dmg : true, //Can do damage with collision or not
 	money_drop : 17 //How much money it drops on death.
+}
+
+global.Enemy[eID.abyssal_melee] = {
+	ID : eID.abyssal_melee,
+	name : "Abyssling",
+	sprite : spr_abyssal_melee,
+	hp : 5,
+	spd : 3,
+	damage : 1,
+	cost : 0, //Number of spawn currency it costs to place enemy in room
+	spawn_area : area.abyss_access,//Which area the enemy spawns in
+	fire_rate : 0,
+	atk_cooldown : 5, //Time Between Special Attacks
+	move_timer : 100,
+	collision_dmg : true, //Can do damage with collision or not
+	money_drop : 6 //How much money it drops on death.
 }
 #endregion
 }
