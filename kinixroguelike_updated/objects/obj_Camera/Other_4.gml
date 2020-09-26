@@ -3,12 +3,13 @@
 #macro RES_SCALE 1
 
 #macro CAM_SMOOTH 0.15
+#macro CAM_SMOOTH_ZOOM CAM_SMOOTH*CAM_SMOOTH
 
 view_enabled = true;
 view_visible[0] = true;
 zoom = 100;
 zoomto = 100;
-zoom_speed= 0.02
+zoom_speed= 1;
 sector_width = 4320;
 sector_height = 4320;
 room_num = 2*3*5*7;

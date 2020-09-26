@@ -31,6 +31,9 @@ if keyboard_check(vk_subtract) {
 	zoom -= 1;
 }	
 
+zoom = lerp(zoom,zoomto,CAM_SMOOTH_ZOOM*zoom_speed);
+
+//Zoom Values
 zoom = clamp(zoom,50,150);
 camW = (zoom/100)*camW2
 camH = (zoom/100)*camH2
