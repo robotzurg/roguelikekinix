@@ -1,7 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-// Inherit the parent event
 struct = global.Enemy[eID.abyssal_melee]
 sprite_index = struct.sprite
 name = struct.name

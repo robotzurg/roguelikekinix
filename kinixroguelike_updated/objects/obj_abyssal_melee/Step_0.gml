@@ -1,4 +1,3 @@
-
 if(spawn_timer > 0){
 	spawn_timer --;
 }

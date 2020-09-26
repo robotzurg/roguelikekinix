@@ -2,12 +2,13 @@
 #macro RES_H 540
 #macro RES_SCALE 1
 
-#macro CAM_SMOOTH 0.2
+#macro CAM_SMOOTH 0.15
 
 view_enabled = true;
 view_visible[0] = true;
-zoom = 0;
-zoom_start = false;
+zoom = 100;
+zoomto = 100;
+zoom_speed= 0.02
 sector_width = 4320;
 sector_height = 4320;
 room_num = 2*3*5*7;
@@ -38,6 +39,8 @@ window_set_position(display_width/2 - window_width/2, display_height/2 - window_
 //Set camera position
 camW = camera_get_view_width(camera);
 camH = camera_get_view_height(camera);
+camW2 = camera_get_view_width(camera);
+camH2 = camera_get_view_height(camera);
 
 var targetX = sector_width - (960/2)
 var targetY = sector_height - (540/2)

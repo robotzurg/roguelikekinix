@@ -12,8 +12,8 @@ if instance_exists(obj_ParentEnemy) && zoom == 0 {
 }
 
 if shake == false {
-	camX = lerp(camX, targetX, CAM_SMOOTH-0.05);
-	camY = lerp(camY, targetY, CAM_SMOOTH-0.05);
+	camX = lerp(camX, targetX, CAM_SMOOTH);
+	camY = lerp(camY, targetY, CAM_SMOOTH);
 } else {
 	if timer("screenshake") == false {
 		camX = lerp(camX, targetX, CAM_SMOOTH) + random_range(-shake,shake);
@@ -23,24 +23,17 @@ if shake == false {
 	}
 }
 
-//Zoom
-if (zoom_start == true ) {
-	
-	//Add to size
-	var addW = camW * zoom;
-	var addH = camH * zoom;
-	
-	camW += addW
-	camH += addH
+if keyboard_check(vk_add) {
+	zoom += 1;
+}	
 
+if keyboard_check(vk_subtract) {
+	zoom -= 1;
+}	
 
-	//Position
-	camX -= addW / 2;
-	camY -= addH / 2;
-} else {	
-}
-
-zoom = clamp(zoom,-1,1);
+zoom = clamp(zoom,50,150);
+camW = (zoom/100)*camW2
+camH = (zoom/100)*camH2
 
 //Apply camera position
 camera_set_view_pos(camera, camX, camY);
